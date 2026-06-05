@@ -1,31 +1,10 @@
+---
 
-Here are several GIF packages related to the detector-present solution of the time-dependent Schrödinger equation for a Gaussian spinor wave packet in a harmonic waveguide.
+## Box length in propagation direction: \(L_z=20\)
 
-The simulations use a spin-coupled absorbing boundary condition (spinor ABC) at the detecting roof \(z=L_z\). The lower face and artificial transverse faces are hard-wall/Dirichlet boundaries. The bulk Hamiltonian is spin-independent and contains harmonic transverse confinement. The initial state is a factorized Gaussian wave packet,
-\[
-\Psi_0(x,y,z)=\chi_\omega(x,y)\,\phi_0(z)\,\eta,
-\]
-where \(\chi_\omega\) is the transverse harmonic ground state, \(\phi_0\) is a longitudinal Gaussian packet, and \(\eta\) is the initial spinor.
-
-Each ZIP contains visualization outputs such as:
-
-- `isosurf.gif`: 3D isosurface visualization of the probability density  
-  \[
-  \rho=|\psi_\uparrow|^2+|\psi_\downarrow|^2 .
-  \]
-
-- `midplanes.gif`: density slices through representative coordinate planes.
-
-- `scatter.gif`: scatter-style visualization of the evolving density.
-
-- `slices_bar.gif`: longitudinal \(z\)-slice marginal,
-  \[
-  P_z(z_k,t)=\sum_{i,j}\rho(x_i,y_j,z_k,t)\,\Delta x\,\Delta y\,\Delta z .
-  \]
-  This diagnostic integrates over \(x,y\), so it shows the longitudinal probability distribution only. It is useful for checking that the early longitudinal marginal is essentially unchanged across the \(\omega\)-sweep. The transverse narrowing is shown instead by the midplane and isosurface movies.
-
-- `rho.png`: representative density snapshot.
-
-- `simulation_log.txt` and `stdout.txt`: run parameters and numerical log information.
-
-The visualization files are intended as diagnostics of the detector-present spinor-ABC evolution. They are not additional detector models and should be read together with the roof-flux and finite-window statistics discussed in the paper.
+| ID | Download | Parameters | Diagnostic purpose |
+|---|---|---|---|
+| **01** | [Download (01.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=35\) | High-confinement Gaussian run with a shorter observation window. Useful for visualizing the early interaction with the spinor absorbing roof. |
+| **02** | [Download (02.zip)](PUT_LINK_HERE) | \(\omega=1\), \(k_z=\pi\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=40\) | Weak-confinement Gaussian run. Useful for visualizing the broader transverse state and the corresponding longitudinal \(z\)-slice marginal. |
+| **03** | [Download (03.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=40\) | Longer-window version of the high-confinement \(L_z=20\) run. Useful for following the delayed roof-flux sector and late density evolution. |
+| **04** | [Download (04.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/2\), \(\sigma_z=0.5\), \(T=40\) | Same high-confinement geometry as case 03, but with a different initial spin orientation. Useful for visual spin-orientation comparison. |
