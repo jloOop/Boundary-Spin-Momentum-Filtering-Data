@@ -1,1 +1,13 @@
 
+**01:** [Download (01.zip)](https://github.com/jloOop/Numerical--SchrodingerEquation-and-BohmianTrajectories/releases/download/v1.0-3D-paper/01.zip).
+
+---
+
+## Box length in propagation direction: \(L_z=20\)
+
+| ID | Download | Parameters | Diagnostic purpose |
+|---|---|---|---|
+| **01** | [Download (01.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=35\) | High-confinement Gaussian run with a shorter observation window. Useful for visualizing the early interaction with the spinor absorbing roof. |
+| **02** | [Download (02.zip)](PUT_LINK_HERE) | \(\omega=1\), \(k_z=\pi\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=40\) | Weak-confinement Gaussian run. Useful for visualizing the broader transverse state and the corresponding longitudinal \(z\)-slice marginal. |
+| **03** | [Download (03.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/6\), \(\sigma_z=0.5\), \(T=40\) | Longer-window version of the high-confinement \(L_z=20\) run. Useful for following the delayed roof-flux sector and late density evolution. |
+| **04** | [Download (04.zip)](PUT_LINK_HERE) | \(\omega=100\), \(k_z=1\), \(\theta=\pi/2\), \(\sigma_z=0.5\), \(T=40\) | Same high-confinement geometry as case 03, but with a different initial spin orientation. Useful for visual spin-orientation comparison. |
