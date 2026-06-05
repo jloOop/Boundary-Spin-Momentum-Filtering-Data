@@ -5,6 +5,11 @@
 5Dirichlet Boundaries Sides+Spin-coupled absorbing boundary conditions
 $\omega=1$, $\theta=\pi/6$, $k_z=\pi$, $\sigma_z=0.5$, $T=40$
 
+**01 — Gaussian wave packet, \(L=20\):**  
+[Download ZIP](https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data/releases/download/v1-gaussian-followup-gifs/01_L20_0mega001_kzpi_thetapi6_sigma0p5_T.40.zip).  
+Five Dirichlet boundaries plus a spin-coupled absorbing boundary at the roof.  
+Parameters: \(\omega=1\), \(\theta=\pi/6\), \(k_z=\pi\), \(\sigma_z=0.5\), \(T=40\).
+
 
 ---
 
