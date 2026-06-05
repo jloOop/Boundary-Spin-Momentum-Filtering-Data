@@ -1,7 +1,7 @@
 ## Box length in propagation direction: \(L_z=20\)
 
 
-**01:** [Download (01.zip)](sha256:83beb03ffd1c88cb17608312643f3ff417d905dba9e133f47b9c65faa46f4c45).
+**01:** [Download (01.zip)](https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data/releases/download/v1-gaussian-followup-gifs/01_L20_0mega001_kzpi_thetapi6_sigma0p5_T.40.zip).
 
 ---
 
