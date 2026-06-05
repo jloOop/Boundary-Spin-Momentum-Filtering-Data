@@ -1,0 +1,13 @@
+name: spinor-abc-gaussian-followup
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - imageio
+  - scikit-image
+  - jupyter
+  - pip
+  # Install cupy separately to match the CUDA version on the target cluster.
