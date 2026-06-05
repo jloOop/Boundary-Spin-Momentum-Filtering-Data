@@ -1,9 +1,10 @@
+## Box length in propagation direction: \(L_z=20\)
 
-**01:** [Download (01.zip)](https://github.com/jloOop/Numerical--SchrodingerEquation-and-BohmianTrajectories/releases/download/v1.0-3D-paper/01.zip).
+
+**01:** [Download (01.zip)](sha256:83beb03ffd1c88cb17608312643f3ff417d905dba9e133f47b9c65faa46f4c45).
 
 ---
 
-## Box length in propagation direction: \(L_z=20\)
 
 | ID | Download | Parameters | Diagnostic purpose |
 |---|---|---|---|
