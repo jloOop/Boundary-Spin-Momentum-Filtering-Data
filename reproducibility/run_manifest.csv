@@ -1,7 +1,0 @@
-paper_or_supplement_item,script_or_notebook,expected_inputs,expected_outputs,repository_location
-Main density evolution and Bohmian selected trajectories,python-scripts/730SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py,"parameters in script or environment, OUTDIR",constants.npz; prob_times.npy; total_probs.npy; rho_prob_t*.npy; bohmian_traj_selected.npy; bohm_times.npy,data/selected-runs/<run>/
-Time-evolution GIFs,notebooks/Spin_Gif.ipynb,constants.npz; rho_prob_t*.npy,midplanes.gif; contour_xy.gif; scatter.gif; isosurf.gif; slices_bar.gif,follow-up-results-3D/3D-results/TimeEvolution-WaveFunction-Gifs/
-Arrival-time and roof-flux plots,notebooks/Paper_Presentation2.ipynb,constants.npz; prob_times.npy; total_probs.npy; bohm_t_hit.npy; bohm_arrived_mask.npy,combined_arrival2.png; arrival_stats_summary.npz,follow-up-results-3D/3D-results/Paper-Figures-and-PNGs/
-Selected 3D trajectories,notebooks/Traj3D.ipynb,bohmian_traj_selected.npy; bohm_times.npy; traj_indices.npy,traj_sel_3D.png; traj_sel_projections.png,follow-up-results-3D/3D-results/Bohmian-Trajectories/
-Reflection/backflow diagnostics,python-scripts/953Reflection_Diag.py,simulation parameters; OUTDIR,summary.json; kz_R.npy; roof_Jnet.npy; E_full_depthSteps_*.npy,follow-up-results-3D/3D-results/Reflection-Diagnostics/
-Boundary-symbol covariance diagnostics,python-scripts/972Cov_Diag_pro.py,simulation parameters; OUTDIR,summary.json; bl_rate*.npy; duhamel_E_full*.npy,follow-up-results-3D/3D-results/Boundary-Symbol-Diagnostics/
