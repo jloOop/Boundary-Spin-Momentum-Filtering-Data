@@ -162,31 +162,7 @@ $$
 
 A minimal post-processing sketch is:
 
-```python
-import numpy as np
 
-# Load solver output
-t = np.load("prob_times.npy")
-S = np.load("total_probs.npy")
-
-# Add t=0, S=1 if the saved arrays start after the first time step
-if t[0] > 0:
-    t = np.concatenate(([0.0], t))
-    S = np.concatenate(([1.0], S))
-
-# Restricted mean detection time over the available window
-mu_star = np.trapezoid(S, t)
-
-# Detected fraction by the final saved time
-D_T = 1.0 - S[-1]
-
-# Roof-flux density from norm loss; smoothing may be useful for final plots
-g = -np.gradient(S, t)
-
-print("T =", t[-1])
-print("detected fraction =", D_T)
-print("mu_star =", mu_star)
-```
 
 For publication-quality figures, the derivative used for `g(t;omega)` should be smoothed or obtained from the same post-processing pipeline used for the plotted data, because numerical differentiation amplifies small norm fluctuations.
 
@@ -298,5 +274,5 @@ For the numerical Crank--Nicolson/GMRES implementation background and the broade
 ```text
 A. Jozani and R. Tumulka,
 "Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials,"
-Physical Review Research, accepted.
+Physical Review Research, soon.
 ```
