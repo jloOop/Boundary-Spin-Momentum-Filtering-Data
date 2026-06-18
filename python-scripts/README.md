@@ -1,72 +1,40 @@
-# Python scripts
+# Main solver scripts for Boundary-Spin-Momentum-Filtering-Data
 
-This folder contains the main solver and diagnostics used for the Gaussian spinor-ABC follow-up project.
+This folder contains the three representative production/diagnostic scripts for the spinor absorbing-boundary project.  The files are intended to be readable on GitHub while preserving the working numerical solver statements from the uploaded versions.
 
-## Scripts
+## Script map
 
-### `730SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py`
+| Script | Public role | Paper / Supplement connection | Main outputs |
+|---|---|---|---|
+| `746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py` | Main spinor-ABC norm-loss solver for confinement sweeps | Main roof-flux curves, detected fraction, and restricted-mean fit | `prob_times.npy`, `total_probs.npy`, `constants.npz`, logs |
+| `953Reflection_Diag.py` | Reflection / finite-window diagnostic | Reflection checks and first-pass versus later-return interpretation | `kz_R.npy`, `roof_J*.npy`, `Q_minus_*.npy`, `E_*depth*.npy`, `summary.json` |
+| `973Cov_Diag_pro.py` | Boundary-symbol covariance and Duhamel diagnostic | Supplemental boundary-symbol / finite-grid diagnostics | `bl_*.npy`, `duhamel_*.npy`, `boundary_layer_covariance_integrands.npz`, `summary.json` |
 
-Main 3D CuPy Crank–Nicolson/GMRES solver for the Gaussian spinor-ABC simulations.
+## Scientific convention used in these scripts
 
-Main outputs include:
-
-```text
-constants.npz
-prob_times.npy
-total_probs.npy
-rho_prob_t*.npy
-bohm_t_hit.npy
-bohm_arrived_mask.npy
-bohmian_traj_selected.npy
-bohm_times.npy
-```
-
-Use this script for selected density snapshots, arrival histograms, and trajectory visualizations.
-
-### `953Reflection_Diag.py`
-
-Reflection/backflow diagnostic script. It keeps the TDSE/CN/spinor-ABC implementation but adds spectral diagnostics:
+The detector observable is the roof flux, equivalently the norm loss of the nonunitary spinor-ABC evolution:
 
 ```text
-roof_Jnet.npy
-roof_Jplus.npy
-roof_Jminus.npy
-kz_P_plus.npy
-kz_P_minus.npy
-kz_R.npy
-near_roof_mass.npy
-W_plus_roof.npy
-W_minus_roof.npy
-Q_minus_roof.npy
-E_full_depthSteps_*.npy
-summary.json
+g(t; omega) = - d ||Psi_t||^2 / dt
+S(t; omega) = ||Psi_t||^2
+D_T(omega) = integral_0^T g(t; omega) dt
+mu*(T; omega) = integral_0^T S(t; omega) dt
 ```
 
-### `972Cov_Diag_pro.py`
+Bohmian histograms, when present in figures outside these scripts, should be described as Monte Carlo samples of the same detector-present flux law, not as a separate no-detector arrival-time proposal.
 
-Boundary-layer covariance diagnostic script for the two-branch spinor-ABC mechanism.
+## Suggested run pattern
 
-Main outputs include:
-
-```text
-det_rate_toprow.npy
-bl_rate0.npy
-bl_rate_Ra.npy
-bl_rate_sa.npy
-bl_rate_R2.npy
-bl_rate_s2.npy
-duhamel_E_full_rel_true_depthSteps_*.npy
-boundary_layer_covariance_integrands.npz
-summary.json
-```
-
-## Running on a cluster
-
-Set `OUTDIR` before running:
+Run into a scratch directory, not into the repository root:
 
 ```bash
-export OUTDIR=/path/to/project/output
-python python-scripts/730SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py
+export OUTDIR=/path/to/scratch/spinor_abc_runs
+export OMEGA=300
+python python-scripts/746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py
 ```
 
-For sweeps, set parameters by editing the script or using environment variables where supported.
+The diagnostic scripts are heavier and should usually be run as controlled single-parameter checks or Slurm array jobs.
+
+## Editing policy
+
+The annotated files add reader-facing docstrings and comments.  They do not intentionally change numerical parameters, matrix assembly, solver calls, saved output names, or diagnostic formulas from the uploaded working versions.
