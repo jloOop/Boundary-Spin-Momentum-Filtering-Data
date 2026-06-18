@@ -35,6 +35,4 @@ python python-scripts/746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py
 
 The diagnostic scripts are heavier and should usually be run as controlled single-parameter checks or Slurm array jobs.
 
-## Editing policy
 
-The annotated files add reader-facing docstrings and comments.  They do not intentionally change numerical parameters, matrix assembly, solver calls, saved output names, or diagnostic formulas from the uploaded working versions.
