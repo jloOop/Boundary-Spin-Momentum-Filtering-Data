@@ -1,8 +1,10 @@
 # Python scripts
 
-This directory contains the public-facing computational material for the spinor-ABC project.
+This folder contains the public-facing computational material.
 
-- `Solvers/`: GPU/CuPy Crank–Nicolson/GMRES production and diagnostic solvers.
-- `Loaders/`: post-processing scripts/notebooks for figures, detection-time plots, GIFs, and Bohmian trajectory visualization.
+- `Solvers/`: GPU/CuPy Crank--Nicolson/GMRES production and diagnostic solvers.
+- `Loaders/`: CPU-side post-processing scripts/notebooks for plots, GIFs, detection-time distributions, and trajectory visualization.
 
-For the recommended reading order, start with `Solvers/ReadMe.md`, then `Loaders/Readme.md`.
+Start with:
+- `Solvers/README.md`
+- `Loaders/README.md`
