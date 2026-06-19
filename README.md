@@ -1,4 +1,14 @@
-# Boundary Spin–Momentum Filtering Data
+# Boundary Spin–Momentum Filtering Data 
+
+## Python scripts
+
+- `Solvers/`: GPU/CuPy Crank--Nicolson/GMRES production and diagnostic solvers.
+- `Loaders/`: CPU-side post-processing scripts/notebooks for plots, GIFs, detection-time distributions, and trajectory visualization.
+
+Start with:
+- `Solvers/README.md`
+- `Loaders/README.md`
+
 
 **Reproducibility material for:**  
 **Spin–Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide**  
