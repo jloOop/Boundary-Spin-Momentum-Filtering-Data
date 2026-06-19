@@ -70,7 +70,7 @@ $$
 with eigenbranches
 
 $$
-\lambda_\pm(\boldsymbol\xi)=i\kappa\pm |\xi|.
+\lambda_\pm(\boldsymbol{\xi})=i\kappa\pm |\xi|.
 $$
 
 For the harmonic transverse ground state, the typical tangential scale is
