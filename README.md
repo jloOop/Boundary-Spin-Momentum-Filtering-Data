@@ -69,7 +69,7 @@ requirements.txt
 .gitignore
 
 paper/
-  PRL manuscript and Supplemental Material PDFs or source snapshots
+  Submitted to PRL + and Supplemental Material PDFs
 
 python-scripts/
   README.md
