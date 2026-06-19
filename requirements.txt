@@ -1,6 +1,11 @@
 numpy
 scipy
 matplotlib
+pandas
+jupyter
+tqdm
 imageio
-scikit-image
-cupy
+ipywidgets
+
+# Install the CuPy package matching your CUDA version, e.g.
+# pip install cupy-cuda12x
