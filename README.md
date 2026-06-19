@@ -73,9 +73,9 @@ paper/
 
 python-scripts/
   README.md
-  730SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py   legacy production/diagnostic solver
-  953Reflection_Diag.py                         reflection/backflow diagnostics
-  972Cov_Diag_pro.py                            boundary-symbol covariance diagnostics
+  solver_spinor_abc_gaussian.py   legacy production/diagnostic solver
+  diagnose_reflection_time_Decomposition.py                         reflection/backflow diagnostics
+  diagnose_boundary_symbol.py                            boundary-symbol covariance diagnostics
 
 data/
   README.md
