@@ -16,7 +16,7 @@ These tables are derived from the small JSON outputs of `diagnose_reflection_tim
 
 ## Interpretation
 
-The physical observable remains the detector-present roof flux / norm loss. The interior-plane ratios and timing windows are diagnostics only. They help justify the fixed cutoff used in Supplement S4 and separate early first-pass behavior from later finite-guide return structure.
+The physical observable remains the detector-present roof flux / norm loss. The interior-planes ratios and timing windows are used for diagnostics only such as e.g., measuring the speeed of packet and so on. They help justify the fixed cutoff used in Supplement S4 and separate early first-pass passage of wavepacket from late finite-guide return sectors structure.
 
 The common cutoff is not fitted from the roof-flux data and is not a reflection coefficient. It is a conservative timing marker chosen to stay before the earliest estimated bottom-return contamination across the sweep.
 
