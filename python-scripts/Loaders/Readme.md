@@ -11,7 +11,7 @@ The notebooks do **not** run the TDSE solver. They assume that a solver run has 
 | `make_density_gifs.ipynb` | Build PNG frames and GIFs from saved density snapshots `rho_prob_t*.npy`. | Repository media and representative density animations. |
 | `plot_detection_time_distribution.ipynb` | Reconstruct survival, roof-flux density, finite-window restricted mean, trajectory histogram overlay, and summary files. | Closest post-processing notebook for Letter Fig. 1 and Supplement S2--S4. |
 | `plot_bohmian_trajectories.ipynb` | Plot selected Pauli-current trajectories in 3D and as XY/XZ/YZ projections. | Trajectory visualization companion; in this project, trajectories are samples of the detector-present flux law. |
-The old names worked during research, but the new names are easier for an outside reader. They say what each notebook *does*, not just that it is a loader.
+
 
 ## Notebook roles
 
