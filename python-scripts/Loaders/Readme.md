@@ -1,31 +1,171 @@
 # Post-processing loaders
 
-This folder contains the three GitHub-facing post-processing notebooks for the spinor-ABC simulation runs.  The name "loader" is kept because these notebooks load completed solver outputs, but the public-facing role is broader: they are the analysis and visualization layer between the GPU/HPC solvers and the figures, GIFs, and trajectory illustrations shown in the repository.
+This folder contains the public-facing post-processing layer for the spinor absorbing-boundary-condition (spinor-ABC) simulations in
 
-The notebooks do **not** run the TDSE solver. They assume that a solver run has already written arrays such as `constants.npz`, `prob_times.npy`, `total_probs.npy`, density snapshots, and optional Bohmian trajectory arrays.
+> **A. Jozani, _Spin--Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide_**
 
-## Recommended names
+and its Supplemental Material.
 
-| New notebook name | Main role | Paper/repository connection |
+The word **loader** is kept because these files load completed solver outputs. Their broader role is to turn raw GPU/HPC run products into figure-level quantities, animations, and trajectory visualizations. They do **not** solve the TDSE/Pauli equation and do **not** assemble the Crank--Nicolson/GMRES matrices. The heavy numerical work is done by the scripts in `../Solvers/`; this folder is the analysis and visualization layer.
+
+The main physical observable is the **detector-present roof flux**, equivalently the **norm loss** of the non-unitary spinor-ABC evolution. Bohmian trajectory histograms, when shown, are Monte Carlo samples of the same detector-present flux law. They should not be described as a separate detector-free arrival-time proposal.
+
+---
+
+## Folder role
+
+A typical workflow is:
+
+```text
+Solvers/      -> run the GPU/CuPy TDSE simulation and write arrays
+Loaders/      -> load those arrays and build figures, GIFs, summaries, and trajectory plots
+data/         -> selected compact data and representative media for GitHub
+paper/        -> manuscript / Supplement information when publicly available
+```
+
+The loaders assume that a completed run directory already contains arrays such as
+
+```text
+constants.npz
+prob_times.npy
+total_probs.npy
+rho_prob_t*.npy
+x.npy, y.npy, z.npy
+```
+
+and, when trajectory post-processing is used,
+
+```text
+bohm_t_hit.npy
+bohm_arrived_mask.npy
+bohm_t_hit_selected.npy
+bohm_arrived_mask_selected.npy
+bohmian_traj_selected.npy
+bohmian_traj.npy
+bohm_times.npy
+traj_indices.npy
+```
+
+Large raw run directories should remain in `runs/`, scratch storage, or external archive storage. Commit only selected compact arrays, final figures, GIF links, and documented summaries.
+
+---
+
+## Loader map
+
+| Loader | Main role | Paper / repository connection |
 |---|---|---|
-| `make_density_gifs.ipynb` | Build PNG frames and GIFs from saved density snapshots `rho_prob_t*.npy`. | Repository media and representative density animations. |
-| `plot_detection_time_distribution.ipynb` | Reconstruct survival, roof-flux density, finite-window restricted mean, trajectory histogram overlay, and summary files. | Closest post-processing notebook for Letter Fig. 1 and Supplement S2--S4. |
-| `plot_bohmian_trajectories.ipynb` | Plot selected Pauli-current trajectories in 3D and as XY/XZ/YZ projections. | Trajectory visualization companion; in this project, trajectories are samples of the detector-present flux law. |
+| `make_density_gifs.ipynb` / `make_density_gifs.py` | Builds PNG frames and GIFs from saved density snapshots such as `rho_prob_t*.npy`. | Repository media and qualitative 3D visualization of propagation, confinement, absorption, and delayed density structure. |
+| `plot_detection_time_distribution.ipynb` / `plot_detection_time_distribution.py` | Reconstructs the survival curve, detector-present flux density, detected fraction, finite-window restricted mean, and optional Bohmian histogram overlay. | Closest loader to Letter Fig. 1 and Supplemental Material S2--S4. |
+| `plot_bohmian_trajectories.ipynb` / `plot_bohmian_trajectories.py` | Plots selected Pauli-current trajectories in 3D and in XY/XZ/YZ projections. | Trajectory visualization companion. In this project, trajectories sample the spinor-ABC detector-present flux law. |
 
+Each loader may appear as a notebook (`.ipynb`) for interactive inspection and/or as an exported Python script (`.py`) for quick GitHub code review. The notebook is usually better for reproducing figures interactively; the `.py` export is easier for a reader to skim without opening Jupyter.
 
-## Notebook roles
+---
 
-### `make_density_gifs.ipynb`
+## Recommended reading order
 
-Use this notebook when a solver run saved density snapshots such as
+1. Start with `plot_detection_time_distribution.*` because it reconstructs the main quantitative observables:
+
+   ```math
+   S(t;\omega)=\|\Psi_t\|^2,
+   \qquad
+   g(t;\omega)=-\frac{d}{dt}S(t;\omega),
+   \qquad
+   \mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt.
+   ```
+
+2. Then inspect `make_density_gifs.*` to see the qualitative 3D density evolution behind selected runs.
+
+3. Finally inspect `plot_bohmian_trajectories.*` if you want the trajectory-level visualization of the same detector-present Pauli-current law.
+
+---
+
+## `plot_detection_time_distribution.*`
+
+This is the most important loader for the main paper-level result. It loads the compact norm-monitoring output from the main solver,
+
+```text
+prob_times.npy
+total_probs.npy
+constants.npz
+```
+
+and reconstructs the survival probability
+
+```math
+S(t;\omega)=\|\Psi_t\|^2.
+```
+
+From this it computes the detector-present roof-flux density
+
+```math
+g(t;\omega)=-\frac{dS(t;\omega)}{dt},
+```
+
+as well as the detected fraction in a finite observation window,
+
+```math
+D_T(\omega)=1-S(T;\omega),
+```
+
+and the restricted mean detection time,
+
+```math
+\mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt=E[\min(\tau,T)].
+```
+
+This loader is the bridge between raw solver arrays and the figure-level detection-time plots. It is the closest post-processing file to the confinement sweep in Letter Fig. 1 and the numerical setup, convergence, full sweep, and finite-window bookkeeping in Supplemental Material S2--S4.
+
+When trajectory hit-time arrays are available, this loader can overlay a gray Bohmian histogram on top of the flux curve. The correct interpretation is:
+
+```text
+blue curve  = detector-present roof-flux / norm-loss density
+gray bars   = Monte Carlo trajectory samples of that same detector-present law
+red curve   = detector-free Gaussian comparison current, not a detector model and not a fit input
+```
+
+The histogram should not be called a separate no-detector Bohmian arrival-time prediction. In this project the sampled trajectories use the Pauli-current velocity field generated by the spinor-ABC wavefunction,
+
+```math
+\dot Q(t)=\frac{j^P[\Psi_t^{\rm ABC}](Q(t))}{\rho[\Psi_t^{\rm ABC}](Q(t))},
+```
+
+and are binned by their first roof-hit times.
+
+Typical outputs are
+
+```text
+arrival_stats_summary.npz
+arrival_stats_summary.txt
+combined_arrival2.png
+combined_arrival2.pdf
+```
+
+or similarly named figure/summary products, depending on the run version.
+
+### Notes for interpretation
+
+- `total_probs.npy` is the survival curve, not a detection-time histogram.
+- The flux density `g(t;omega)` is obtained by differentiating the survival curve, so smoothing or the paper's plotting pipeline may be needed for publication-quality curves.
+- The restricted mean `mu*(T;omega)` is a finite-window statistic. It includes both the timing of detected probability and the probability still undetected at time `T`.
+- If a histogram is normalized only over detected trajectories, it represents a conditional finite-window density. If it is normalized over all sampled initial particles, its area estimates the detected fraction.
+
+---
+
+## `make_density_gifs.*`
+
+This loader builds visualizations from saved density snapshots such as
 
 ```text
 rho_prob_t0.10000.npy
 rho_prob_t0.20000.npy
+rho_prob_t0.30000.npy
 ...
 ```
 
-It creates frame images and GIFs:
+It is mainly for qualitative communication. It helps a reader see the evolution of the 3D probability density, the confined transverse profile, the propagation toward the roof, absorption, storage near the roof, and delayed oscillatory structure.
+
+Typical generated products include
 
 ```text
 plots_general3/midplanes_t*.png
@@ -40,64 +180,22 @@ plots_general3/isosurf.gif
 plots_general3/slices_bar.gif
 ```
 
-This notebook is mainly for visual communication: propagation, confinement, absorption, delayed density structure, and qualitative 3D wave-packet behavior.
+These GIFs are useful for GitHub and presentations, but they are not the primary quantitative evidence. The quantitative evidence is the roof-flux / norm-loss analysis, convergence checks, confinement sweep, and boundary-symbol diagnostics.
 
-### `plot_detection_time_distribution.ipynb`
+### Notes for interpretation
 
-Use this notebook for the main detection-time figure built from the compact solver outputs
+- The density snapshots visualize `rho = |psi_up|^2 + |psi_down|^2`.
+- A GIF may come from a representative parameter run rather than from the exact main Fig. 1 production sweep.
+- Use captions carefully: describe GIFs as representative simulations or qualitative animations unless they are explicitly tied to a figure/table parameter set.
 
-```text
-prob_times.npy
-total_probs.npy
-constants.npz
-```
+---
 
-and, when available,
+## `plot_bohmian_trajectories.*`
 
-```text
-bohm_t_hit.npy
-bohm_arrived_mask.npy
-bohm_t_hit_selected.npy
-bohm_arrived_mask_selected.npy
-bohmian_traj_selected.npy
-bohm_times.npy
-```
-
-It reconstructs the survival curve
+This loader plots selected Pauli-current trajectories from saved trajectory arrays. It supports several storage conventions used during the research workflow, for example
 
 ```text
-S(t; omega) = ||Psi_t||^2
-```
-
-and the detector-present flux density
-
-```text
-g(t; omega) = -dS(t; omega)/dt
-```
-
-then computes the finite-window restricted mean
-
-```text
-mu*(T; omega) = integral_0^T S(t; omega) dt.
-```
-
-It also writes reusable summary files:
-
-```text
-arrival_stats_summary.npz
-arrival_stats_summary.txt
-combined_arrival2.png
-combined_arrival2.pdf
-```
-
-This is the most important loader for the PRL-style spin--momentum filtering repository, because it connects the raw norm-loss arrays to the figure-level detector-time plot.
-
-### `plot_bohmian_trajectories.ipynb`
-
-Use this notebook to inspect individual trajectory geometry. It supports three storage layouts:
-
-```text
-# New selected trajectory format
+# Selected trajectory format
 bohmian_traj_selected.npy
 bohm_times.npy
 traj_indices.npy
@@ -112,48 +210,113 @@ bohmian_traj.npy
 bohm_times.npy
 ```
 
-The notebook can choose trajectories randomly or by hit-time status:
-
-```bash
-jupyter nbconvert --execute loaders/plot_bohmian_trajectories.ipynb -- --K 5 --mode spread --seed 1
-```
-
-It saves
+Typical outputs are
 
 ```text
 traj_sel_3D.png
 traj_sel_projections.png
 ```
 
-In the spinor-ABC repository, describe these trajectories carefully: they are visualization/sampling tools for the detector-present Pauli-current law, not a separate detector-free arrival-time law.
+The goal is geometric inspection: how representative sampled trajectories move in the confined guide, how they approach the roof, and how selected detected/undetected trajectories differ visually.
+
+### Correct interpretation
+
+These trajectories are not an alternative physical detector model. They are sampled paths generated from the same spinor-ABC detector-present wavefunction and Pauli-current velocity field used in the flux calculation. Therefore:
+
+```text
+Do say:     Bohmian trajectory samples of the detector-present spinor-ABC flux law.
+Do not say: Detector-free Bohmian arrival-time prediction.
+```
+
+This distinction matters because the paper compares detector-present absorbing-boundary dynamics with detector-free arrival-time proposals. The loader belongs to the detector-present side of that distinction.
+
+---
 
 ## How to run
 
-The simplest workflow is to copy or open the notebooks from inside a completed run directory:
+The safest workflow is to open or copy the loader into a completed run directory. Many research-loader notebooks assume that the current working directory contains the arrays they load.
+
+From the repository root, for interactive use:
 
 ```bash
-cd runs/<one-completed-run>
-jupyter lab ../../loaders/plot_detection_time_distribution.ipynb
+jupyter lab python-scripts/Loaders/plot_detection_time_distribution.ipynb
+jupyter lab python-scripts/Loaders/make_density_gifs.ipynb
+jupyter lab python-scripts/Loaders/plot_bohmian_trajectories.ipynb
 ```
 
-For the GIF notebook, running from a subfolder is also supported because it searches upward until it finds `constants.npz`.
-
-For scripted execution, use:
+From inside a completed run directory:
 
 ```bash
-jupyter nbconvert --to notebook --execute loaders/plot_detection_time_distribution.ipynb   --output executed_detection_time.ipynb
+cd runs/<completed-run>
+jupyter lab ../../python-scripts/Loaders/plot_detection_time_distribution.ipynb
 ```
 
-Large trajectory or density files should stay in `runs/` or external scratch storage. Commit only selected compact arrays, final figures, and the notebooks themselves.
+For exported `.py` versions, run them only after checking the input path variables near the top of the script:
+
+```bash
+python python-scripts/Loaders/plot_detection_time_distribution.py
+python python-scripts/Loaders/make_density_gifs.py
+python python-scripts/Loaders/plot_bohmian_trajectories.py
+```
+
+If this folder is later moved to a top-level `loaders/` directory, replace `python-scripts/Loaders/` by `loaders/` in the commands above.
+
+---
 
 ## Dependencies
 
-The loaders are CPU-side post-processing notebooks. They do not require CuPy unless you are re-running the solver. Typical dependencies are:
+The loaders are CPU-side post-processing tools. They normally do not require CuPy unless the loader has been modified to inspect GPU arrays directly.
+
+Typical dependencies are
 
 ```bash
-pip install numpy scipy matplotlib imageio scikit-image notebook
+pip install numpy scipy matplotlib imageio scikit-image notebook jupyterlab
 ```
+
+Optional, depending on the visualization mode:
+
+```bash
+pip install ipywidgets tqdm pandas
+```
+
+The solver environment additionally requires CUDA-compatible CuPy, but that is a solver requirement rather than a loader requirement.
+
+---
+
+## Data hygiene
+
+Recommended practice:
+
+```text
+runs/                  local or scratch run output; do not commit
+python-scripts/Loaders/ commit loader notebooks/scripts and this README
+data/                  commit only selected compact arrays or documented media links
+figures/               commit selected final figures only, if used
+```
+
+Avoid committing large raw arrays from every run. For GitHub, prefer:
+
+```text
+small summary .npz/.txt files
+selected .csv tables
+final .png/.pdf figures
+README files explaining parameter sets
+links to large GIFs or archived data when needed
+```
+
+---
 
 ## What this folder demonstrates
 
-For a scientific/industry reviewer, this folder shows the analysis layer after a large GPU simulation: robust loading of legacy and current output formats, survival/flux post-processing, finite-window statistics, Monte Carlo trajectory summaries, 3D visualization, GIF generation, and publication-quality plotting.
+For a scientific or industry reader, this folder shows the analysis layer after large GPU/HPC simulations:
+
+- robust loading of legacy and current simulation-output formats;
+- survival, norm-loss, and roof-flux post-processing;
+- finite-window detection statistics;
+- Monte Carlo trajectory histogram handling;
+- 3D trajectory visualization;
+- density-frame and GIF generation;
+- publication-quality Matplotlib/Jupyter workflows;
+- disciplined separation between heavy numerical solvers and lightweight reproducibility/visualization scripts.
+
+This is the folder to inspect after `../Solvers/` to understand how raw simulation arrays become the figures and media shown in the repository.
