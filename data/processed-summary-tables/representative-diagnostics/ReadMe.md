@@ -1,12 +1,12 @@
+# Representative S4 time-window diagnostics
 
-# S4 representative JSON diagnostics
+This folder contains compact JSON audit files for the Supplement S4 time-window diagnostics.
 
-This folder contains sanitized JSON outputs used to build the S4 time-window/reflection CSV tables.
+The CSV files in `data/processed-summary-tables/` are the main public data products. They summarize the cutoff sweep, roof detector budget, first-bounce plane diagnostics, and no-return/post-cut current ratios.
 
-The original absolute HPC scratch paths were replaced by run-directory basenames. These JSON files are small enough to keep in GitHub as an audit trail, while the large raw arrays should remain in external storage or ignored run directories.
+The JSON files here provide the provenance behind those tables.
 
-Recommended public use:
+- `metrics/`: compact diagnostic summaries for each value of \(\omega\). These are the recommended files for reproducing the public CSV tables.
+- `full-summary/`: lower-level solver summaries with detailed window choices, thresholds, search intervals, and peak-finding diagnostics. These are included only as representative audit files.
 
-1. Point readers first to `data/processed-summary-tables/`.
-2. Keep these JSON files as provenance for scientific readers who want more detail.
-3. Do not present these JSON files as the main result; the CSV tables are the public-facing summary.
+The detector observable is always the roof flux / norm loss. Interior-plane timing windows and \(J_-/J_+\) ratios are diagnostic tools used to estimate first-pass axial motion and separate early first-pass behavior from later finite-guide return structure. They are not additional detectors and not a separate arrival-time law.
