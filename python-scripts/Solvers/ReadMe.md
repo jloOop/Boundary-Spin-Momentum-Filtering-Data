@@ -23,12 +23,16 @@ The physical observable throughout this project is the **detector-present roof f
 
 The bulk evolution is the two-component Pauli/Schrödinger evolution in a harmonic waveguide,
 
-$$
- i\partial_t\Psi = \left[-\frac12\Delta
- + \frac12\omega^2\big((x-x_c)^2+(y-y_c)^2\big)\right]\Psi,
- \qquad
- \Psi=(\psi_\uparrow,\psi_\downarrow)^T.
-$$
+```math
+i\partial_t\Psi =
+\left[
+-\frac{1}{2}\Delta
++ \frac{1}{2}\omega^2\bigl((x-x_c)^2+(y-y_c)^2\bigr)
+\right]\Psi,
+\qquad
+\Psi=(\psi_\uparrow,\psi_\downarrow)^T .
+```
+
 
 The lower face and transverse side walls are reflecting Dirichlet walls. The detecting roof is
 
