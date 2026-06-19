@@ -1,13 +1,21 @@
-
 # Representative spinor-ABC solvers
 
-This folder contains the three representative Python/CuPy solver scripts used for the numerical side of the spin--momentum filtering project.  They are included as reproducibility material for the paper
+This folder contains the three representative Python/CuPy solver and diagnostic scripts for the numerical side of
 
 > **A. Jozani, _Spin--Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide_**
 
-and for its Supplemental Material.  The scripts are not meant to be a polished Python package.  They are legacy production/diagnostic solvers kept close to the form used in the research runs, so that a reader can trace how the numerical quantities in the paper were generated.
+and its Supplemental Material.
 
-The physical observable in this project is the **detector-present roof flux**, equivalently the **norm loss** of the non-unitary spinor absorbing-boundary evolution.  The scripts should therefore be read as simulations of the detector model itself, not as detector-free arrival-time simulations.
+The scripts are not presented as a polished Python package. They are research solvers and diagnostic programs kept close to the form used in the production runs, with public-facing names chosen to make their roles readable:
+
+```text
+solvers/
+  solver_spinor_abc_gaussian.py
+  diagnose_reflection_time_Decomposition.py
+  diagnose_boundary_symbol.py
+```
+
+The physical observable throughout this project is the **detector-present roof flux**, equivalently the **norm loss** of the non-unitary spinor absorbing-boundary evolution. These scripts should therefore be read as simulations and diagnostics of the detector model itself, not as simulations of a detector-free arrival-time law.
 
 ---
 
@@ -16,36 +24,42 @@ The physical observable in this project is the **detector-present roof flux**, e
 The bulk evolution is the two-component Pauli/Schrödinger evolution in a harmonic waveguide,
 
 $$
- i\partial_t\Psi = \left[-\frac12\Delta + \frac12\omega^2\big((x-x_c)^2+(y-y_c)^2\big)\right]\Psi,
+ i\partial_t\Psi = \left[-\frac12\Delta
+ + \frac12\omega^2\big((x-x_c)^2+(y-y_c)^2\big)\right]\Psi,
  \qquad
  \Psi=(\psi_\uparrow,\psi_\downarrow)^T.
 $$
 
-The lower face and transverse side walls are reflecting Dirichlet walls.  The detecting roof is the plane
+The lower face and transverse side walls are reflecting Dirichlet walls. The detecting roof is
 
 $$
-\Sigma_L=\{z=L\},
+\Sigma_L = \{z=L\},
 $$
 
 where the spin-coupled absorbing boundary condition is imposed:
 
 $$
-(\sigma\cdot\nabla)\Psi=i\kappa\sigma_z\Psi.
+(\sigma\cdot\nabla)\Psi = i\kappa\sigma_z\Psi.
 $$
 
-In components this reads
+In components,
 
 $$
-\partial_z\psi_\uparrow=i\kappa\psi_\uparrow-(\partial_x-i\partial_y)\psi_\downarrow,
-\qquad
-\partial_z\psi_\downarrow=i\kappa\psi_\downarrow+(\partial_x+i\partial_y)\psi_\uparrow.
+\partial_z\psi_\uparrow
+= i\kappa\psi_\uparrow-(\partial_x-i\partial_y)\psi_\downarrow,
 $$
 
-For the Pauli current this boundary gives the detector-present roof-flux density
+$$
+\partial_z\psi_\downarrow
+= i\kappa\psi_\downarrow+(\partial_x+i\partial_y)\psi_\uparrow.
+$$
+
+For the Pauli current, this boundary gives the detector-present roof-flux density
 
 $$
- g(t;\omega)=\kappa\int_{\Sigma_L}\Psi^\dagger\Psi\,dxdy
-            =-\frac{d}{dt}\|\Psi_t\|^2.
+g(t;\omega)
+= \kappa\int_{\Sigma_L}\Psi^\dagger\Psi\,dxdy
+= -\frac{d}{dt}\|\Psi_t\|^2.
 $$
 
 The survival probability is
@@ -57,11 +71,12 @@ $$
 and the finite-window restricted mean detection time used in the paper is
 
 $$
-\mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt
-               =E[\min(\tau,T)].
+\mu^*(T;\omega)
+= \int_0^T S(t;\omega)\,dt
+= E[\min(\tau,T)].
 $$
 
-The central mechanism studied by the diagnostics is that the spinor ABC is not a scalar sink.  At the roof, tangential Fourier modes see the boundary matrix
+The central mechanism is that the spinor ABC is **not** a scalar sink. At the roof, tangential Fourier modes see the boundary matrix
 
 $$
 C(\xi)=i\kappa I+(\hat z\times \xi)\cdot\sigma,
@@ -70,7 +85,7 @@ $$
 with eigenbranches
 
 $$
-\lambda_\pm(\boldsymbol{\xi})=i\kappa\pm |\xi|.
+\lambda_\pm(\xi)=i\kappa\pm |\xi|.
 $$
 
 For the harmonic transverse ground state, the typical tangential scale is
@@ -79,54 +94,67 @@ $$
 |\xi|\sim \ell_\perp^{-1}\sim \sqrt{\omega}.
 $$
 
-This is the local boundary scale behind the confinement-dependent detector response.
+This local boundary scale is the source of the confinement-dependent detector response studied in the paper.
 
 ---
 
 ## Solver map
 
-| Script | Role in this repository | Main outputs | Paper connection |
+| Script | Main role | Main outputs | Paper connection |
 |---|---|---|---|
-| `746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py` | Main compact production solver for the confinement sweep and finite-window detection-time statistic.  It evolves the 3D spinor wave function with the spinor ABC using Crank--Nicolson and GMRES, records the total norm, and produces the data needed for `S(t;omega)`, `g(t;omega)`, `D_T`, and `mu^*(T;omega)`. | `prob_times.npy`, `total_probs.npy`, `constants.npz`, `simulation_log.txt`, `stdout.txt` | Letter Fig. 1; Supplemental Material S2--S4. |
-| `953Reflection_Diag.py` | Reflection and finite-window diagnostic solver.  It keeps the same TDSE/CN/spinor-ABC evolution but adds diagnostics for roof backflow, a windowed longitudinal `k_z` decomposition, near-roof storage, tangential `Pi_+`/`Pi_-` branch content, and Duhamel-style comparison of the true near-roof field with the homogeneous boundary-symbol continuation. | `summary.json`, `diag_times.npy`, `roof_J*.npy`, `kz_*.npy`, `near_roof_mass.npy`, `W_plus_*.npy`, `W_minus_*.npy`, `Q_minus_*.npy`, `E_full_*.npy`, `E_plus_*.npy` | Supplemental Material S4, S7, and S8-style discussion of early/late windows, reflection diagnostics, and near-roof boundary response. |
-| `973Cov_Diag_pro.py` | Boundary-symbol/covariance diagnostic solver.  This is the most direct numerical test of the two-branch mechanism.  It evaluates the full two-branch map `exp(-epsilon J)`, the covariance coefficient `beta_omega = Cov(t, s a_omega)`, exact finite-epsilon checks, RMST coefficients, detector-budget checks, and full two-branch Duhamel/slab remainders. | `summary.json`, `diag_times.npy`, `det_rate_toprow.npy`, `bl_rate*.npy`, `bl_*epsSteps_*.npy`, `duhamel_*depthSteps_*.npy`, `boundary_layer_covariance_integrands.npz` | Letter boundary-mechanism section; Supplemental Material S6--S7. |
+| `solver_spinor_abc_gaussian.py` | Main production solver for the Gaussian spinor-ABC confinement runs. It evolves the 3D spinor wave function with Crank--Nicolson and GMRES, records the total norm, and provides the compact data needed for `S(t;omega)`, `g(t;omega)`, `D_T`, and `mu^*(T;omega)`. | `prob_times.npy`, `total_probs.npy`, `constants.npz`, `simulation_log.txt`, `stdout.txt` | Letter Fig. 1; Supplemental Material S2--S4. |
+| `diagnose_reflection_time_Decomposition.py` | Reflection and finite-window/time-decomposition diagnostic. It keeps the same TDSE/CN/spinor-ABC evolution but adds diagnostics for roof backflow, longitudinal `k_z` upgoing/downgoing content, near-roof storage, tangential `Pi_+`/`Pi_-` branch content, and Duhamel-style comparison with the local boundary-symbol continuation. | `summary.json`, `diag_times.npy`, `roof_J*.npy`, `kz_*.npy`, `near_roof_mass.npy`, `W_plus_*.npy`, `W_minus_*.npy`, `Q_minus_*.npy`, `E_full_*.npy`, `E_plus_*.npy` | Supplemental Material S4 for finite-window early/late bookkeeping; S7--S8 for boundary-response and finite-guide memory diagnostics. |
+| `diagnose_boundary_symbol.py` | Boundary-symbol, covariance, finite-epsilon, and Duhamel diagnostic. This is the most direct numerical diagnostic for the two-branch spin--momentum mechanism. It tests the full two-branch map, the covariance coefficient, detector-budget consistency, and finite-grid Duhamel/slab remainders. | `summary.json`, `diag_times.npy`, `det_rate_toprow.npy`, `P_total_series.npy`, `bl_rate*.npy`, `bl_*epsSteps_*.npy`, `duhamel_*depthSteps_*.npy`, `boundary_layer_covariance_integrands.npz` | Letter boundary-mechanism section; Supplemental Material S6--S7, especially S7 for the finite-grid boundary-symbol diagnostic and Duhamel estimate. |
 
-Together these scripts separate three tasks:
+Together, the three scripts separate the reproducibility workflow into three layers:
 
 1. **Production data:** compute the survival/norm-loss curves used for the confinement sweep.
-2. **Reflection diagnostics:** test whether the delayed sector behaves like ordinary propagating reflection or near-roof boundary storage/filtering.
-3. **Boundary-symbol diagnostics:** verify the local two-branch spin--momentum mechanism and its finite-grid Duhamel/covariance checks.
+2. **Reflection and time decomposition:** test whether delayed signal is ordinary propagating reflection or near-roof spinor-ABC boundary response with finite-guide memory.
+3. **Boundary-symbol diagnostics:** verify the local two-branch spin--momentum mechanism and its finite-grid covariance/Duhamel checks.
+
+---
+
+## Historical filename map
+
+Older run logs or notebooks may still refer to the original internal filenames. The public repository names are:
+
+| Legacy/internal name | Public name |
+|---|---|
+| `746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py` | `solver_spinor_abc_gaussian.py` |
+| `953Reflection_Diag.py` | `diagnose_reflection_time_Decomposition.py` |
+| `973Cov_Diag_pro.py` | `diagnose_boundary_symbol.py` |
+
+Use the public names in new documentation, scripts, and README files. Keep the legacy mapping only for traceability.
 
 ---
 
 ## Running the scripts
 
-These scripts require a CUDA-capable GPU and a CuPy installation compatible with the local CUDA driver.  They were written for GPU/HPC execution, not for a small laptop CPU run.
+These scripts require a CUDA-capable GPU and a CuPy installation compatible with the local CUDA driver. They were written for GPU/HPC execution, not for small CPU-only runs.
 
-A typical workflow is:
+From the repository root:
 
 ```bash
-# from the repository root
 mkdir -p runs
 
-# Main confinement/norm-loss run
-OMEGA=300 OUTDIR=./runs python solvers/746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py
+# Main Gaussian spinor-ABC confinement/norm-loss run
+OMEGA=300 OUTDIR=./runs python solvers/solver_spinor_abc_gaussian.py
 
-# Reflection / k_z / Pi diagnostic run
-OMEGA=100 OUTDIR=./runs python solvers/953Reflection_Diag.py
+# Reflection, early/late timing, k_z, Pi_+/Pi_-, and near-roof diagnostics
+OMEGA=100 OUTDIR=./runs python solvers/diagnose_reflection_time_Decomposition.py
 
-# Boundary-symbol covariance and Duhamel diagnostic run
+# Boundary-symbol covariance, finite-epsilon, and Duhamel diagnostics
 OMEGA=200 OUTDIR=./runs NX=100 NY=100 NZ=1500 DT=2.5e-4 TFINAL=20 \
-python solvers/973Cov_Diag_pro.py
+python solvers/diagnose_boundary_symbol.py
 ```
 
-For cluster runs, set `OUTDIR` to a scratch or project-storage directory rather than committing raw output folders to GitHub.
+For cluster runs, set `OUTDIR` to a scratch or project-storage directory. Do not commit raw run directories unless a small selected file is explicitly part of the reproducibility data.
 
 ---
 
-## Interpreting the main production output
+## Interpreting `solver_spinor_abc_gaussian.py`
 
-The main production solver writes
+This is the main compact production solver for the confinement sweep. Its essential output is the survival curve,
 
 ```text
 prob_times.npy
@@ -136,13 +164,13 @@ prob_times.npy
  stdout.txt
 ```
 
-The array `total_probs.npy` is the discrete survival curve
+Here `total_probs.npy` is the discrete survival probability
 
 $$
 S(t;\omega)=\|\Psi_t\|^2.
 $$
 
-From this one obtains
+From this one obtains the detected fraction
 
 $$
 D_T(\omega)=1-S(T;\omega),
@@ -157,49 +185,92 @@ $$
 The roof-flux density can be reconstructed as
 
 $$
- g(t;\omega)=-\frac{dS}{dt}.
+g(t;\omega)=-\frac{dS}{dt}.
 $$
 
 A minimal post-processing sketch is:
 
+```python
+from pathlib import Path
+import numpy as np
 
+run = Path("runs/<your-run-directory>")
+t = np.load(run / "prob_times.npy")
+S = np.load(run / "total_probs.npy")
 
-For publication-quality figures, the derivative used for `g(t;omega)` should be smoothed or obtained from the same post-processing pipeline used for the plotted data, because numerical differentiation amplifies small norm fluctuations.
+T = 20.0
+mask = t <= T
+tT = t[mask]
+ST = S[mask]
+
+# Include the known initial survival S(0)=1 if the saved arrays start after t=0.
+if len(tT) == 0 or tT[0] > 0.0:
+    tT = np.concatenate(([0.0], tT))
+    ST = np.concatenate(([1.0], ST))
+
+# Add an interpolated endpoint at T if necessary.
+if tT[-1] < T and t[-1] >= T:
+    ST_at_T = np.interp(T, t, S)
+    tT = np.concatenate((tT, [T]))
+    ST = np.concatenate((ST, [ST_at_T]))
+
+trapz = getattr(np, "trapezoid", None)
+if trapz is None:
+    trapz = np.trapz
+
+D_T = 1.0 - ST[-1]
+mu_star = trapz(ST, tT)
+
+# Useful diagnostic only; numerical differentiation amplifies small fluctuations.
+g = -np.gradient(S, t)
+
+print("D_T      =", D_T)
+print("mu_star =", mu_star)
+```
+
+For publication-quality flux plots, use the same smoothing or post-processing pipeline used for the paper figures rather than relying only on a raw numerical derivative.
 
 ---
 
-## Interpreting the reflection diagnostic output
+## Interpreting `diagnose_reflection_time_Decomposition.py`
 
-`953Reflection_Diag.py` is designed to answer the question:
+This script asks:
 
 > Is the delayed signal mainly ordinary propagating reflection, or is it a near-roof spinor-ABC boundary response with finite-guide memory?
 
-The most important diagnostics are:
+It should be read together with the finite-window bookkeeping in Supplemental Material S4. In particular, the early/late split is a diagnostic decomposition of the detector-present roof-flux signal. It is not a new detector model and not a detector-free arrival-time law.
+
+Important output families are:
 
 | Output | Meaning |
 |---|---|
 | `roof_Jnet.npy`, `roof_Jplus.npy`, `roof_Jminus.npy` | Pauli-current roof flux and local backflow bookkeeping. |
-| `kz_P_plus.npy`, `kz_P_minus.npy`, `kz_R.npy` | Windowed longitudinal FFT diagnostic in a slab below the roof.  Positive `k_z` is upgoing; negative `k_z` is downgoing. |
+| `roof_in_J*.npy`, `roof_in_rho_int.npy` | Same style of checks one grid point below the roof. |
+| `kz_P_plus.npy`, `kz_P_minus.npy`, `kz_R.npy` | Windowed longitudinal FFT diagnostic in a slab below the roof. Positive `k_z` is upgoing; negative `k_z` is downgoing. |
+| `kz_slab_mass.npy` | Mass in the slab used for the longitudinal FFT diagnostic. |
 | `near_roof_mass.npy` | Probability stored in a near-roof slab. |
 | `W_plus_roof.npy`, `W_minus_roof.npy`, `Q_minus_roof.npy` | Tangential spin--momentum branch content at the roof. |
 | `E_full_depthSteps_*.npy` | Relative error of the full two-branch homogeneous boundary-symbol continuation. |
-| `E_plus_depthSteps_*.npy` | Historical plus-only comparison; not the central two-branch diagnostic. |
+| `E_plus_depthSteps_*.npy` | Historical plus-only comparison. The full two-branch diagnostic is the central one. |
 | `summary.json` | Integrated reflection/backflow/kz/Pi/Duhamel summaries. |
 
-The conservative first-pass timing window in this script is only a diagnostic device.  It should not be interpreted as a separate detector model.
+The conservative first-pass timing window used in the script is only a diagnostic timing device for separating early reflected signal from later bottom-return contamination. It should not be interpreted as an independent physical law.
 
 ---
 
-## Interpreting the boundary-symbol/covariance output
+## Interpreting `diagnose_boundary_symbol.py`
 
-`973Cov_Diag_pro.py` is the main diagnostic script for the paper's local boundary mechanism.  It uses the top-row roof trace and the discrete tangential symbol to test the two-branch response
+This is the main numerical diagnostic for the local spin--momentum filtering mechanism. It corresponds most directly to Supplemental Material S7, with the analytic mechanism derived in S6.
+
+The script uses the stored top-row roof trace and the discrete tangential symbol to test the two-branch response
 
 $$
-B_{\mathrm{br}}(\epsilon,\xi)=e^{-R\epsilon}\Pi_+(\xi)+e^{R\epsilon}\Pi_-(\xi),
+B_{\mathrm{br}}(\epsilon,\xi)
+= e^{-R\epsilon}\Pi_+(\xi)+e^{R\epsilon}\Pi_-(\xi),
 \qquad R=|\xi|.
 $$
 
-The central coefficient is the covariance form
+The central first-order coefficient is the covariance form
 
 $$
 \Lambda_\omega=\sqrt{\omega}\,\beta_\omega,
@@ -209,7 +280,7 @@ $$
 s=R/\sqrt{\omega}.
 $$
 
-Important outputs include:
+Important output families are:
 
 | Output | Meaning |
 |---|---|
@@ -221,43 +292,46 @@ Important outputs include:
 | `bl_exact_rate_epsSteps_*.npy` | Exact finite-epsilon two-branch density-rate check. |
 | `bl_linear_rate_epsSteps_*.npy`, `bl_quadratic_rate_epsSteps_*.npy` | Taylor checks against the exact finite-epsilon expression. |
 | `duhamel_E_full_rel_true_depthSteps_*.npy` | Full two-branch Duhamel/slab relative error. |
+| `boundary_layer_covariance_integrands.npz` | Saved rate integrands used to inspect covariance contributions. |
 | `summary.json` | Detector budget, covariance coefficients, finite-epsilon checks, and Duhamel summaries. |
 
-This script deliberately does **not** neglect `Pi_-`.  The full two-branch map is the central object.
+This script deliberately does **not** neglect `Pi_-`. The full two-branch map is the central object. The auxiliary inward depth used in the diagnostic is a local boundary-symbol probe, not a physical detector thickness.
 
 ---
 
 ## Recommended repository practice
 
-These scripts can generate large output directories.  Keep the repository clean:
+A clean repository layout is:
 
 ```text
-solvers/                  # commit these scripts
-runs/                     # local or scratch output; do not commit
-figures/                  # selected final figures only
-data/                     # selected compact arrays only
-docs/                     # explanations, figure maps, and post-processing notes
+solvers/        # the three representative scripts and this README
+runs/           # local or scratch output; do not commit
+figures/        # selected final figures only
+data/           # selected compact arrays used for figures/tables
+docs/           # explanations, figure maps, and post-processing notes
 ```
 
 Recommended `.gitignore` entries:
 
 ```gitignore
 runs/
-*.npy
-*.npz
-*.log
-stdout.txt
-simulation_log.txt
+scratch/
+output/
+outputs/
 __pycache__/
+*.pyc
+*.log
+**/stdout.txt
+**/simulation_log.txt
 ```
 
-Commit only selected small arrays or summary files that are needed to reproduce the figures in the paper.
+Avoid globally ignoring `*.npy` and `*.npz` if the repository intentionally tracks selected compact data in `data/`. Instead, keep raw run output under `runs/` and commit only selected, documented arrays.
 
 ---
 
 ## Citation
 
-If you use this repository, cite the paper and the accompanying data/code repository:
+If you use these scripts, cite the paper and the accompanying data/code repository:
 
 ```text
 A. Jozani,
@@ -269,10 +343,10 @@ Boundary-Spin-Momentum-Filtering-Data,
 GitHub repository: https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data
 ```
 
-For the numerical Crank--Nicolson/GMRES implementation background and the broader detection-time framework, also cite:
+For the broader detection-time framework and the Crank--Nicolson/GMRES implementation background, also cite:
 
 ```text
 A. Jozani and R. Tumulka,
 "Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials,"
-Physical Review Research, soon.
+Physical Review Research, accepted / forthcoming.
 ```
