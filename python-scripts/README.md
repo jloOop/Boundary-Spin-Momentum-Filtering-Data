@@ -6,9 +6,9 @@ This folder contains the three representative production/diagnostic scripts for 
 
 | Script | Public role | Paper / Supplement connection | Main outputs |
 |---|---|---|---|
-| `746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py` | Main spinor-ABC norm-loss solver for confinement sweeps | Main roof-flux curves, detected fraction, and restricted-mean fit | `prob_times.npy`, `total_probs.npy`, `constants.npz`, logs |
-| `953Reflection_Diag.py` | Reflection / finite-window diagnostic | Reflection checks and first-pass versus later-return interpretation | `kz_R.npy`, `roof_J*.npy`, `Q_minus_*.npy`, `E_*depth*.npy`, `summary.json` |
-| `973Cov_Diag_pro.py` | Boundary-symbol covariance and Duhamel diagnostic | Supplemental boundary-symbol / finite-grid diagnostics | `bl_*.npy`, `duhamel_*.npy`, `boundary_layer_covariance_integrands.npz`, `summary.json` |
+| `solver_spinor_abc_gaussian.py` | Main spinor-ABC norm-loss solver for confinement sweeps | Main roof-flux curves, detected fraction, and restricted-mean fit | `prob_times.npy`, `total_probs.npy`, `constants.npz`, logs |
+| `diagnose_reflection_time_Decomposition.py` | Reflection / finite-window diagnostic | Reflection checks and first-pass versus later-return interpretation | `kz_R.npy`, `roof_J*.npy`, `Q_minus_*.npy`, `E_*depth*.npy`, `summary.json` |
+| `diagnose_boundary_symbol.py` | Boundary-symbol covariance and Duhamel diagnostic | Supplemental boundary-symbol / finite-grid diagnostics | `bl_*.npy`, `duhamel_*.npy`, `boundary_layer_covariance_integrands.npz`, `summary.json` |
 
 ## Scientific convention used in these scripts
 
