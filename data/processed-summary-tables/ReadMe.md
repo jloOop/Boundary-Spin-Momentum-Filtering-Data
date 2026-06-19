@@ -1,6 +1,6 @@
 # S4 time-window and reflection diagnostics
 
-This folder contains compact CSV summaries for the Supplement S4 time-window bookkeeping and the related reflection / finite-guide-memory diagnostics.
+This folder contains compact CSV summaries for the Supplement S4 of the paper time-window bookkeeping and the related reflection / finite-guide-memory diagnostics.
 
 These tables are derived from the small JSON outputs of `diagnose_reflection_time_decomposition.py`. They are intended for GitHub readability: a reviewer can inspect the key numerical checks without downloading large raw `.npy` arrays.
 
