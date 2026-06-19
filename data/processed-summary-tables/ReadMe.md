@@ -93,13 +93,4 @@ kept only as a historical comparison.
 |     200 |          0.188562  |                 0.000676803 | 2.91885  |  0.0214723 |      0.303665  |                  0.054401   |                                      0.223921 |
 |     300 |          0.23094   |                 0.00023723  | 2.65044  |  0.0104942 |      0.181765  |                  0.0760119  |                                      0.223783 |
 
-## Repository practice
-
-Commit these CSV tables and the compact JSON summaries in
-`data/representative-diagnostics/s7-boundary-layer-json/`.
-
-Do **not** commit the large generated `.npy` arrays unless a small selected file is needed
-for a specific figure or loader. Large arrays such as `bl_rate*.npy`,
-`bl_*epsSteps_*.npy`, `duhamel_*depthSteps_*.npy`, and
-`boundary_layer_covariance_integrands.npz` should normally stay in external run storage.
 
