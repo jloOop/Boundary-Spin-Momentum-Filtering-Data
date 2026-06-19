@@ -114,18 +114,6 @@ Together, the three scripts separate the reproducibility workflow into three lay
 
 ---
 
-## Historical filename map
-
-Older run logs or notebooks may still refer to the original internal filenames. The public repository names are:
-
-| Legacy/internal name | Public name |
-|---|---|
-| `746SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py` | `solver_spinor_abc_gaussian.py` |
-| `953Reflection_Diag.py` | `diagnose_reflection_time_Decomposition.py` |
-| `973Cov_Diag_pro.py` | `diagnose_boundary_symbol.py` |
-
-Use the public names in new documentation, scripts, and README files. Keep the legacy mapping only for traceability.
-
 ---
 
 ## Running the scripts
