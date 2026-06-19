@@ -5,8 +5,6 @@ type: software
 authors:
   - family-names: Jozani
     given-names: Alireza
-  - family-names: Tumulka
-    given-names: Roderich
 repository-code: "https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data"
 date-released: "2026-06-05"
 license: "NOASSERTION"
