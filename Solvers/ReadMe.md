@@ -78,7 +78,7 @@ For the Pauli current, this boundary gives the outward roof-flux density
 $$
 g(t;\omega)
 =\kappa\int_{\Sigma_L}\Psi^\dagger\Psi\,dx\,dy
-=-\frac{d}{dt}\|\Psi_t\|^2.
+=-\frac{d}{dt}\|\Psi_t\|^2
 $$
 
 The survival probability is
