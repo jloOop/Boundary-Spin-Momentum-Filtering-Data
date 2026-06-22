@@ -1,0 +1,3 @@
+## Recruiter summary
+
+This repository supports a quantum-detection simulation project in which a particle propagates through a harmonic waveguide toward a detector modeled by an absorbing boundary condition. I implemented and analyzed non-unitary Schrödinger/Pauli evolution, where the detection-time distribution is extracted from probability-norm loss / roof flux. The public material demonstrates GPU/CuPy scientific computing, finite-difference PDE simulation, sparse non-Hermitian Hamiltonians, Crank–Nicolson/GMRES solvers, post-processing, visualization, and reproducible research-code organization.
