@@ -12,7 +12,6 @@ Start with:
 
 **Reproducibility material for:**  
 **Spin–Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide**  
-Alireza Jozani
 
 This repository contains selected scripts, reduced data, figures, and animations for the detector-present spinor absorbing-boundary simulations used in for a manuscript and Supplemental Material. It is a focused follow-up to the broader Schrödinger/Pauli detection-time simulations in the first repository.
 
