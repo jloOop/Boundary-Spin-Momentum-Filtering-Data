@@ -2,7 +2,7 @@
 
 This folder collects representative animation bundles for the Gaussian spin-coupled absorbing boundary condition simulations used in the paper.
 
-The simulations evolve a two-component Pauli/Schrödinger wave packet in a finite harmonic waveguide. The side walls and the lower face are Dirichlet boundaries; the detecting roof uses the spin-coupled absorbing boundary condition
+The simulations evolve a two-component Pauli spinor wave packet in a finite harmonic waveguide. The side walls and the lower face are Dirichlet boundaries; the detecting roof uses the spin-coupled absorbing boundary condition
 
 $$
 (\boldsymbol{\sigma}\cdot\boldsymbol{\nabla})\Psi=i\kappa\sigma_z\Psi .
