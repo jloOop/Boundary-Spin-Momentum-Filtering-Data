@@ -170,5 +170,5 @@ If you use this repository, cite the associated manuscript and this repository. 
 ## Author
 
 Alireza Jozani  
-Physics PhD candidate, University of Tübingen  
+Phys/Math PhD candidate, University of Tübingen  
 GitHub: `jloOop`
