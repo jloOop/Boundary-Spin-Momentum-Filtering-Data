@@ -17,7 +17,7 @@ These tables are derived from the small JSON outputs of `diagnose_reflection_tim
 
 ## Interpretation
 
-The physical detector observable is always the roof flux, equivalently the norm loss of the spinor-ABC evolution. The interior monitoring planes are not additional detectors. They are diagnostic surfaces placed below the roof to track the first upward passage of the packet, estimate an effective axial speed, and identify when later finite-guide return signals can start to contaminate the early-time signal.
+The physical detector observable is always the roof flux, equivalently the norm loss of the spinor-ABC evolution. The interior monitoring planes are not additional detectors. They are diagnostic surfaces placed below the roof to track the first upward passage of the packet (the peak), estimate an effective axial speed, and identify when later finite-guide return signals can start to contaminate the early-time signal.
 
 The quantities measured on the interior planes, such as $J_-/J_+$ ratios and upward/downward timing windows, are therefore diagnostic bookkeeping tools. They help justify the fixed cutoff $t_{\rm cut}=3.6$ used in Supplement S4 and separate the early first-pass sector from later finite-guide return/memory structure. They should not be interpreted as a second detection law or as an alternative arrival-time distribution.
 
