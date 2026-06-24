@@ -2,7 +2,7 @@
 
 This folder contains the public-facing post-processing layer for the spinor absorbing-boundary-condition (spinor-ABC) simulations in
 
-> **A. Jozani, _Spin--Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide_**
+> **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**
 
 and its Supplemental Material.
 
