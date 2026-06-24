@@ -8,7 +8,7 @@ This directory is for selected small data and processed tables.
 
 The `slices_bar.gif` files show the longitudinal marginal $P_z(z,t)$. Since this quantity is summed over the transverse directions, it does not directly show the transverse narrowing. Its purpose is to test the longitudinal propagation profile.
 
-For comparing transverse confinement, use `midplanes.gif` and `isosurf.gif`. Together, the diagnostics show two complementary facts:
+%For comparing transverse confinement, use `midplanes.gif` and `isosurf.gif`. Together, the diagnostics show two complementary facts:
 
 1. the early longitudinal marginal can remain nearly unchanged across different $\omega$, and  
 2. the transverse density narrows as the oscillator length $\ell_\perp=\omega^{-1/2}$ decreases.
