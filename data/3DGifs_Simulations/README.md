@@ -5,7 +5,7 @@ This folder collects representative animation bundles for the Gaussian spinor ab
 The simulations evolve a two-component Pauli/Schrödinger wave packet in a finite harmonic waveguide. The side walls and the lower face are Dirichlet boundaries; the detecting roof uses the spin-coupled absorbing boundary condition
 
 $$
-(\sigma\cdot\nabla)\Psi=i\kappa\sigma_z\Psi .
+(\boldsymbol{\sigma}\cdot\boldsymbol{\nabla})\Psi=i\kappa\sigma_z\Psi .
 $$
 
 The animations are qualitative visualizations of the detector-present evolution: propagation toward the roof, transverse confinement, absorption, near-roof storage, and delayed oscillatory structure. The quantitative detection-time analysis comes from the survival curve and roof-flux post-processing, not from the GIFs alone.
