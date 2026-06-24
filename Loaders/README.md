@@ -55,7 +55,7 @@ Large raw run directories should remain in `runs/`, scratch storage, or external
 | Loader | Main role | Paper / repository connection |
 |---|---|---|
 | `make_density_gifs.ipynb` / `make_density_gifs.py` | Builds PNG frames and GIFs from saved density snapshots such as `rho_prob_t*.npy`. | Repository media and qualitative 3D visualization of propagation, confinement, absorption, and delayed density structure. |
-| `plot_detection_time_distribution.ipynb` / `plot_detection_time_distribution.py` | Reconstructs the survival curve, detector-present flux density, detected fraction, finite-window restricted mean, and optional Bohmian histogram overlay. | Closest loader to Letter Fig. 1 and Supplemental Material S2--S4. |
+| `plot_detection_time_distribution.ipynb` / `plot_detection_time_distribution.py` | Reconstructs the survival curve, detector-present flux density, detected fraction, finite-window restricted mean, and optional Bohmian histogram overlay. | Closest loader to Paper Fig. 1 and Supplemental Material S2--S4. |
 | `plot_bohmian_trajectories.ipynb` / `plot_bohmian_trajectories.py` | Plots selected Pauli-current trajectories in 3D and in XY/XZ/YZ projections. | Trajectory visualization companion. In this project, trajectories sample the spinor-ABC detector-present flux law. |
 
 Each loader may appear as a notebook (`.ipynb`) for interactive inspection and/or as an exported Python script (`.py`) for quick GitHub code review. The notebook is usually better for reproducing figures interactively; the `.py` export is easier for a reader to skim without opening Jupyter.
@@ -114,7 +114,7 @@ and the restricted mean detection time,
 \mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt=E[\min(\tau,T)].
 ```
 
-This loader is the bridge between raw solver arrays and the figure-level detection-time plots. It is the closest post-processing file to the confinement sweep in Letter Fig. 1 and the numerical setup, convergence, full sweep, and finite-window bookkeeping in Supplemental Material S2--S4.
+This loader is the bridge between raw solver arrays and the figure-level detection-time plots. It is the closest post-processing file to the confinement sweep in Paper Fig. 1 and the numerical setup, convergence, full sweep, and finite-window bookkeeping in Supplemental Material S2--S4.
 
 When trajectory hit-time arrays are available, this loader can overlay a gray Bohmian histogram on top of the flux curve. The correct interpretation is:
 
