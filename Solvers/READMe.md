@@ -2,7 +2,7 @@
 
 This folder contains the three representative Python/CuPy research solvers used for the numerical side of
 
-> **A. Jozani, _Spin--Momentum Filtering by an Absorbing Boundary Delays Quantum Detection in a Harmonic Waveguide_**
+> **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**
 
 and its Supplemental Material.
 
