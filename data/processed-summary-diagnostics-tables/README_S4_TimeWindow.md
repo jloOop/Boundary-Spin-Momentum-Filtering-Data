@@ -21,6 +21,6 @@ The physical detector observable is always the roof flux, equivalently the norm 
 
 The quantities measured on the interior planes, such as $J_-/J_+$ ratios and upward/downward timing windows, are therefore diagnostic bookkeeping tools. They help justify the fixed cutoff $t_{\rm cut}=3.6$ used in Supplement S4 and separate the early first-pass sector from later finite-guide return/memory structure. They should not be interpreted as a second detection law or as an alternative arrival-time distribution.
 
-The common cutoff is not fitted from the roof-flux data and is not a reflection coefficient. It is a conservative timing marker chosen to stay before the earliest estimated bottom-return contamination across the sweep.
+The common cutoff is not fitted from the roof-flux data, nor is the safety factor a reflection coefficient. It is a conservative diagnostic timing marker chosen to lie before the earliest estimated bottom-return contamination over the whole parameter sweep.
 
 Large time-series arrays such as `roof_J*.npy`, `kz_*.npy`, and `E_full_*.npy` should normally stay outside GitHub. The CSVs here are the public audit layer.
