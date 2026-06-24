@@ -163,7 +163,7 @@ rho_prob_t0.30000.npy
 ...
 ```
 
-It is mainly for qualitative communication. It helps a reader see the evolution of the 3D probability density, the confined transverse profile, the propagation toward the roof, absorption, storage near the roof, and delayed oscillatory structure.
+It is mainly for qualitative communication. It helps a reader see the time evolution of the 3D probability density, the confined transverse profile, the propagation toward the roof, absorption, storage near the roof, and delayed oscillatory structure.
 
 Typical generated products include
 
