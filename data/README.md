@@ -1,6 +1,6 @@
 # Data
 
-This directory is for selected small data and processed tables.
+This directory is for selected data and processed tables.
 
 ---
 
