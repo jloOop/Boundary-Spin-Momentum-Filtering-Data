@@ -1,6 +1,6 @@
 # 3D GIF simulations — Gaussian spinor-ABC waveguide
 
-This folder collects representative animation bundles for the Gaussian spinor absorbing-boundary-condition simulations used in the paper.
+This folder collects representative animation bundles for the Gaussian spin-coupled absorbing-boundary-condition simulations used in the paper.
 
 The simulations evolve a two-component Pauli/Schrödinger wave packet in a finite harmonic waveguide. The side walls and the lower face are Dirichlet boundaries; the detecting roof uses the spin-coupled absorbing boundary condition
 
