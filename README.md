@@ -163,9 +163,6 @@ omega, kappa, kz, sigma_z, theta, phi, Lz, Nx, Ny, Nz, dt, T_final,
 detected_fraction, mu_star, prompt_weight, late_weight, notes
 ```
 
-## Suggested citation
-
-If you use this repository, cite the associated manuscript and this repository. Update `CITATION.cff` after the manuscript has a DOI, arXiv identifier, or journal reference.
 
 ## Author
 
