@@ -112,7 +112,7 @@ reproducibility/
 | `python-scripts/diagnose_reflection_time_Decomposition.py` | Spectral reflection/backflow diagnostic below the detecting roof. | `roof_Jnet.npy`, `roof_Jplus.npy`, `roof_Jminus.npy`, `kz_P_plus.npy`, `kz_P_minus.npy`, `kz_R.npy`, `summary.json` |
 | `python-scripts/diagnose_boundary_symbol.py` | Boundary-symbol covariance and Duhamel/one-grid continuation diagnostics. | `det_rate_toprow.npy`, `bl_rate0.npy`, `bl_rate_Ra.npy`, `bl_rate_sa.npy`, `bl_rate_R2.npy`, `bl_rate_s2.npy`, `duhamel_E_full_rel_true_depthSteps_*.npy`, `boundary_layer_covariance_integrands.npz`, `summary.json` |
 
-Recommended future cleanup: keep the current filenames as legacy names for reproducibility, but add clearer aliases or wrappers such as `solve_spinor_abc_gaussian.py`, `diagnose_reflection.py`, and `diagnose_boundary_symbol.py`.
+
 
 ## Quick start
 
