@@ -133,9 +133,9 @@ Run a selected simulation or diagnostic:
 
 ```bash
 export OUTDIR=/path/to/output/folder
-python python-scripts/730SpinorXY_Gauss_Bohm_DirichletABC_ZIB.py
-python python-scripts/953Reflection_Diag.py
-python python-scripts/972Cov_Diag_pro.py
+python python-scripts/solver_spinor_abc_gaussian.py
+python python-scripts/diagnose_reflection_time_Decomposition_S4.py
+python python-scripts/diagnose_boundary_symbol_S7.py
 ```
 
 For cluster runs, keep raw output under `runs/`, `scratch/`, or an external storage location. Commit only reduced tables, selected snapshots, and final figures.
