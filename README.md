@@ -285,7 +285,7 @@ Use the repository citation metadata in `CITATION.cff`. Until journal metadata i
 ## Author
 
 **Alireza Jozani**  
-Physics PhD Candidate, University of Tübingen  
+Physics Researcher
 GitHub: [`jloOop`](https://github.com/jloOop)
 
 
