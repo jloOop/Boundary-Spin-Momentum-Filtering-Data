@@ -1,14 +1,5 @@
 # Boundary Spin–Momentum Filtering Data 
 
-## Python scripts
-
-- `Solvers/`: GPU/CuPy Crank--Nicolson/GMRES production and diagnostic solvers.
-- `Loaders/`: CPU-side post-processing scripts/notebooks for plots, GIFs, detection-time distributions, and trajectory visualization.
-
-Start with:
-- `Solvers/README.md`
-- `Loaders/README.md`
-
 
 **Reproducibility material for:**  
 **Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition**  
@@ -60,6 +51,18 @@ Therefore increasing `omega` narrows the guide, strengthens the local boundary r
 ```
 
 This fit is a finite-window result for the stated packet, detector parameter, geometry, and observation time. The robust point is the boundary scale `sqrt(omega)`, not the numerical universality of the fitted coefficients.
+
+
+## Python scripts
+
+- `Solvers/`: GPU/CuPy Crank--Nicolson/GMRES production and diagnostic solvers.
+- `Loaders/`: CPU-side post-processing scripts/notebooks for plots, GIFs, detection-time distributions, and trajectory visualization.
+
+Start with:
+- `Solvers/README.md`
+- `Loaders/README.md`
+
+
 
 ## What this repository is, and is not
 
