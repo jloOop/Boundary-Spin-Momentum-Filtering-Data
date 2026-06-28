@@ -7,7 +7,10 @@ This repository contains selected research code, reduced data, diagnostic output
 > **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**  
 > Preprint / manuscript-related repository. See `paper/` and `CITATION.cff` for the current citation metadata.
 
-The project studies detector-present Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as **research-code and reproducibility material**, not as a production software package.
+The project studies detector-present Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as **research-code and reproducibility material**, not as a production software package. The repository demonstrates GPU-accelerated scientific computing for non-Hermitian quantum dynamics:
+3D finite-difference Pauli/Schrödinger evolution, spin-coupled absorbing boundary conditions,
+Crank–Nicolson time stepping, GMRES/Krylov sparse solves, detector-present norm-loss statistics,
+and reduced-data post-processing for reproducible scientific figures.
 
 ---
 
