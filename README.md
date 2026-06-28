@@ -264,8 +264,6 @@ This repository does **not** claim:
 ---
 
 ## Related work
-
-- A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_, arXiv:2606.25650.
 - A. Jozani and R. Tumulka, _Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials_, arXiv:2603.22044.
 
 ---
