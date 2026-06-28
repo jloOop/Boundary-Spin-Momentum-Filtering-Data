@@ -510,7 +510,14 @@ num_steps, prob_steps_cpu, view_steps_cpu, total_probs, prob_times = build_time_
     T_final,
     dt,
 )
-
+# Include the known initial survival point.
+# This makes prob_times.npy / total_probs.npy a self-contained S(t) curve.
+initial_total_prob = float(
+    to_cpu(cp.sum(cp.abs(psi_up)**2 + cp.abs(psi_down)**2) * (hx * hy * hz))
+)
+prob_times.append(0.0)
+total_probs.append(initial_total_prob)
+logging.info(f"[Probability] t=0.00, ∫|ψ|² dV = {initial_total_prob:.6f}")
 
 
 
