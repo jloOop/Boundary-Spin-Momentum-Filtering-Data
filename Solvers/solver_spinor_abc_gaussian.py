@@ -71,6 +71,8 @@ except ImportError:
 # identified without opening the log files.
 # -------------------- directories / logging --------------------
 OMEGA_ENV = os.getenv("OMEGA", None)
+omega = float(OMEGA_ENV) if (OMEGA_ENV is not None) else float(300.0)
+
 backend = "CuPy"
 print(f"[info] backend: {backend}")
 
