@@ -14,7 +14,7 @@ For an industry or scientific-computing reader, this folder demonstrates:
 - sparse non-Hermitian Hamiltonian assembly,
 - Crank--Nicolson time stepping with GMRES/Krylov linear solves,
 - ghost-point implementation of a spin-coupled absorbing boundary,
-- probability-current, reflection, boundary-symbol, and Duhamel diagnostics,
+- probability-current, reflection, boundary-symbol, time decomposition, and Duhamel diagnostics,
 - compact output suitable for post-processing and reproducibility.
 
 The physical observable throughout the project is the **detector-present roof flux**, equivalently the **norm loss** of the non-unitary spinor absorbing-boundary evolution.  These scripts should therefore be read as simulations and diagnostics of a detector model, not as detector-free arrival-time simulations.
