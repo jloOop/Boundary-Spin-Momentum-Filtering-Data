@@ -84,7 +84,7 @@ $$
 The survival probability is
 
 $$
-S(t;\omega)=\||\Psi_t\||^2,
+S(t;\omega)=\|\Psi_t\|^2
 $$
 
 and the finite-window restricted mean detection time used in the paper is
