@@ -1,3 +1,4 @@
+# environment.yml
 name: spinor-abc-gaussian-followup
 channels:
   - conda-forge
@@ -10,4 +11,3 @@ dependencies:
   - scikit-image
   - jupyter
   - pip
-  # Install cupy separately to match the CUDA version on the target cluster.
