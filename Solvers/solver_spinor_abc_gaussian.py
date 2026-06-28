@@ -124,7 +124,6 @@ Nx = 100
 Ny = 100
 Nz = 2000
 ell = 10.0
-omega = float(OMEGA_ENV) if (OMEGA_ENV is not None) else float(300.0)
 
 Lx = ell / np.sqrt(omega)
 Ly = ell / np.sqrt(omega)
