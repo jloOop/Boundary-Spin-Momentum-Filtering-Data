@@ -1,5 +1,6 @@
+# Boundary Spin–Momentum Filtering Data
 
-**Focused research-code and reproducibility repository for detector-present spinor absorbing-boundary simulations in numerical quantum detection theory.**
+Focused research-code and reproducibility repository for detector-present spinor absorbing-boundary simulations in numerical quantum detection theory.
 
 This repository contains selected Python/CuPy research code, reduced data, diagnostic outputs, figures, and representative animations for:
 
@@ -8,19 +9,27 @@ This repository contains selected Python/CuPy research code, reduced data, diagn
 
 The project studies Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as research-code and reproducibility material, not as a production software package.
 
+---
 
+## What this repository demonstrates
+
+| Area | Evidence in this repository |
+|---|---|
+| Numerical quantum dynamics | 3D finite-difference Pauli/Schrödinger evolution in a finite waveguide |
+| Non-Hermitian detector modeling | Spin-coupled absorbing boundary conditions and norm-loss / roof-flux statistics |
+| Scientific computing | Python/CuPy workflows, sparse operators, Crank–Nicolson time stepping, GMRES/Krylov solves |
+| Boundary-mechanism diagnostics | Boundary-symbol, reflection, finite-window, and Duhamel diagnostics |
+| Reproducibility material | Selected scripts, reduced data, processed tables, figures, GIFs, and citation/environment files |
 
 ---
 
 ## Scientific point
 
-The central question is how a spin-coupled absorbing boundary changes the detection-time distribution of a Pauli particle in a confined waveguide.
-
 The detector observable is the roof flux, equivalently the norm loss of the non-unitary spinor absorbing-boundary evolution,
 
 ```math
 g(t;\omega)=\kappa\int_{\Sigma_L}\Psi^\dagger\Psi(x,y,L,t)\,dx\,dy
-      = -\frac{d}{dt}\|\Psi_t\|^2 .
+= -\frac{d}{dt}\|\Psi_t\|^2 .
 ```
 
 For a finite observation window `T`, the main finite-window statistic is the restricted mean detection time,
@@ -43,7 +52,9 @@ For a harmonic transverse ground state,
 \qquad |\xi|\sim \ell_\perp^{-1}\sim \sqrt{\omega} .
 ```
 
-Thus, increasing the transverse confinement parameter `omega` changes the local boundary response: it suppresses the prompt roof-flux peak, lowers the detected fraction in a fixed time window, and shifts part of the detector-present response to later times. The fitted form
+Thus increasing the transverse confinement parameter `omega` changes the local boundary response: it suppresses the prompt roof-flux peak, lowers the detected fraction in a fixed observation window, and shifts part of the detector-present response to later times.
+
+The fit
 
 ```math
 \mu^*(20;\omega) \simeq 4.084 + 0.638\sqrt{\omega}
@@ -53,35 +64,37 @@ is a finite-window diagnostic for the simulated packet, detector parameter, guid
 
 ---
 
-## What this repository contains
+## Repository map
 
 ```text
 Boundary-Spin-Momentum-Filtering-Data/
-├── Solvers/              GPU/CuPy Crank–Nicolson/GMRES research solvers and diagnostics
+├── Solvers/              GPU/CuPy Crank–Nicolson/GMRES solvers and diagnostics
 ├── Loaders/              CPU-side post-processing for figures, GIFs, and trajectory plots
 ├── data/                 Selected compact data, processed tables, and representative media
-├── paper/                Manuscript / supplementary material when publicly available
-├── environment.yml       Conda environment without CuPy pinned to a specific CUDA build
+├── paper/                Manuscript / preprint material and citation context
+├── environment.yml       Conda environment without CuPy pinned to a CUDA build
 ├── requirements.txt      Lightweight Python dependencies for inspection/post-processing
-├── CITATION.cff          Citation metadata for the repository
+├── CITATION.cff          Repository citation metadata
+├── PROJECT_SCOPE.md      Public scope, evidence map, and claim boundaries
 └── README.md             This overview
 ```
 
-### Start here
+---
+
+## Start here
 
 | Path | Purpose |
 |---|---|
-| `Solvers/READMe.md` | Explains the GPU/CuPy solver and diagnostic scripts. |
-| `Loaders/README.md` | Explains how solver outputs are converted into figures, GIFs, and trajectory visualizations. |
-| `data/README.md` | Notes on selected data and interpretation of the GIF material. |
-| `paper/` | Manuscript-related PDF and citation context. |
-| `CITATION.cff` | Repository citation metadata. |
+| [`Solvers/README.md`](Solvers/README.md) | Explains the GPU/CuPy solver and diagnostic scripts |
+| [`Loaders/README.md`](Loaders/README.md) | Explains post-processing for figures, GIFs, and trajectory visualizations |
+| [`data/README.md`](data/README.md) | Explains selected data, reduced outputs, and representative media |
+| [`paper/README.md`](paper/README.md) | Gives manuscript / preprint citation context |
+| [`PROJECT_SCOPE.md`](PROJECT_SCOPE.md) | Summarizes what the repository supports and what it should not be used to claim |
+| [`CITATION.cff`](CITATION.cff) | Citation metadata |
 
 ---
 
 ## Main workflow
-
-The scientific chain is:
 
 ```text
 spinor absorbing boundary
@@ -91,7 +104,7 @@ spinor absorbing boundary
   -> figures, tables, GIFs, and reproducibility notes
 ```
 
-The heavy numerical simulations are in `Solvers/`. The `Loaders/` directory is the analysis layer: it reads completed solver outputs and produces detection-time plots, representative density animations, and trajectory visualizations.
+The heavy numerical simulations are in [`Solvers/`](Solvers/). The [`Loaders/`](Loaders/) directory is the analysis layer: it reads completed solver outputs and produces detection-time plots, representative density animations, and trajectory visualizations.
 
 ---
 
@@ -99,12 +112,12 @@ The heavy numerical simulations are in `Solvers/`. The `Loaders/` directory is t
 
 | Script | Role | Typical outputs |
 |---|---|---|
-| `Solvers/solver_spinor_abc_gaussian.py` | Main Gaussian spinor-ABC simulation; evolves the 3D spinor wavefunction and records survival/norm-loss data. | `prob_times.npy`, `total_probs.npy`, `constants.npz`, `simulation_log.txt` |
-| `Solvers/diagnose_reflection_time_Decomposition.py` | Reflection, time-window, near-roof, and finite-guide-memory diagnostics. | `roof_J*.npy`, `kz_*.npy`, `near_roof_mass.npy`, `summary.json` |
-| `Solvers/diagnose_boundary_symbol.py` | Boundary-symbol, covariance, finite-epsilon, and Duhamel diagnostics. | `det_rate_toprow.npy`, `bl_rate*.npy`, `duhamel_*`, `boundary_layer_covariance_integrands.npz` |
-| `Loaders/plot_detection_time_distribution.py` | Reconstructs survival, roof flux, detected fraction, restricted mean, and optional trajectory histograms. | `arrival_stats_summary.*`, detection-time figures |
-| `Loaders/make_density_gifs.py` | Builds frames and GIFs from saved density snapshots. | `midplanes.gif`, `contour_xy.gif`, `slices_bar.gif`, etc. |
-| `Loaders/plot_bohmian_trajectories.py` | Plots selected Pauli-current trajectories from saved trajectory arrays. | 3D trajectory and projection figures |
+| `Solvers/solver_spinor_abc_gaussian.py` | Main Gaussian spinor-ABC simulation; evolves the 3D spinor wavefunction and records survival/norm-loss data | `prob_times.npy`, `total_probs.npy`, `constants.npz`, `simulation_log.txt` |
+| `Solvers/diagnose_reflection_time_Decomposition.py` | Reflection, time-window, near-roof, and finite-guide-memory diagnostics | `roof_J*.npy`, `kz_*.npy`, `near_roof_mass.npy`, `summary.json` |
+| `Solvers/diagnose_boundary_symbol.py` | Boundary-symbol, covariance, finite-epsilon, and Duhamel diagnostics | `det_rate_toprow.npy`, `bl_rate*.npy`, `duhamel_*`, `boundary_layer_covariance_integrands.npz` |
+| `Loaders/plot_detection_time_distribution.py` | Reconstructs survival, roof flux, detected fraction, restricted mean, and optional trajectory histograms | `arrival_stats_summary.*`, detection-time figures |
+| `Loaders/make_density_gifs.py` | Builds frames and GIFs from saved density snapshots | `midplanes.gif`, `contour_xy.gif`, `slices_bar.gif` |
+| `Loaders/plot_bohmian_trajectories.py` | Plots selected Pauli-current trajectories from saved trajectory arrays | 3D trajectory and projection figures |
 
 ---
 
@@ -140,17 +153,12 @@ Run from the repository root.
 ```bash
 mkdir -p runs
 
-# Main Gaussian spinor-ABC confinement / norm-loss run
-OMEGA=300 OUTDIR=./runs \
-python Solvers/solver_spinor_abc_gaussian.py
+OMEGA=300 OUTDIR=./runs python Solvers/solver_spinor_abc_gaussian.py
 
-# Reflection, timing-window, and near-roof diagnostics
-OMEGA=100 OUTDIR=./runs \
-python Solvers/diagnose_reflection_time_Decomposition.py
+OMEGA=100 OUTDIR=./runs python Solvers/diagnose_reflection_time_Decomposition.py
 
-# Boundary-symbol covariance and Duhamel diagnostics
 OMEGA=200 OUTDIR=./runs NX=100 NY=100 NZ=1500 DT=2.5e-4 TFINAL=20 \
-python Solvers/diagnose_boundary_symbol.py
+  python Solvers/diagnose_boundary_symbol.py
 ```
 
 For post-processing, first inspect the input-path variables near the top of each loader. Many loaders assume that they are opened or copied into a completed run directory.
@@ -184,7 +192,7 @@ summary.json         optional diagnostic metadata
 From `prob_times.npy` and `total_probs.npy`, one can reconstruct:
 
 ```math
-D_T(\omega)=1-S(T;\omega),
+D_T(\omega)=1-S(T),
 \qquad
 \mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt,
 \qquad
@@ -195,6 +203,16 @@ For publication-quality figures, use the same smoothing and plotting pipeline us
 
 ---
 
+## Representative media
+
+| Media type | Where to look | Interpretation |
+|---|---|---|
+| Detection-time / roof-flux figures | `data/processed-summary-diagnostics-tables/` and loader outputs | Quantitative finite-window detector-present statistics |
+| Density animations | `data/3DGifs_Simulations/` and repository releases | Qualitative visualization of propagation, absorption, confinement, and delayed density structure |
+| Trajectory plots | loader outputs from `plot_bohmian_trajectories.py` | Monte Carlo samples of the detector-present Pauli-current flux law |
+
+---
+
 ## Data policy
 
 This repository is intentionally selective.
@@ -202,13 +220,13 @@ This repository is intentionally selective.
 - Commit compact processed tables, reduced outputs, representative figures, and documented GIFs.
 - Keep full raw GPU/HPC output in `runs/`, scratch storage, external archives, or GitHub releases when appropriate.
 - Do not treat this repository as a complete raw simulation archive.
-- Use `constants.npz` and `summary.json` as the source of truth for the parameters of a specific run.
+- Use `constants.npz` and `summary.json` as the source of truth for parameters of a specific run.
 
 ---
 
 ## Correct interpretation of trajectories
 
-Bohmian trajectories shown in this repository are used as Monte Carlo samples of the **same detector-present spinor-ABC flux law**. They are not a separate no-detector arrival-time proposal.
+Bohmian trajectories shown in this repository are Monte Carlo samples of the same detector-present spinor-ABC flux law. They are not a separate no-detector arrival-time proposal.
 
 Use this wording:
 
@@ -249,7 +267,7 @@ This repository supports claims about:
 - boundary-symbol diagnostics and parameter scans;
 - reduced-data, figure, GIF, and reproducibility organization.
 
-This repository does **not** claim:
+This repository does not claim:
 
 - a physical detector implementation;
 - a universal experimental detector law;
@@ -257,18 +275,20 @@ This repository does **not** claim:
 - a production software package;
 - CUDA C/C++ expertise;
 - complete archival storage of every raw HPC output;
-- journal publication or PRL acceptance unless the citation metadata is later updated after confirmation.
+- journal publication or PRL acceptance unless citation metadata is later updated after confirmation.
 
 ---
 
 ## Related work
-- A. Jozani and R. Tumulka, _Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials_, arXiv:2603.22044.
+
+- A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_, preprint / manuscript-related work.
+- A. Jozani and R. Tumulka, _Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials_, Physical Review Research, accepted / forthcoming.
 
 ---
 
 ## Citation
 
-Use the repository citation metadata in `CITATION.cff`. Until journal metadata is finalized, cite the associated manuscript/preprint and this repository together.
+Use the repository citation metadata in [`CITATION.cff`](CITATION.cff). Until journal metadata is finalized, cite the associated manuscript/preprint and this repository together.
 
 ```bibtex
 @software{jozani_boundary_spin_momentum_filtering_data_2026,
@@ -279,13 +299,22 @@ Use the repository citation metadata in `CITATION.cff`. Until journal metadata i
 }
 ```
 
----
-
 ## Author
 
-**Alireza Jozani**  
-Physics Researcher
+Alireza Jozani  
+Physics PhD Candidate, University of Tübingen  
 GitHub: [`jloOop`](https://github.com/jloOop)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
