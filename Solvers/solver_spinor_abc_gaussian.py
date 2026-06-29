@@ -9,7 +9,7 @@ This script is the representative time-dependent Pauli-spinor solver used for
 main spinor-ABC confinement runs.  It evolves a Gaussian wave packet in the
 harmonic waveguide with the spin-coupled absorbing boundary at the roof.
 
-The script intentionally keeps the production run light: no Bohmian trajectory
+The script intentionally keeps the full research run light: no Bohmian trajectory
 sampling and no dense density snapshots are written by default.  It stores the
 survival/norm history, from which the paper-level detector observables are
 post-processed:
@@ -41,7 +41,7 @@ Numerics
 
 Important reader note
 ---------------------
-The executable solver statements below are left as in the working production
+The executable solver statements below are left as in the working research
 script.  The comments are added for GitHub readability and to connect the code
 to the notation used in the paper and Supplemental Material.
 """
