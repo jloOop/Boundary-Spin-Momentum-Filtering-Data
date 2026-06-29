@@ -18,7 +18,7 @@ The project studies Pauli/Schrödinger dynamics in a harmonic waveguide with a s
 | Numerical quantum dynamics | 3D finite-difference Pauli/Schrödinger evolution in a finite waveguide |
 | Non-Hermitian detector modeling | Spin-coupled absorbing boundary conditions and norm-loss / roof-flux statistics |
 | Scientific computing | Python/CuPy workflows, sparse operators, Crank–Nicolson time stepping, GMRES/Krylov solves |
-| Boundary-mechanism diagnostics | Boundary-symbol, reflection, finite-window, and Duhamel diagnostics |
+| Boundary-mechanism diagnostics | Boundary-symbol, reflection, finite-window, and Duhamel remainder diagnostics |
 | Reproducibility material | Selected scripts, reduced data, processed tables, figures, GIFs, and citation/environment files |
 
 ---
