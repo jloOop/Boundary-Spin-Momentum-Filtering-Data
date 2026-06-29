@@ -269,7 +269,7 @@ This repository supports claims about:
 
 This repository does not claim:
 
-- a physical detector implementation;
+- an experimental physical detector implementation;
 - a universal experimental detector law;
 - a detector-free Bohmian arrival-time model;
 - a production software package;
