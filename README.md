@@ -1,8 +1,6 @@
 # Boundary Spin–Momentum Filtering Data
 
-Focused research-code and reproducibility repository for detector-present spinor absorbing-boundary simulations in numerical quantum detection theory.
-
-This repository contains selected Python/CuPy research code, reduced data, diagnostic outputs, figures, and representative animations for:
+Focused research-code and reproducibility repository for spinor absorbing-boundary simulations in numerical quantum detection theory. The repository contains Python/CuPy solver scripts, CPU-side post-processing, selected reduced data, diagnostic tables, figures, and representative GIFs for a manuscript/preprint on boundary-induced spin–momentum filtering. It is research-code material, not a production software package or physical detector implementation.
 
 > **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**  
 > Preprint / manuscript-related repository. See [`paper/`](paper/) and [`CITATION.cff`](CITATION.cff) for citation metadata.
