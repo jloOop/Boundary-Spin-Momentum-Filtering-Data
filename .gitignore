@@ -3,19 +3,26 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+
 *.log
 *.out
 *.err
 slurm-*.out
+
 runs/
 scratch/
 raw-data/
+
 *.h5
 *.hdf5
-# Large numpy arrays should be selectively added only when needed.
+
+# Large NumPy arrays should be selectively added only when needed.
 *.npy
 !data/selected-runs/**/*.npy
-!data/processed-summary-tables/**/*.csv
-# Allow images in results folders.
+
+# Allow compact processed diagnostic CSVs.
+!data/processed-summary-diagnostics-tables/**/*.csv
+
+# Allow selected images/GIFs in documented result folders.
 !follow-up-results-3D/**/*.png
 !follow-up-results-3D/**/*.gif
