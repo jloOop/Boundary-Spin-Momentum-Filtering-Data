@@ -293,7 +293,8 @@ Use the repository citation metadata in [`CITATION.cff`](CITATION.cff). Until jo
 ```bibtex
 @software{jozani_boundary_spin_momentum_filtering_data_2026,
   author = {Jozani, Alireza},
-  title  = {Boundary Spin-Momentum Filtering: Gaussian Waveguide Data},
+  title  = {Spin–Momentum Impedance and Filtering by a Spin-Coupled
+Absorbing Boundary Condition},
   year   = {2026},
   url    = {https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data}
 }
