@@ -201,13 +201,14 @@ For publication-quality figures, use the same smoothing and plotting pipeline us
 
 ---
 
-## Representative media
+## Representative media and diagnostic outputs
 
-| Media type | Where to look | Interpretation |
+| Output type | Where to look | Interpretation |
 |---|---|---|
-| Detection-time / roof-flux figures | `data/processed-summary-diagnostics-tables/` and loader outputs | Quantitative finite-window detector-present statistics |
+| Detection-time / roof-flux figures | `data/processed-summary-diagnostics-tables/` and loader outputs | Quantitative finite-window detector-present statistics reconstructed from survival, norm-loss, and roof-flux data |
+| Boundary-symbol / Duhamel diagnostic tables | `data/processed-summary-diagnostics-tables/ReadMe_S7_Boundary_Layer_Duhamel.md`, `s7_boundary_symbol_diagnostics.csv`, `s7_duhamel_depth_sweep.csv`, `s7_finite_epsilon_checks.csv`; generated/checked through `Solvers/diagnose_boundary_symbol.py` | Compact diagnostic checks of the local two-branch boundary-symbol mechanism, finite-epsilon boundary-layer response, and Duhamel-remainder bookkeeping. These are diagnostics of the detector-present boundary mechanism; the physical detector observable remains the roof flux at `z = L`. |
 | Density animations | `data/3DGifs_Simulations/` and repository releases | Qualitative visualization of propagation, absorption, confinement, and delayed density structure |
-| Trajectory plots | loader outputs from `plot_bohmian_trajectories.py` | Monte Carlo samples of the detector-present Pauli-current flux law |
+| Trajectory plots | loader outputs from `plot_bohmian_trajectories.py` | Monte Carlo samples of the detector-present Pauli-current roof-flux law, not detector-free Bohmian arrival-time predictions |
 
 ---
 
