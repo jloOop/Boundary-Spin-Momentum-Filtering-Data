@@ -283,21 +283,6 @@ This repository does not claim:
 - A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_, preprint / manuscript-related work.
 - A. Jozani and R. Tumulka, _Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials_, Physical Review Research, accepted / forthcoming.
 
----
-
-## Citation
-
-Use the repository citation metadata in [`CITATION.cff`](CITATION.cff). Until journal metadata is finalized, cite the associated manuscript/preprint and this repository together.
-
-```bibtex
-@software{jozani_boundary_spin_momentum_filtering_data_2026,
-  author = {Jozani, Alireza},
-  title  = {Spin–Momentum Impedance and Filtering by a Spin-Coupled
-Absorbing Boundary Condition},
-  year   = {2026},
-  url    = {https://github.com/jloOop/Boundary-Spin-Momentum-Filtering-Data}
-}
-```
 
 ## Author
 
