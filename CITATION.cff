@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-title: "Boundary Spin-Momentum Filtering: Gaussian Waveguide Data"
+title: "Spin–Momentum Impedance and Filtering by a Spin-Coupled
+Absorbing Boundary Condition"
 message: "If you use this repository, please cite the associated manuscript."
 type: software
 authors:
