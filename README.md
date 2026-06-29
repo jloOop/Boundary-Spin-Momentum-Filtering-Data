@@ -1,16 +1,14 @@
-# Boundary Spin–Momentum Filtering Data
 
-**Focused reproducibility repository for spinor absorbing-boundary simulations in numerical quantum detection theory.**
+**Focused research-code and reproducibility repository for detector-present spinor absorbing-boundary simulations in numerical quantum detection theory.**
 
-This repository contains selected research code, reduced data, diagnostic outputs, figures, and representative animations for the project
+This repository contains selected Python/CuPy research code, reduced data, diagnostic outputs, figures, and representative animations for:
 
 > **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**  
-> Preprint / manuscript-related repository. See `paper/` and `CITATION.cff` for the current citation metadata.
+> Preprint / manuscript-related repository. See [`paper/`](paper/) and [`CITATION.cff`](CITATION.cff) for citation metadata.
 
-The project studies detector-present Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as **research-code and reproducibility material**, not as a production software package. The repository demonstrates GPU-accelerated scientific computing for non-Hermitian quantum dynamics:
-3D finite-difference Pauli/Schrödinger evolution, spin-coupled absorbing boundary conditions,
-Crank–Nicolson time stepping, GMRES/Krylov sparse solves, detector-present norm-loss statistics,
-and reduced-data post-processing for reproducible scientific figures.
+The project studies Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as research-code and reproducibility material, not as a production software package.
+
+
 
 ---
 
