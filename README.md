@@ -274,7 +274,6 @@ This repository does not claim:
 - a production software package;
 - CUDA C/C++ expertise;
 - complete archival storage of every raw HPC output;
-- journal publication or PRL acceptance unless citation metadata is later updated after confirmation.
 
 ---
 
