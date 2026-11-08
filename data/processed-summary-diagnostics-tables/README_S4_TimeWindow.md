@@ -1,3 +1,5 @@
+> **Historical scope.** The `s4_*` names refer to an earlier diagnostic package, not Fig. S4 or Table S4 of the 28 October 2026 Supplement. For the revised centered early/late statistics, use [Table S2](../centered/tables/README.md#table-s2); the cutoff is a diagnostic split, not an encounter-resolved or strictly return-free interval. The historical data and paths below are retained.
+
 
 # S4 time-window and reflection diagnostics
 

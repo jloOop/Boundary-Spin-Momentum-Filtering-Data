@@ -1,3 +1,5 @@
+> **Historical scope.** The `s7_*` names identify an older auxiliary-diagnostic package, not revised Fig. S7 or Table S7. See the centered [Table S3](../centered/tables/README.md#table-s3) for the revised finite-grid diagnostics and [Tables S7–S8](../centered/tables/README.md#table-s7) for physical absorbing-layer comparisons. Auxiliary inward continuation is not a physical layer; the data and public paths below are retained.
+
 
 
 

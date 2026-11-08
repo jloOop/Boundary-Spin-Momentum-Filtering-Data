@@ -26,6 +26,21 @@ Each command writes numerical tables/figures and a JSON report. The verifier che
 
 The [single manifest](data/centered/provenance/manifest.json) links each figure/table to its input, adapter, original run/configuration/source and reproduction level. [PROJECT_SCOPE.md](PROJECT_SCOPE.md) lists source-version discrepancies. The [gallery](data/centered/README.md) links the actual tracked images and supporting tables.
 
+## Supplementary table presentation
+
+[Tables S1–S12](data/centered/tables/README.md) are generated from canonical CSVs by a small standard-library renderer. Existing high-precision records are reused; settings and four-run refinement summaries retain their numerical source. Tables S7–S9 explicitly contain **manuscript-reported rounded values**, with PDF page/hash provenance. Their presentation is not an independent numerical reconstruction. Implementation type and reproduction status are separate labels.
+
+```bash
+python Loaders/render_supplement_tables.py --check
+python Loaders/render_supplement_tables.py
+```
+
+The first command checks that the committed catalog agrees with the CSVs, expected row counts, identifiers and declared display rounding, and writes nothing. The second regenerates only `data/centered/tables/README.md`; it never changes numerical data. Decimal tokens are formatted using round-to-nearest, ties-to-even. Display differences from the manuscript remain explicit. Run `verify_centered.py` for the combined presentation, link, identity and native-data checks.
+
+The settings and four-run refinement summaries can be checked separately with `python -m Loaders.centered.supplement_tables_a --check --diagnostics-output build/diagnostics` after the diagnostics command. Omit `--diagnostics-output` to recompute only the four required refinement runs. The long-time summary uses `python -m Loaders.centered.supplement_tables_b --check`. The verifier also reports all 282 inspected S1–S6 printed-value comparisons, including the nine known disagreements, without changing the numerical results to match the manuscript.
+
+The [gallery](data/centered/README.md) includes all thirteen supplementary figure presentations. Original archived exports and faithful manuscript figure extracts are identified separately, with extraction recipes in the manifest. Displaying an image does not imply that its curve-level inputs are bundled.
+
 ## Packaging versus routine reproduction
 
 Tracked packaging/extraction scripts in `Loaders/centered/` accept an explicit local research root. They were used only to curate mapped sources, calculate source/distributed hashes, retain all selected rows and verify equality after export. Routine users do not need to run them or possess that original folder. They do not generate simulations. Any selected historical plotting/reduction recipes are provenance, separate from the portable adapters; machine paths and dependencies may have required documented transformations.

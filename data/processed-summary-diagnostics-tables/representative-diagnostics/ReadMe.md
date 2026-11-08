@@ -1,3 +1,5 @@
+> **Historical scope.** These `s4_*` and `s7_*` JSON names retain their earlier package labels. They are not a mapping to the revised Supplement’s same-numbered figures or tables. Start with the centered [Tables S2–S3](../../centered/tables/README.md#table-s2) and [figure gallery](../../centered/README.md) for the 28 October 2026 snapshot.
+
 # Representative S4 time-window diagnostics
 
 This folder contains compact JSON audit files for the Supplement S4 time-window diagnostics.

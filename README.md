@@ -89,6 +89,18 @@ The [lower-wall and long-time gallery](data/centered/README.md#geometry-and-the-
 
 The long-time calculation records substantial detection beyond T=40. The manuscript's logged-survival estimate ends at **189.95**, whereas the available native norm support now reaches **200**. Neither determines the unrestricted mean. Finite-guide memory is not identified here with bath non-Markovianity.
 
+## Supplementary results and controls
+
+The [table catalog](data/centered/tables/README.md) presents **Tables S1–S12** with readable panels, definitions and canonical CSV links. The [supporting gallery](data/centered/README.md) indexes **Figs. S1–S13** and distinguishes archived exports from manuscript extracts. Each result states its numerical family and available reproduction level.
+
+| Scientific group | Tables and figures |
+|---|---|
+| Finite-window statistics and scalar controls | [Table S1 settings](data/centered/tables/README.md#table-s1), [Table S2 early/late statistics](data/centered/tables/README.md#table-s2) |
+| Boundary/spin diagnostics and refinement | [Tables S3–S5](data/centered/tables/README.md#table-s3), [Fig. S1](data/centered/README.md#fig-s1) |
+| Bulk/preparation and absorbing-layer controls | [Tables S6–S8](data/centered/tables/README.md#table-s6), [Fig. S2](data/centered/README.md#fig-s2) |
+| Source/detector/geometry parameter studies | [Tables S9–S10](data/centered/tables/README.md#table-s9), [parameter figures](data/centered/README.md#parameter-and-guide-length-controls) |
+| Lower-boundary controls and long-time detection | [Tables S11–S12](data/centered/tables/README.md#table-s11), [Figs. S11–S13](data/centered/README.md#geometry-and-the-long-tail), [long-time summary](data/centered/tables/README.md#long-time-summary) |
+
 ## Controls, numerical scope and reuse
 
 Scalar, bulk-spin, chiral-preparation, source/detector-parameter and geometry controls test specific alternatives, not arbitrary preparations. The [scope document](PROJECT_SCOPE.md) records legacy preparation differences and missing layer/width inputs. The auxiliary inward continuation is not a physical absorber, and its covariance does not determine the empirical fit. The reduced return-kernel closure is an assumed interpretation, not the simulator generating these curves. Layer calibration is a separate manuscript-reported study: better entrance matching need not reproduce an entire click-time law.

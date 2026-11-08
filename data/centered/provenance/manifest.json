@@ -7,11 +7,13 @@
     "author": "Alireza Jozani",
     "snapshot_date": "2026-10-28",
     "supplement_included": true,
-    "pdf_distributed": false
+    "pdf_distributed": false,
+    "sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948"
   },
   "root_aliases": {
     "R": "authorized 3_CenteredABC_Run research root; not required for CPU reproduction",
-    "UNBUNDLED": "outside the selected source/input scope; machine prefixes removed"
+    "UNBUNDLED": "outside the selected source/input scope; machine prefixes removed",
+    "P": "supplied 28 October 2026 manuscript snapshot including Supplement; PDF not distributed"
   },
   "scope": "Cartesian detector-only; no transverse bath or open-system task results",
   "assets": [
@@ -25,11 +27,12 @@
     },
     {
       "path": "Loaders/README.md",
-      "sha256": "aac101b318764ef32b21df977b5c3fbc5c3aef5c098dc1b7c80ec484f15aa836",
-      "size_bytes": 1633,
+      "sha256": "2ee04fda5cb44b415609ce57de5fc3cbac2d028e1ab20a304c89a6ab2d909fe4",
+      "size_bytes": 1898,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
+      "previous_distributed_sha256": "aac101b318764ef32b21df977b5c3fbc5c3aef5c098dc1b7c80ec484f15aa836"
     },
     {
       "path": "Loaders/centered/__init__.py",
@@ -62,6 +65,14 @@
       "source_path": null,
       "source_sha256": null,
       "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+    },
+    {
+      "path": "Loaders/centered/extract_manuscript_figures.py",
+      "size_bytes": 4750,
+      "sha256": "654367f5ad09d50e842dbca0e630d0ce89cdf2f613b73bc7cda98ed0bf8934bb",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "New curation-only extraction recipe or revised gallery documentation; no numerical reduction."
     },
     {
       "path": "Loaders/centered/historical/Fig1a_original.py",
@@ -184,12 +195,52 @@
       "transformation": "AST selection of archived rendering functions; no native CSV loader or source-path dependency"
     },
     {
+      "path": "Loaders/centered/supplement_tables.py",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "1c028684d71b6e1c119d58619558ab33b1802a67772511e069d791f1e9441e9d",
+      "size_bytes": 7673
+    },
+    {
+      "path": "Loaders/centered/supplement_tables_a.py",
+      "sha256": "f38d360bdbc8f10cbbb15d04ec1e7bf6dbc60b0c57a88caa736d9f86caa95683",
+      "size_bytes": 27816,
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "New portable CSV presentation specification and summary/check helpers; original production scripts not executed."
+    },
+    {
+      "path": "Loaders/centered/supplement_tables_b.py",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "32503289b54c11ae0383ab985e65febde7003d6125e200016bdfdec67df81028",
+      "size_bytes": 28081
+    },
+    {
       "path": "Loaders/centered/test_numerics.py",
       "sha256": "dc50d4cfdf237342ee4021df547c812eed1652c9c323660a1211f88352fc930c",
       "size_bytes": 1594,
       "source_path": null,
       "source_sha256": null,
       "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+    },
+    {
+      "path": "Loaders/centered/test_supplement_tables.py",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "9c85d9f06fa5e64421322dee5b0a45b3c93db99e01ee73eadaf0e476e241428b",
+      "size_bytes": 1698
+    },
+    {
+      "path": "Loaders/render_supplement_tables.py",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "05da8bdd7da73ebae8b90061c064d397b1cc8d450f693749ab2aa5496f5a93ad",
+      "size_bytes": 1068
     },
     {
       "path": "Loaders/reproduce_centered.py",
@@ -201,35 +252,39 @@
     },
     {
       "path": "Loaders/verify_centered.py",
-      "sha256": "3855dcadc5a265cdba3caacaa98e5717598264673309921d9df67e54457e59b6",
-      "size_bytes": 6352,
+      "sha256": "03da25346ccaa1ad5ae2e6847eb838701c56d100ab9dad12adb2d4f2f41bd941",
+      "size_bytes": 9173,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
+      "previous_distributed_sha256": "3855dcadc5a265cdba3caacaa98e5717598264673309921d9df67e54457e59b6"
     },
     {
       "path": "PROJECT_SCOPE.md",
-      "sha256": "de1054c7b5580d4c491dae085a53371a8f6277db9803ec0d4b48bd6464cf8dc1",
-      "size_bytes": 8391,
+      "sha256": "358707111809abeafc6684144334ee9efad96681b37135f136f8921bfd7e0bfa",
+      "size_bytes": 9740,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
+      "previous_distributed_sha256": "de1054c7b5580d4c491dae085a53371a8f6277db9803ec0d4b48bd6464cf8dc1"
     },
     {
       "path": "README.md",
-      "sha256": "dfcf032bb10ae22df2d7e4a4306e792694b7db8380849d19fa61c2d5bbace65f",
-      "size_bytes": 8973,
+      "sha256": "5449beb29eda328157d289d5db704d940f50a7d4478b63fa22e81018146dd473",
+      "size_bytes": 10353,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
+      "previous_distributed_sha256": "dfcf032bb10ae22df2d7e4a4306e792694b7db8380849d19fa61c2d5bbace65f"
     },
     {
       "path": "REPRODUCING.md",
-      "sha256": "f30f771a4bf5ae1a247b0feaa5b222cae44ea8171edcbea2b49ffc14ea1a6494",
-      "size_bytes": 5196,
+      "sha256": "c3626354e073f3dfe14662eb035dce1889fba19bcd46f495a9f7529a9c0e62bb",
+      "size_bytes": 7154,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
+      "previous_distributed_sha256": "f30f771a4bf5ae1a247b0feaa5b222cae44ea8171edcbea2b49ffc14ea1a6494"
     },
     {
       "path": "Solvers/README.md",
@@ -457,11 +512,12 @@
     },
     {
       "path": "data/centered/README.md",
-      "sha256": "147d37dc1222aa1545ff37792d195c6b175387f34879f7becd8d7d57f9d45c94",
-      "size_bytes": 8779,
+      "size_bytes": 22783,
+      "sha256": "e93028046d8c4e956c6600e64ec95296a970dea2e5becc8491f899dfb5dc914d",
       "source_path": null,
       "source_sha256": null,
-      "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration"
+      "transformation": "New curation-only extraction recipe or revised gallery documentation; no numerical reduction.",
+      "previous_distributed_sha256": "e67b19e7334fee21800bd99cea211a1860f6d8987cdc4d5a4895aaee4ded3b9c"
     },
     {
       "path": "data/centered/figures/Fig1a.png",
@@ -564,6 +620,94 @@
       ]
     },
     {
+      "path": "data/centered/figures/FigS2.png",
+      "size_bytes": 644730,
+      "sha256": "0ba0ea7d9f5cf13cd3e556acc1355025e9e6d884a5179df3097c286786ab52bb",
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "transformation": "Faithful Poppler figure-region raster; no redraw, recolor, curve smoothing, digitization or curve reconstruction.",
+      "dimensions": [
+        1542,
+        943
+      ],
+      "extraction": {
+        "source_page_one_based": 44,
+        "printed_supplement_page": 31,
+        "dpi": 300,
+        "pdf_box_points_top_left": [
+          120,
+          136,
+          490,
+          362
+        ],
+        "pixel_crop_xywh": [
+          500,
+          566,
+          1542,
+          943
+        ],
+        "command": [
+          "pdftoppm",
+          "-f",
+          "44",
+          "-l",
+          "44",
+          "-singlefile",
+          "-r",
+          "300",
+          "-x",
+          "500",
+          "-y",
+          "566",
+          "-W",
+          "1542",
+          "-H",
+          "943",
+          "-png",
+          "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+          "data/centered/figures/FigS2"
+        ],
+        "recipe": "Loaders/centered/extract_manuscript_figures.py"
+      }
+    },
+    {
+      "path": "data/centered/figures/FigS3.png",
+      "size_bytes": 2186990,
+      "sha256": "11b4b26d04e6372f85b02bec0bbdddaca40b0ddf48ef9d478669290efa831818",
+      "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/kappa_campaign3.png",
+      "source_sha256": "1dcb8c81189f88eab2be76c0663e0161dbd957220720e99164a646a98e45a56e",
+      "source_assets": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/kappa_campaign3.png",
+          "source_sha256": "1dcb8c81189f88eab2be76c0663e0161dbd957220720e99164a646a98e45a56e",
+          "size_bytes": 1187233
+        },
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/kappa_campaign4.png",
+          "source_sha256": "af37f0f031211e9b2503ce179ad13c770cd0c86c4843f957f0db858332d42136",
+          "size_bytes": 1133149
+        }
+      ],
+      "transformation": "Unresampled vertical stack of the complete original RGBA panels; (a) above (b), 40-pixel white gap; panel pixel equality checked exactly.",
+      "dimensions": [
+        5061,
+        6096
+      ],
+      "extraction": {
+        "panel_offsets_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3068
+          ]
+        ],
+        "recipe": "Loaders/centered/extract_manuscript_figures.py"
+      }
+    },
+    {
       "path": "data/centered/figures/FigS4.png",
       "size_bytes": 291643,
       "sha256": "c14507bb26cc6df003cb8770fec5decb61ab613bb1127ed658f8306ba099becf",
@@ -577,6 +721,18 @@
       "dimensions": [
         2400,
         1444
+      ]
+    },
+    {
+      "path": "data/centered/figures/FigS5.png",
+      "size_bytes": 233618,
+      "sha256": "a9b4e9a046b9d4dcc1f4cc2c4d51369ff0f5293616dc372670dc663a584663b3",
+      "source_path": "R/4.Sweep_Scan_Controls/2.kz_campaign/Output/Fig_S5_Paul_Tol_muted_2026-10-21/Fig_S5_Paul_Tol_muted_preview.png",
+      "source_sha256": "a9b4e9a046b9d4dcc1f4cc2c4d51369ff0f5293616dc372670dc663a584663b3",
+      "transformation": "Byte-identical existing complete PNG preview; original rendering retained.",
+      "dimensions": [
+        1376,
+        832
       ]
     },
     {
@@ -596,6 +752,57 @@
       ]
     },
     {
+      "path": "data/centered/figures/FigS7.png",
+      "size_bytes": 479660,
+      "sha256": "351aa66a7f6ea22dc01631b83acda1502beb4c872cbcdb08a12941d23a6b7adc",
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "transformation": "Faithful Poppler figure-region raster; no redraw, recolor, curve smoothing, digitization or curve reconstruction.",
+      "dimensions": [
+        1542,
+        930
+      ],
+      "extraction": {
+        "source_page_one_based": 48,
+        "printed_supplement_page": 35,
+        "dpi": 300,
+        "pdf_box_points_top_left": [
+          120,
+          47,
+          490,
+          270
+        ],
+        "pixel_crop_xywh": [
+          500,
+          195,
+          1542,
+          930
+        ],
+        "command": [
+          "pdftoppm",
+          "-f",
+          "48",
+          "-l",
+          "48",
+          "-singlefile",
+          "-r",
+          "300",
+          "-x",
+          "500",
+          "-y",
+          "195",
+          "-W",
+          "1542",
+          "-H",
+          "930",
+          "-png",
+          "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+          "data/centered/figures/FigS7"
+        ],
+        "recipe": "Loaders/centered/extract_manuscript_figures.py"
+      }
+    },
+    {
       "path": "data/centered/figures/FigS8.png",
       "size_bytes": 81849,
       "sha256": "3abd64bb806c68a016bda18559a87593e867567b1cfad724ff414b3e44765b22",
@@ -609,6 +816,18 @@
       "dimensions": [
         1347,
         807
+      ]
+    },
+    {
+      "path": "data/centered/figures/FigS9.png",
+      "size_bytes": 276069,
+      "sha256": "947d6d6a6df5147b5f232072b606ca4e88a7563239c9b679924faf12e91ff13c",
+      "source_path": "R/4.Sweep_Scan_Controls/4.Length_L=30_comparision/Output/Fig_S9_Paul_Tol_muted_2026-10-21/Fig_S9_centered_T40_Paul_Tol_muted_preview.png",
+      "source_sha256": "947d6d6a6df5147b5f232072b606ca4e88a7563239c9b679924faf12e91ff13c",
+      "transformation": "Byte-identical existing complete PNG preview; original rendering retained.",
+      "dimensions": [
+        1376,
+        832
       ]
     },
     {
@@ -3420,6 +3639,35 @@
       "transformation": "selected scientific recipe fields; machine paths aliased"
     },
     {
+      "path": "data/centered/tables/README.md",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "5427eab3a395715a1c9817e8e45f7c21f8f01720dd8549056c260b05b0183d0c",
+      "size_bytes": 39722
+    },
+    {
+      "path": "data/centered/tables/controls/7810/long_time_support.csv",
+      "sha256": "92b534f354c2b9ec9be648832941aeccd501543f5c3c840a9dda334d23d403b5",
+      "size_bytes": 338,
+      "source_path": "data/centered/native/controls/7810/plot_data.csv; prob_times.npy; total_probs.npy; run.json",
+      "source_sha256": null,
+      "distributed_inputs": [
+        "data/centered/native/controls/7810/plot_data.csv",
+        "data/centered/native/controls/7810/prob_times.npy",
+        "data/centered/native/controls/7810/total_probs.npy",
+        "data/centered/native/controls/7810/run.json"
+      ],
+      "transformation": "Recompute four horizon summaries using established event interval-overlap integration on existing derived bins and launch-normalized sampled survival. Numeric fields exactly match the first-pass controls reducer output; no resampling of native history.",
+      "paper_items": [
+        "Fig. S13"
+      ],
+      "reproduction_level": "derived-bin reduction and sampled-native-norm support check",
+      "reduction_code": "Loaders/centered/supplement_tables_b.py",
+      "generation_command": "python -m Loaders.centered.supplement_tables_b",
+      "check_command": "python -m Loaders.centered.supplement_tables_b --check"
+    },
+    {
       "path": "data/centered/tables/controls/S10/S10_fit_coefficients.csv",
       "size_bytes": 372,
       "sha256": "08031915b3c9a319e2fe63475486a6b46a895fc5e12fab11c4dfe3552039bc91",
@@ -3736,6 +3984,155 @@
       "source_sha256": "dcde00506a895f22f42cbef6b453f284b776321db71753f4cec3b2610be5fdc4",
       "size_bytes": 15410,
       "transformation": "path strings aliased to R or UNBUNDLED; scientific values unchanged"
+    },
+    {
+      "path": "data/centered/tables/manuscript_reported/FigS13_logged_estimates_manuscript_rounded.csv",
+      "sha256": "61b411bb6c5b9e74e2cbc9197e826096c8e5527921922adc3dd9a4a14ee23821",
+      "size_bytes": 48,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page_1based": 53,
+      "source_pdf_supplement_page": 40,
+      "paper_items": [
+        "Fig. S13"
+      ],
+      "transformation": "Manual transcription of manuscript-reported rounded table/estimate values; numeric entries, signs and labels visually checked against full PDF page rendered by Poppler. No digitization or numerical reconstruction.",
+      "reproduction_level": "manuscript-reported rounded values",
+      "native_inputs_status": "not bundled / not located for this manuscript table; Fig. S13 has separate current derived support",
+      "precision": "printed decimal precision only; independent rounding"
+    },
+    {
+      "path": "data/centered/tables/manuscript_reported/Table_S7_manuscript_rounded.csv",
+      "sha256": "c75f4fc8e482946e927bf51de9498594edb256398fe28c4ed2451e429695867a",
+      "size_bytes": 355,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page_1based": 42,
+      "source_pdf_supplement_page": 29,
+      "paper_items": [
+        "Table S7"
+      ],
+      "transformation": "Manual transcription of manuscript-reported rounded table/estimate values; numeric entries, signs and labels visually checked against full PDF page rendered by Poppler. No digitization or numerical reconstruction.",
+      "reproduction_level": "manuscript-reported rounded values",
+      "native_inputs_status": "not bundled / not located for this manuscript table; Fig. S13 has separate current derived support",
+      "precision": "printed decimal precision only; independent rounding"
+    },
+    {
+      "path": "data/centered/tables/manuscript_reported/Table_S8_manuscript_rounded.csv",
+      "sha256": "5d284cf122eb4d35a73a030c8cfd424de51fc10d8f22f11dbf851f6e7cb8ed2e",
+      "size_bytes": 393,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page_1based": 43,
+      "source_pdf_supplement_page": 30,
+      "paper_items": [
+        "Table S8"
+      ],
+      "transformation": "Manual transcription of manuscript-reported rounded table/estimate values; numeric entries, signs and labels visually checked against full PDF page rendered by Poppler. No digitization or numerical reconstruction.",
+      "reproduction_level": "manuscript-reported rounded values",
+      "native_inputs_status": "not bundled / not located for this manuscript table; Fig. S13 has separate current derived support",
+      "precision": "printed decimal precision only; independent rounding"
+    },
+    {
+      "path": "data/centered/tables/manuscript_reported/Table_S9_located_source_audit.csv",
+      "sha256": "6830a12adbf6b590895112f81acb9d9627e0e2dffbfdecea4a90522edb91c03b",
+      "size_bytes": 592,
+      "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/Fig_S3_Paul_Tol_muted.provenance.json",
+      "source_sha256": "1fcf8d6ad33daecdf18702f633cfb6574fa28db960949e08de69fd82ed5f2788",
+      "transformation": "Select the eight audit records and six numeric fields; JSON numeric values round-trip through CSV; machine paths, logs and nonnumeric messages omitted. This is a source-qualification audit, not the complete Table S9.",
+      "paper_items": [
+        "Table S9",
+        "Fig. S3"
+      ],
+      "reproduction_level": "archived derived audit values",
+      "columns": [
+        "kappa",
+        "theta_recorded",
+        "dt_recorded",
+        "z_detector_recorded",
+        "survival_area_saved_window",
+        "survival_area_trapezoid"
+      ]
+    },
+    {
+      "path": "data/centered/tables/manuscript_reported/Table_S9_manuscript_rounded.csv",
+      "sha256": "b8acf3e5a2c26dddb192df9920ecf9bcf8990edbd87f357b0fa9d242e3909655",
+      "size_bytes": 380,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page_1based": 45,
+      "source_pdf_supplement_page": 32,
+      "paper_items": [
+        "Table S9"
+      ],
+      "transformation": "Manual transcription of manuscript-reported rounded table/estimate values; numeric entries, signs and labels visually checked against full PDF page rendered by Poppler. No digitization or numerical reconstruction.",
+      "reproduction_level": "manuscript-reported rounded values",
+      "native_inputs_status": "not bundled / not located for this manuscript table; Fig. S13 has separate current derived support",
+      "precision": "printed decimal precision only; independent rounding"
+    },
+    {
+      "path": "data/centered/tables/refinement/Table_S5_recomputed.csv",
+      "sha256": "762142e2048d00834fb4bf71ae4c600b0938d62959e1d81c900d65827894b784",
+      "size_bytes": 1661,
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "Deterministic compact summary from bundled configuration/native records using supplement_tables_a.py and existing diagnostics.py; no native array changes."
+    },
+    {
+      "path": "data/centered/tables/refinement/manuscript_reported_rounding_S2_S6.csv",
+      "sha256": "29f7b33826fe06d2f94a9cccf1736796b373c50c1afb17c18ce11ae2699b0140",
+      "size_bytes": 9067,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "transformation": "Manually transcribed printed values; visually checked rendered PDF pages17,21,32,35,37,41. Manuscript-reported rounded reference only, not numerical reconstruction."
+    },
+    {
+      "path": "data/centered/tables/settings/Table_S1_common_preparation.csv",
+      "sha256": "af96111130a63d07992a3df39947aac58f077b10962fb1de47d8d63700766116",
+      "size_bytes": 208,
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "Deterministic compact summary from bundled configuration/native records using supplement_tables_a.py and existing diagnostics.py; no native array changes."
+    },
+    {
+      "path": "data/centered/tables/settings/Table_S1_manuscript_timesteps.csv",
+      "sha256": "b86753592e0c48d5700928c7418287295958ea68d5dffa2d00d834e940b75d16",
+      "size_bytes": 153,
+      "source_path": "P/Spin_Momentum_filtering_RevisedVersion.pdf",
+      "source_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "transformation": "Manually transcribed printed values; visually checked rendered PDF pages17,21,32,35,37,41. Manuscript-reported rounded reference only, not numerical reconstruction."
+    },
+    {
+      "path": "data/centered/tables/settings/Table_S1_recorded_settings.csv",
+      "sha256": "a77e954797190a93f0094f2f394a05acf24c8c149b7bac22244b8f4a82fca1e5",
+      "size_bytes": 2898,
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "Deterministic compact summary from bundled configuration/native records using supplement_tables_a.py and existing diagnostics.py; no native array changes."
+    },
+    {
+      "path": "data/processed-summary-diagnostics-tables/README_S4_TimeWindow.md",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "3f8b732240fe2e2932070dbdd6092139c503f0efcdce248eeb4fab8b9f8f4552",
+      "size_bytes": 3104
+    },
+    {
+      "path": "data/processed-summary-diagnostics-tables/ReadMe_S7_Boundary_Layer_Duhamel.md",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "9c10e2d6957b5ba3aaa452671623a029301e49256a662499e442460711333993",
+      "size_bytes": 4132
+    },
+    {
+      "path": "data/processed-summary-diagnostics-tables/representative-diagnostics/ReadMe.md",
+      "source_path": null,
+      "source_sha256": null,
+      "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
+      "sha256": "bcab33af7d4aaf104efbf67a7d144ff3d57e204b629fe6c92fd2d2cafd987b93",
+      "size_bytes": 2750
     },
     {
       "path": "paper/README.md",
@@ -5464,8 +5861,96 @@
       ],
       "input_bundle": "data/centered/native",
       "reduction_code": "Loaders/centered/main.py",
-      "reproduction_level": "configuration/source verification",
-      "qualification": "Manuscript dt differs from actual records; both vectors retained in output and PROJECT_SCOPE.md"
+      "reproduction_level": "configuration/documentation verified against bundled run records",
+      "qualification": "Manuscript dt differs from actual records; both vectors retained in output and PROJECT_SCOPE.md",
+      "presentation": "data/centered/tables/README.md#table-s1",
+      "presentation_source_csvs": [
+        "data/centered/tables/settings/Table_S1_common_preparation.csv",
+        "data/centered/tables/settings/Table_S1_recorded_settings.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Centered ghost-point roof closure with a terminal half-weight norm; lower and lateral Dirichlet walls. The stored grid excludes nominal upper endpoints.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 17,
+      "scientific_status": "Configuration/documentation, verified against bundled run records; no production simulation is claimed. [Summary preparation code](../../../Loaders/centered/supplement_tables_a.py) generates these compact configuration views.",
+      "printed_comparison_conflicts": [
+        {
+          "table_id": "S1",
+          "row_id": "50",
+          "quantity": "dt",
+          "reported_value": 0.0007,
+          "numerical_value": 0.0008,
+          "display_format": ".5g",
+          "source_pdf_page": 17,
+          "numerical_display": "0.0008",
+          "manuscript_display": "0.0007",
+          "absolute_error": 0.00010000000000000005,
+          "rounding_half_unit": 0,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S1",
+          "row_id": "75",
+          "quantity": "dt",
+          "reported_value": 0.0005,
+          "numerical_value": 0.0004,
+          "display_format": ".5g",
+          "source_pdf_page": 17,
+          "numerical_display": "0.0004",
+          "manuscript_display": "0.0005",
+          "absolute_error": 9.999999999999999e-05,
+          "rounding_half_unit": 0,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S1",
+          "row_id": "100",
+          "quantity": "dt",
+          "reported_value": 0.0003,
+          "numerical_value": 0.0005,
+          "display_format": ".5g",
+          "source_pdf_page": 17,
+          "numerical_display": "0.0005",
+          "manuscript_display": "0.0003",
+          "absolute_error": 0.00020000000000000004,
+          "rounding_half_unit": 0,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S1",
+          "row_id": "200",
+          "quantity": "dt",
+          "reported_value": 0.0002,
+          "numerical_value": 0.00025,
+          "display_format": ".5g",
+          "source_pdf_page": 17,
+          "numerical_display": "0.00025",
+          "manuscript_display": "0.0002",
+          "absolute_error": 4.9999999999999996e-05,
+          "rounding_half_unit": 0,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S1",
+          "row_id": "300",
+          "quantity": "dt",
+          "reported_value": 0.00015,
+          "numerical_value": 0.0002,
+          "display_format": ".5g",
+          "source_pdf_page": 17,
+          "numerical_display": "0.0002",
+          "manuscript_display": "0.00015",
+          "absolute_error": 5.000000000000002e-05,
+          "rounding_half_unit": 0,
+          "agrees_at_printed_precision": false
+        }
+      ],
+      "canonical_csvs": [
+        "data/centered/tables/settings/Table_S1_common_preparation.csv",
+        "data/centered/tables/settings/Table_S1_recorded_settings.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "configuration records available but no rendered table"
     },
     {
       "paper_item": "Fig. S1",
@@ -5480,7 +5965,10 @@
         5540,
         7100
       ],
-      "reproduction_level": "archived export display; native reconstruction and archived-data comparison; no exact manuscript-image claim"
+      "reproduction_level": "archived export display; native reconstruction and archived-data comparison; no exact manuscript-image claim",
+      "presentation": "data/centered/README.md#fig-s1",
+      "displayed_asset": "data/centered/figures/FigS1.png",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Table S2",
@@ -5496,7 +5984,22 @@
       ],
       "tables": "data/centered/tables/diagnostics/",
       "reduction_code": "Loaders/centered/diagnostics.py",
-      "reproduction_level": "spinor rows recomputed from compact native records; scalar rows archived only; field-level spectral/monitor reconstruction unavailable"
+      "reproduction_level": "spinor rows recomputed from bundled native records; scalar rows archived derived results with native histories unavailable",
+      "presentation": "data/centered/tables/README.md#table-s2",
+      "presentation_source_csvs": [
+        "data/centered/tables/diagnostics/Table_S2_archived.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Mixed-source comparison: centered/half-weight spinor family and legacy one-sided scalar Robin closure with full terminal weight.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 21,
+      "scientific_status": "Archived full-precision CSV; the eight spinor rows are independently recomputed from bundled accepted-step detector events and separately integrated survival by the [native diagnostics reducer](../../../Loaders/centered/diagnostics.py). Scalar rows are archived derived results only: normalized piecewise-linear **sampled survival**, checked in the source package against full-step histories, with launch norms and one-sided/full-weight provenance recorded [here](diagnostics/scalar_provenance.json). Those native scalar histories are not bundled.",
+      "printed_comparison_conflicts": [],
+      "canonical_csvs": [
+        "data/centered/tables/diagnostics/Table_S2_archived.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S3",
@@ -5512,7 +6015,22 @@
       ],
       "tables": "data/centered/tables/diagnostics/",
       "reduction_code": "Loaders/centered/diagnostics.py",
-      "reproduction_level": "spinor rows recomputed from compact native records; scalar rows archived only; field-level spectral/monitor reconstruction unavailable"
+      "reproduction_level": "recomputed from bundled native moment and diagnostic records; underlying complex fields unavailable",
+      "presentation": "data/centered/tables/README.md#table-s3",
+      "presentation_source_csvs": [
+        "data/centered/tables/diagnostics/Table_S3_archived.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Centered reference family with the half-weight terminal norm; the finite-grid tangential symbol uses centered differences.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 32,
+      "scientific_status": "Archived full-precision results, recomputed from bundled native moment/diagnostic records by the [native diagnostics reducer](../../../Loaders/centered/diagnostics.py). Reconstructing the underlying Fourier fields or full Duhamel/monitor diagnostics would require unbundled fields. Plane-record accounting, spin/branch integrals, and accepted-step detector events remain separate.",
+      "printed_comparison_conflicts": [],
+      "canonical_csvs": [
+        "data/centered/tables/diagnostics/Table_S3_archived.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S4",
@@ -5528,7 +6046,37 @@
       ],
       "tables": "data/centered/tables/diagnostics/",
       "reduction_code": "Loaders/centered/diagnostics.py",
-      "reproduction_level": "spinor rows recomputed from compact native records; scalar rows archived only; field-level spectral/monitor reconstruction unavailable"
+      "reproduction_level": "recomputed from bundled native branch/spin records",
+      "presentation": "data/centered/tables/README.md#table-s4",
+      "presentation_source_csvs": [
+        "data/centered/tables/diagnostics/Table_S4_archived.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Centered reference family. Neutral tangential-symbol modes remain in the total branch weight.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 35,
+      "scientific_status": "Archived full-precision results independently recomputed by the [native diagnostics reducer](../../../Loaders/centered/diagnostics.py). **Printed-value mismatch:** at \u03c9=50 the manuscript shows Pz,survivor=0.999; the retained value 0.99971289084281545 rounds to 1.000 at three decimals. This presentation follows the numerical CSV and retains the mismatch in the [printed-value reference](refinement/manuscript_reported_rounding_S2_S6.csv); it is not silently forced to the paper.",
+      "printed_comparison_conflicts": [
+        {
+          "table_id": "S4",
+          "row_id": "50",
+          "quantity": "P_nc_z40",
+          "reported_value": "0.999",
+          "display_format": ".3f",
+          "source_pdf_page": "35",
+          "numerical_value": 0.9997128908428154,
+          "numerical_display": "1.000",
+          "manuscript_display": "0.999",
+          "absolute_error": 0.0007128908428154501,
+          "rounding_half_unit": 0.0005,
+          "agrees_at_printed_precision": false
+        }
+      ],
+      "canonical_csvs": [
+        "data/centered/tables/diagnostics/Table_S4_archived.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S5",
@@ -5545,24 +6093,108 @@
         "data/centered/native/7706"
       ],
       "reduction_code": "Loaders/centered/diagnostics.py",
-      "reproduction_level": "new native-data reconstruction of Eq. S117; archived three-run product cross-check; four-run original exporter absent",
-      "notes": "Nz2999 fixed numerical boundaries; later Nz4000 excluded. Printed baseline D=.739 differs from native .739745 rounding."
+      "reproduction_level": "four-run native reconstruction of the stated formulas; original final exporter unavailable",
+      "notes": "Nz2999 fixed numerical boundaries; later Nz4000 excluded. Printed baseline D=.739 differs from native .739745 rounding.",
+      "presentation": "data/centered/tables/README.md#table-s5",
+      "presentation_source_csvs": [
+        "data/centered/tables/refinement/Table_S5_recomputed.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Centered/half-weight family, with longitudinal refinement retaining the original numerical roof and transverse walls.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 37,
+      "scientific_status": "Recomputed from bundled native records using the first-pass [native diagnostics reducer](../../../Loaders/centered/diagnostics.py)'s Eq. S117 reconstruction; the original final four-run exporter was not located. [Summary preparation](../../../Loaders/centered/supplement_tables_a.py) joins its outputs without changing formulas. The earlier [three-run archive](diagnostics/Table_S5_three_run_archived.csv) and [pairwise archive](diagnostics/Table_S5_pairwise_archived.csv) remain as independent checks. **Printed discrepancies:** manuscript D40 is 0.739/0.742 for baseline/transverse, while native values round to 0.740/0.743; longitudinal \u03b5rel is printed 1.823%, while 1.823508241% rounds to 1.824%. The [printed-value reference](refinement/manuscript_reported_rounding_S2_S6.csv) keeps all inspected printed values and their display precision; no computed discrepancy is hardcoded.",
+      "printed_comparison_conflicts": [
+        {
+          "table_id": "S5",
+          "row_id": "7100",
+          "quantity": "D",
+          "reported_value": "0.739",
+          "display_format": ".3f",
+          "source_pdf_page": "37",
+          "numerical_value": 0.7397451824777831,
+          "numerical_display": "0.740",
+          "manuscript_display": "0.739",
+          "absolute_error": 0.0007451824777831018,
+          "rounding_half_unit": 0.0005,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S5",
+          "row_id": "7102",
+          "quantity": "D",
+          "reported_value": "0.742",
+          "display_format": ".3f",
+          "source_pdf_page": "37",
+          "numerical_value": 0.7425456265526323,
+          "numerical_display": "0.743",
+          "manuscript_display": "0.742",
+          "absolute_error": 0.00054562655263235,
+          "rounding_half_unit": 0.0005,
+          "agrees_at_printed_precision": false
+        },
+        {
+          "table_id": "S5",
+          "row_id": "7101",
+          "quantity": "epsilon_mu_refined_denom_percent",
+          "reported_value": "1.823",
+          "display_format": ".3f",
+          "source_pdf_page": "37",
+          "numerical_value": 1.8235082410905776,
+          "numerical_display": "1.824",
+          "manuscript_display": "1.823",
+          "absolute_error": 0.0005082410905776769,
+          "rounding_half_unit": 0.0005,
+          "agrees_at_printed_precision": false
+        }
+      ],
+      "canonical_csvs": [
+        "data/centered/tables/refinement/Table_S5_recomputed.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "native records and CPU reducer available; final four-run summary not presented"
     },
     {
       "paper_item": "Fig. S2",
-      "reproduction_level": "manuscript-reported; layer inputs and original export not bundled",
+      "reproduction_level": "manuscript figure display only; curve-level inputs unavailable",
       "reduction_code": null,
-      "displayed_asset": null,
+      "displayed_asset": "data/centered/figures/FigS2.png",
       "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "generating_source_status": "Original numerical curve inputs/solver/reduction recipe not located; manuscript figure extracted faithfully without curve reconstruction.",
+      "presentation": "data/centered/README.md#fig-s2",
+      "implementation": "distinct spinor/scalar ABC and physical absorbing-layer models as reported in the manuscript",
+      "presentation_recipe": "Loaders/centered/extract_manuscript_figures.py",
+      "source_pdf_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page": 44,
+      "presentation_before_second_update": "preview missing"
     },
     {
       "paper_item": "Fig. S3",
-      "reproduction_level": "archived legacy one-sided profiles located but not bundled; unmatched preparation/native input qualifications retained",
+      "reproduction_level": "archived legacy figure display; native reconstruction inputs not bundled",
       "reduction_code": null,
-      "displayed_asset": null,
+      "displayed_asset": "data/centered/figures/FigS3.png",
       "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "generating_source_status": "Original recipes and provenance located in R, hashes recorded here; native curve inputs are not bundled. This preview utility does not reconstruct numerical curves.",
+      "presentation": "data/centered/README.md#fig-s3",
+      "implementation": "legacy one-sided; theta and detector-position differences retained",
+      "run_ids": [],
+      "notes": "Native saved-norm derivative, np.gradient default edge_order=1. kappa1 theta=pi/3 dt0.0008 vs other shown theta0 dt0.001; kappa pi detector19.9867 vs nominal20. Complete source arrays lie outside authorized R. Supplied caption says red dashed; embedded image and selected export gray dashed.",
+      "source_recipes": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/plot_fig_s3_tol_muted.py",
+          "source_sha256": "1a508ea6c6d55ba9ed352f6dff66318efde3f079aad55c615660c069dfddd079",
+          "size_bytes": 18542
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/1.kappa_campaign/Output/Fig_S3_Paul_Tol_muted_2026-10-22/Fig_S3_Paul_Tol_muted.provenance.json",
+          "source_sha256": "1fcf8d6ad33daecdf18702f633cfb6574fa28db960949e08de69fd82ed5f2788",
+          "size_bytes": 28713
+        }
+      ],
+      "presentation_recipe": "Loaders/centered/extract_manuscript_figures.py",
+      "presentation_before_second_update": "preview missing"
     },
     {
       "paper_item": "Fig. S4",
@@ -5573,15 +6205,37 @@
         "data/centered/tables/controls/S4/fig_S4_centered_T20.csv",
         "data/centered/tables/controls/S4/fig_S4_centered_fit_summary.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s4",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S5",
-      "reproduction_level": "archived legacy one-sided profiles located but not bundled; original native histories outside authorized source root",
+      "reproduction_level": "archived legacy figure display; native reconstruction inputs not bundled",
       "reduction_code": null,
-      "displayed_asset": null,
+      "displayed_asset": "data/centered/figures/FigS5.png",
       "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "generating_source_status": "Original recipes and provenance located in R, hashes recorded here; native curve inputs are not bundled. This preview utility does not reconstruct numerical curves.",
+      "presentation": "data/centered/README.md#fig-s5",
+      "implementation": "legacy one-sided; mixed spin preparation and precision",
+      "run_ids": [],
+      "notes": "Saved-norm derivative. kz0.5,1 theta pi/6 complex128 vs kz2,pi,5 theta0 complex64; recorded detector positions differ. Original input histories lie outside authorized R. Red/gray caption discrepancy retained.",
+      "source_recipes": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/2.kz_campaign/Output/Fig_S5_Paul_Tol_muted_2026-10-21/plot_fig_s5_tol_muted.py",
+          "source_sha256": "376bf82f5685e175ab2393701cf28f697883ee869f7ae702b78df17741a3bdb1",
+          "size_bytes": 19750
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/2.kz_campaign/Output/Fig_S5_Paul_Tol_muted_2026-10-21/Fig_S5_Paul_Tol_muted_provenance.json",
+          "source_sha256": "b15722126507128e35bea1e0f222c253e560804623673a1c9c87a654ff2eee01",
+          "size_bytes": 21032
+        }
+      ],
+      "presentation_recipe": "Loaders/centered/extract_manuscript_figures.py",
+      "presentation_before_second_update": "preview missing"
     },
     {
       "paper_item": "Fig. S6",
@@ -5592,15 +6246,23 @@
         "data/centered/tables/controls/S6/fig_S6_centered_T20.csv",
         "data/centered/tables/controls/S6/fig_S6_centered_fit_summary.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s6",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S7",
-      "reproduction_level": "manuscript-reported; original one-sided width inputs not located; incomplete centered reruns not substituted; inputs not bundled",
+      "reproduction_level": "manuscript figure display only; curve-level inputs unavailable",
       "reduction_code": null,
-      "displayed_asset": null,
+      "displayed_asset": "data/centered/figures/FigS7.png",
       "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "generating_source_status": "Original numerical curve inputs/solver/reduction recipe not located; manuscript figure extracted faithfully without curve reconstruction.",
+      "presentation": "data/centered/README.md#fig-s7",
+      "implementation": "legacy one-sided",
+      "presentation_recipe": "Loaders/centered/extract_manuscript_figures.py",
+      "source_pdf_sha256": "4db81f6350128bd2e6828d93f287ce8067da76010bc3b562451dd22f87366948",
+      "source_pdf_page": 48,
+      "presentation_before_second_update": "preview missing"
     },
     {
       "paper_item": "Fig. S8",
@@ -5612,15 +6274,48 @@
         "data/centered/tables/controls/S8/fit_coefficients.csv",
         "data/centered/tables/controls/S8/fit_residuals.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s8",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S9",
-      "reproduction_level": "candidate export method conflicts with manuscript caption; not presented as exact reproduction; inputs not bundled",
+      "reproduction_level": "archived native-event figure candidate display; caption-method mismatch unresolved; curve inputs not bundled",
       "reduction_code": null,
-      "displayed_asset": null,
+      "displayed_asset": "data/centered/figures/FigS9.png",
       "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "generating_source_status": "Original recipes and provenance located in R, hashes recorded here; native curve inputs are not bundled. This preview utility does not reconstruct numerical curves.",
+      "presentation": "data/centered/README.md#fig-s9",
+      "implementation": "centered ghost-point roof, terminal half-weight norm",
+      "run_ids": [
+        7700,
+        7702,
+        7703,
+        7704,
+        7705
+      ],
+      "notes": "PDF49 caption says differentiated raw norms; identified export uses accepted-step roof_probability/(P0*dt) at native midpoints. Actual detector29.985000610351562, L30,zc15,T40. Curve tables located in mapped source package but not bundled for this display-only route. Red/gray caption discrepancy retained.",
+      "source_recipes": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/4.Length_L=30_comparision/Output/Fig_S9_Paul_Tol_muted_2026-10-21/plot_fig_s9_tol_muted.py",
+          "source_sha256": "0cb521b3df611df4904c5474d3607288aa4f831e35d484772fe68e951d59d566",
+          "size_bytes": 9565
+        },
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/4.Length_L=30_comparision/Output/S9_S10_centered_T40_2026-10-20/scripts/reproduce_s9_s10.py",
+          "source_sha256": "967393dc4e1b32876e9f8b781ad1f6963bc0f70829b0e6fa271d0dd5f75eb6ce",
+          "size_bytes": 20063
+        }
+      ],
+      "source_metadata": [
+        {
+          "source_path": "R/4.Sweep_Scan_Controls/4.Length_L=30_comparision/Output/Fig_S9_Paul_Tol_muted_2026-10-21/style_and_data_provenance.json",
+          "source_sha256": "b51a4754153ab9bbf0f6b12e298a48269d38fba61f835afb9795a6a03a3d74b0",
+          "size_bytes": 5178
+        }
+      ],
+      "presentation_recipe": "Loaders/centered/extract_manuscript_figures.py",
+      "presentation_before_second_update": "preview missing"
     },
     {
       "paper_item": "Fig. S10",
@@ -5631,7 +6326,9 @@
         "data/centered/tables/controls/S10/S10_statistics_and_validation.csv",
         "data/centered/tables/controls/S10/S10_fit_coefficients.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s10",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S11",
@@ -5643,7 +6340,9 @@
         "data/centered/tables/controls/S11/table_S11_fixed_source_T40.tex",
         "data/centered/tables/controls/S11/plot_metadata.json"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s11",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S12",
@@ -5667,11 +6366,13 @@
         "data/centered/tables/controls/T12/horizons_comparison.csv",
         "data/centered/tables/controls/T12/endpoint_comparison.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/README.md#fig-s12",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Fig. S13",
-      "reproduction_level": "raster of identified archived export; derived-bin replot and sampled-norm checks; full native step CSV not bundled",
+      "reproduction_level": "existing figure and derived-bin replot; manuscript logged-survival estimates separately transcribed; current binned-event/norm summary; no full-step native reconstruction",
       "reduction_code": "Loaders/centered/controls.py",
       "displayed_asset": "data/centered/figures/FigS13.png",
       "distributed_inputs": [
@@ -5682,11 +6383,20 @@
         "data/centered/native/controls/7810/plot_data.csv",
         "data/centered/native/controls/7810/plot_metadata.json"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "additional_presentation": "data/centered/tables/README.md#long-time-summary",
+      "additional_inputs": [
+        "data/centered/tables/manuscript_reported/FigS13_logged_estimates_manuscript_rounded.csv",
+        "data/centered/tables/controls/7810/long_time_support.csv"
+      ],
+      "historical_endpoint": 189.95,
+      "current_support_endpoint": 200,
+      "presentation": "data/centered/README.md#fig-s13",
+      "presentation_before_second_update": "existing linked preview"
     },
     {
       "paper_item": "Table S6",
-      "reproduction_level": "archived bulk/chiral results; original every-step survival reduction documented, not independently reconstructed here",
+      "reproduction_level": "archived derived results; every-step control histories not bundled",
       "reduction_code": "Loaders/centered/controls.py",
       "displayed_asset": null,
       "distributed_inputs": [
@@ -5695,35 +6405,99 @@
         "data/centered/tables/controls/T6/full_precision_results.csv",
         "data/centered/tables/controls/T6/numerical_validation.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/tables/README.md#table-s6",
+      "presentation_source_csvs": [
+        "data/centered/tables/controls/T6/full_precision_results.csv"
+      ],
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "implementation": "Centered spinor-ABC controls. Statistics follow the original survival-history convention, using every-step stored mass and recorded launch norm.",
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page": 41,
+      "scientific_status": "Archived derived numerical results, displayed from the existing full-precision CSV. The [historical reducer](../../../Solvers/centered/controls/analysis/T6/recalculate_s8_1.py) documents the every-step survival recipe, but its full control histories are not bundled; coarse sampled norms are not substituted. Historical source comments refer to an earlier manuscript snapshot; this presentation's printed-value comparison uses the supplied 28 October 2026 PDF (page 41).",
+      "printed_comparison_conflicts": [],
+      "canonical_csvs": [
+        "data/centered/tables/controls/T6/full_precision_results.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_a.py",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S7",
-      "reproduction_level": "manuscript-reported; generic layer inputs not bundled",
+      "reproduction_level": "manuscript-reported rounded transcription; native layer inputs unavailable",
       "reduction_code": null,
-      "displayed_asset": null,
-      "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "displayed_asset": "data/centered/tables/README.md#table-s7",
+      "distributed_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S7_manuscript_rounded.csv"
+      ],
+      "generating_source_status": "Manuscript transcription is presentation, not a native-data reducer; original generating inputs remain unavailable.",
+      "presentation": "data/centered/tables/README.md#table-s7",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S7_manuscript_rounded.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 42,
+      "canonical_csvs": [
+        "data/centered/tables/manuscript_reported/Table_S7_manuscript_rounded.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Centered spinor-ABC reference; physical absorbing-layer controls without a spinor roof ABC. The actual layer implementation files are unavailable.",
+      "scientific_status": "Manuscript-reported rounded values, transcribed and visually checked against PDF page 42 (Supplement page 29). No verified numerical table export, layer solver, or native history was located in the mapped sources. The renderer reproduces this transcription only; it is not an independent numerical reconstruction. Entries were rounded independently, so displayed digits do not specify numerical accuracy.",
+      "presentation_before_second_update": "manuscript-reported; complete numerical export not located"
     },
     {
       "paper_item": "Table S8",
-      "reproduction_level": "manuscript-reported; impedance-calibrated layer inputs not bundled",
+      "reproduction_level": "manuscript-reported rounded transcription; native calibrated-layer inputs unavailable",
       "reduction_code": null,
-      "displayed_asset": null,
-      "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "displayed_asset": "data/centered/tables/README.md#table-s8",
+      "distributed_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S8_manuscript_rounded.csv"
+      ],
+      "generating_source_status": "Manuscript transcription is presentation, not a native-data reducer; original generating inputs remain unavailable.",
+      "presentation": "data/centered/tables/README.md#table-s8",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S8_manuscript_rounded.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 43,
+      "canonical_csvs": [
+        "data/centered/tables/manuscript_reported/Table_S8_manuscript_rounded.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Centered spinor-ABC references plus finite absorbing layers with a Dirichlet backing wall; the calibrated functions of K use the manuscript\u2019s centered transverse Dirichlet operators. Layer inputs remain unavailable.",
+      "scientific_status": "Manuscript-reported rounded values, visually checked against PDF page 43 (Supplement page 30). No calibrated potentials, native curves, or verified numerical table export were located. This presentation preserves unfavorable as well as improved comparisons and is not a fresh computation.",
+      "presentation_before_second_update": "manuscript-reported; complete numerical export not located"
     },
     {
       "paper_item": "Table S9",
-      "reproduction_level": "manuscript-reported; legacy parameter-table input match incomplete; inputs not bundled",
+      "reproduction_level": "manuscript-reported rounded transcription plus separately qualified archived source audit; complete native family unavailable",
       "reduction_code": null,
-      "displayed_asset": null,
-      "distributed_inputs": [],
-      "generating_source_status": "Original inputs/generating sources not bundled for this item; see scope qualification."
+      "displayed_asset": "data/centered/tables/README.md#table-s9",
+      "distributed_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S9_manuscript_rounded.csv"
+      ],
+      "generating_source_status": "Manuscript transcription is presentation, not a native-data reducer; original generating inputs remain unavailable.",
+      "presentation": "data/centered/tables/README.md#table-s9",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/manuscript_reported/Table_S9_manuscript_rounded.csv",
+        "data/centered/tables/manuscript_reported/Table_S9_located_source_audit.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 45,
+      "canonical_csvs": [
+        "data/centered/tables/manuscript_reported/Table_S9_manuscript_rounded.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Legacy one-sided normal-boundary family. The located source audit includes preparation and detector-position qualifications; it is not a uniform centered reference family.",
+      "scientific_status": "Manuscript-reported rounded values, visually checked against PDF page 45 (Supplement page 32). A complete verified Table S9 export was not located: the mapped audit lacks \u03ba=5. The \u03ba=1 record has \u03b8=\u03c0/3 and \u0394t=0.0008 while the other audited records have \u03b8=0 and \u0394t=0.001; its logged output-directory label says \u03ba=2 despite recorded \u03ba=1. The \u03ba=\u03c0 detector coordinate is approximately 19.986666 rather than the other audited records\u2019 20. No centered row or different preparation is substituted.",
+      "presentation_before_second_update": "manuscript-reported; complete numerical export not located"
     },
     {
       "paper_item": "Table S10",
-      "reproduction_level": "archived table; original reducer has missing provenance helper",
+      "reproduction_level": "archived derived numerical fit results; not native campaign reconstruction",
       "reduction_code": "Loaders/centered/controls.py",
       "displayed_asset": null,
       "distributed_inputs": [
@@ -5731,11 +6505,26 @@
         "data/centered/tables/controls/T10/table_S10_centered_T20.tex",
         "data/centered/tables/controls/T10/table_S10_raw_metrics_T20.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/tables/README.md#table-s10",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/controls/T10/table_S10_centered_T20.csv",
+        "data/centered/tables/controls/T10/table_S10_raw_metrics_T20.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 47,
+      "canonical_csvs": [
+        "data/centered/tables/controls/T10/table_S10_centered_T20.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Centered ghost-point roof closure with its compatible terminal half-weight norm.",
+      "scientific_status": "Archived derived numerical results, rendered from the existing full-precision CSV. The rounded values agree with PDF page 47 (Supplement page 34). The [historical reducer](../../../Solvers/centered/controls/analysis/T10/recalculate_table_S10.py) refers to an unavailable provenance helper. The [portable controls workflow](../../../Loaders/centered/controls.py) displays the archived results; it does not independently reconstruct every sweep run.",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S11",
-      "reproduction_level": "archived fixed-source wall statistics; spatial/native large histories not bundled",
+      "reproduction_level": "archived derived numerical results; complete spatial and native histories not bundled",
       "reduction_code": "Loaders/centered/controls.py",
       "displayed_asset": null,
       "distributed_inputs": [
@@ -5743,11 +6532,25 @@
         "data/centered/tables/controls/S11/table_S11_fixed_source_T40.tex",
         "data/centered/tables/controls/S11/plot_metadata.json"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/tables/README.md#table-s11",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/controls/S11/table_S11_fixed_source_T40.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 50,
+      "canonical_csvs": [
+        "data/centered/tables/controls/S11/table_S11_fixed_source_T40.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Centered spinor-ABC roof, reflecting Dirichlet lower wall; fixed-source geometry family, distinct from a guide-length scan with a moving source.",
+      "scientific_status": "Archived derived numerical results, using the existing full-precision CSV and its survival-history convention. Displayed values agree with PDF page 50 (Supplement page 37). [Original analysis recipe](../../../Solvers/centered/controls/analysis/S11/analyze_fixed_source_T40.py) and [plot metadata](controls/S11/plot_metadata.json) are included; the four complete native histories and spatial current histories are not bundled, so this is archived-table presentation rather than native reconstruction.",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     },
     {
       "paper_item": "Table S12",
-      "reproduction_level": "native upper/lower/survival statistics recomputable; archival comparison includes rounded Dirichlet rows",
+      "reproduction_level": "mixed: two native lower-ABC rows verified from bundled records, two archived rounded Dirichlet references",
       "reduction_code": "Loaders/centered/controls.py",
       "displayed_asset": null,
       "distributed_inputs": [
@@ -5767,7 +6570,21 @@
         "data/centered/tables/controls/T12/horizons_comparison.csv",
         "data/centered/tables/controls/T12/endpoint_comparison.csv"
       ],
-      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed."
+      "generating_source_status": "Selected historical recipes retained under Solvers/centered/controls; no fresh-simulation or restart validation claimed.",
+      "presentation": "data/centered/tables/README.md#table-s12",
+      "presentation_code": "Loaders/render_supplement_tables.py",
+      "canonical_presentation_inputs": [
+        "data/centered/tables/controls/T12/four_way_statistics.csv"
+      ],
+      "presentation_status": "complete generated table panels; independent reproduction status is separate",
+      "source_pdf_page_1based": 53,
+      "canonical_csvs": [
+        "data/centered/tables/controls/T12/four_way_statistics.csv"
+      ],
+      "presentation_specification": "Loaders/centered/supplement_tables_b.py",
+      "implementation": "Centered spinor upper ABC in all rows; reflecting Dirichlet or scalar absorbing lower closure. The different evidence conventions within the table are retained.",
+      "scientific_status": "Mixed evidence: the two scalar-lower-ABC rows are archived numerical results independently recomputed from bundled native accepted-step records by the [controls adapter](../../../Loaders/centered/controls.py). The two Dirichlet rows retain the rounded archived rounded-reference convention: S_in=1\u2212D\u2084\u2080 and D_L=D\u2084\u2080w_L with w_L retained to four decimals in this CSV (0.3942 and 0.5587), beyond the three decimals printed in Table S2. They are not replaced by more precise native Dirichlet values. Their existing CSV arithmetic precision does not create new source precision. Values agree with PDF page 53 (Supplement page 40) after the declared display rounding.",
+      "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     }
   ],
   "packaging_checks": [
@@ -7006,6 +7823,83 @@
       "passed": true,
       "actual": 120000,
       "tolerance": 0
+    },
+    {
+      "name": "supplement summary: data/centered/tables/settings/Table_S1_recorded_settings.csv",
+      "passed": true,
+      "actual": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "supplement summary: data/centered/tables/settings/Table_S1_common_preparation.csv",
+      "passed": true,
+      "actual": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "supplement summary: data/centered/tables/refinement/Table_S5_recomputed.csv",
+      "passed": true,
+      "actual": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "S7/S8/S9 manuscript transcription visually checked from PDF pages42/43/45",
+      "passed": true,
+      "independent_native_reconstruction": false
+    },
+    {
+      "name": "S10/S11/S12 displayed rounding visually agrees with PDF pages47/50/53",
+      "passed": true
+    },
+    {
+      "name": "S7rows7 S8rows8 S9rows9 S10rows3 S11rows4 S12rows4",
+      "passed": true
+    },
+    {
+      "name": "S9sourceaudit8 exact extracted numeric records",
+      "passed": true
+    },
+    {
+      "name": "FigS13current summary exact numeric equality with first-pass controls output",
+      "passed": true
+    },
+    {
+      "name": "FigS13current summary --check",
+      "passed": true
+    },
+    {
+      "name": "FigS13 truncated sampled-norm support is rejected before endpoint interpolation",
+      "passed": true,
+      "method": "in-memory load patch, source files unchanged"
+    },
+    {
+      "name": "FigS13 stale support CSV check returns false",
+      "passed": true,
+      "method": "in-memory read patch, canonical CSV unchanged"
+    },
+    {
+      "name": "all13explicitfigureanchors",
+      "passed": true
+    },
+    {
+      "name": "all13figurepreviews",
+      "passed": true
+    },
+    {
+      "name": "prior_gallery_heading_anchors_preserved",
+      "passed": true
+    },
+    {
+      "name": "S3_both_original_panel_pixels_unchanged",
+      "passed": true
+    },
+    {
+      "name": "S5_S9_original_preview_bytes_unchanged",
+      "passed": true
+    },
+    {
+      "name": "S2_S7_complete_axes_legends_insets_visually_checked_against_rendered_PDF",
+      "passed": true
     }
   ],
   "tested_environment": {
@@ -7165,9 +8059,162 @@
     }
   ],
   "payload": {
-    "unique_registered_assets": 256,
-    "registered_bytes": 186969274,
-    "centered_data_bytes_excluding_manifest": 185095230,
+    "unique_registered_assets": 282,
+    "registered_bytes": 190949005,
+    "centered_data_bytes_excluding_manifest": 188986116,
     "size_target": "100MiB soft; exceeded to preserve all19 scientific/accounting step columns for11 reference/refinement runs; no full large run directories or new release deposits"
+  },
+  "supplementary_presentation": {
+    "starting_commit": "4374ff3fa569cd9347a23137ee53543ee6b93d3a",
+    "table_catalog": "data/centered/tables/README.md",
+    "figure_gallery": "data/centered/README.md",
+    "renderer": "Loaders/render_supplement_tables.py",
+    "check_command": "python Loaders/render_supplement_tables.py --check",
+    "scope": "all Tables S1\u2013S12 and Figs. S1\u2013S13 presented; native reconstruction remains item-specific",
+    "rounding": "Decimal CSV tokens; nearest with ties-to-even for human display only",
+    "printed_comparison_count_S1_S6": 282,
+    "printed_value_conflicts_S1_S6": [
+      {
+        "table_id": "S4",
+        "row_id": "50",
+        "quantity": "P_nc_z40",
+        "reported_value": "0.999",
+        "display_format": ".3f",
+        "source_pdf_page": "35",
+        "numerical_value": 0.9997128908428154,
+        "numerical_display": "1.000",
+        "manuscript_display": "0.999",
+        "absolute_error": 0.0007128908428154501,
+        "rounding_half_unit": 0.0005,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S5",
+        "row_id": "7100",
+        "quantity": "D",
+        "reported_value": "0.739",
+        "display_format": ".3f",
+        "source_pdf_page": "37",
+        "numerical_value": 0.7397451824777831,
+        "numerical_display": "0.740",
+        "manuscript_display": "0.739",
+        "absolute_error": 0.0007451824777831018,
+        "rounding_half_unit": 0.0005,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S5",
+        "row_id": "7102",
+        "quantity": "D",
+        "reported_value": "0.742",
+        "display_format": ".3f",
+        "source_pdf_page": "37",
+        "numerical_value": 0.7425456265526323,
+        "numerical_display": "0.743",
+        "manuscript_display": "0.742",
+        "absolute_error": 0.00054562655263235,
+        "rounding_half_unit": 0.0005,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S5",
+        "row_id": "7101",
+        "quantity": "epsilon_mu_refined_denom_percent",
+        "reported_value": "1.823",
+        "display_format": ".3f",
+        "source_pdf_page": "37",
+        "numerical_value": 1.8235082410905776,
+        "numerical_display": "1.824",
+        "manuscript_display": "1.823",
+        "absolute_error": 0.0005082410905776769,
+        "rounding_half_unit": 0.0005,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S1",
+        "row_id": "50",
+        "quantity": "dt",
+        "reported_value": 0.0007,
+        "numerical_value": 0.0008,
+        "display_format": ".5g",
+        "source_pdf_page": 17,
+        "numerical_display": "0.0008",
+        "manuscript_display": "0.0007",
+        "absolute_error": 0.00010000000000000005,
+        "rounding_half_unit": 0,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S1",
+        "row_id": "75",
+        "quantity": "dt",
+        "reported_value": 0.0005,
+        "numerical_value": 0.0004,
+        "display_format": ".5g",
+        "source_pdf_page": 17,
+        "numerical_display": "0.0004",
+        "manuscript_display": "0.0005",
+        "absolute_error": 9.999999999999999e-05,
+        "rounding_half_unit": 0,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S1",
+        "row_id": "100",
+        "quantity": "dt",
+        "reported_value": 0.0003,
+        "numerical_value": 0.0005,
+        "display_format": ".5g",
+        "source_pdf_page": 17,
+        "numerical_display": "0.0005",
+        "manuscript_display": "0.0003",
+        "absolute_error": 0.00020000000000000004,
+        "rounding_half_unit": 0,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S1",
+        "row_id": "200",
+        "quantity": "dt",
+        "reported_value": 0.0002,
+        "numerical_value": 0.00025,
+        "display_format": ".5g",
+        "source_pdf_page": 17,
+        "numerical_display": "0.00025",
+        "manuscript_display": "0.0002",
+        "absolute_error": 4.9999999999999996e-05,
+        "rounding_half_unit": 0,
+        "agrees_at_printed_precision": false
+      },
+      {
+        "table_id": "S1",
+        "row_id": "300",
+        "quantity": "dt",
+        "reported_value": 0.00015,
+        "numerical_value": 0.0002,
+        "display_format": ".5g",
+        "source_pdf_page": 17,
+        "numerical_display": "0.0002",
+        "manuscript_display": "0.00015",
+        "absolute_error": 5.000000000000002e-05,
+        "rounding_half_unit": 0,
+        "agrees_at_printed_precision": false
+      }
+    ],
+    "figures_added": [
+      "Fig. S2",
+      "Fig. S3",
+      "Fig. S5",
+      "Fig. S7",
+      "Fig. S9"
+    ],
+    "tables_new_manuscript_transcriptions": [
+      "Table S7",
+      "Table S8",
+      "Table S9"
+    ],
+    "long_time_summary": "data/centered/tables/README.md#long-time-summary",
+    "historical_names": "s4_* and s7_* retain their earlier package scope; not revised paper numbering",
+    "proof_limits": "PDF transcriptions and figure extracts are presentation evidence, not independent reconstruction"
   }
 }

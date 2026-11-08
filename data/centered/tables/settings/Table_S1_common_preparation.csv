@@ -1,0 +1,2 @@
+L_nominal,source_z,kz,kappa,sigma_amplitude,theta,phi,T_final,terminal_mass_weight,gmres_rtol,gmres_atol,gmres_restart,gmres_maxiter
+20,10,3.1415926535897931,3.1415926535897931,0.5,0,0,40,0.5,1e-08,0,30,1000

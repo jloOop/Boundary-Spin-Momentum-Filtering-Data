@@ -2,6 +2,8 @@
 
 The centered manuscript workflow is `reproduce_centered.py`, with checks in `verify_centered.py` and small CPU modules in `centered/`. See [REPRODUCING.md](../REPRODUCING.md) for the tested commands and [source distinctions](../PROJECT_SCOPE.md). It reads only committed compact records, never imports a production solver, and writes to ignored `build/`.
 
+The [supplementary table renderer](render_supplement_tables.py) reads canonical CSVs and writes the [table catalog](../data/centered/tables/README.md). Its `--check` mode detects stale presentation without modifying data, and is included in the centered verifier.
+
 The original top-level loader programs and their behavior are retained. They belong to the legacy output formats:
 
 | Existing path | Actual required inputs / limitation |
