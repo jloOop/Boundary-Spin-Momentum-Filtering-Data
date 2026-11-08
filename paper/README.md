@@ -3,3 +3,4 @@
 
 This folder contains the manuscript/preprint PDF associated with the repository.
 
+https://arxiv.org/abs/2606.25650
