@@ -1,0 +1,109 @@
+{
+  "source_csv": "R/4.Sweep_Scan_Controls/7.Long_Run_T=200/7810.Spin_Gauss_centeredABC_Omega=200_L=20_T=200_Nz=1500_complex64_LongTime_v1_full_job3793376/revision_step_data.csv",
+  "source_metadata": "R/4.Sweep_Scan_Controls/7.Long_Run_T=200/7810.Spin_Gauss_centeredABC_Omega=200_L=20_T=200_Nz=1500_complex64_LongTime_v1_full_job3793376/revision_run.json",
+  "density_definition": "roof_probability / (t_right - t_left) / P0_init64",
+  "normalization": "Unconditioned; divide once by initial norm, not by detected fraction.",
+  "time_units": "Simulation natural units (hbar = m = 1); no SI conversion applied.",
+  "gaussian_definition": "psi0(z) proportional to exp[-(z-z0)^2/(2*sigma_z^2) + i*k0*(z-z0)]; free full-line current evaluated at actual detector coordinate.",
+  "comparison_caveat": "Comparison flux, not a detector-click probability density: free full-line evolution with no detector or reflecting lower boundary, not exact finite-guide evolution.",
+  "free_comparison_plane_convention": "Stored numerical detecting plane, preserving the original plotting code's z_roof_actual convention.",
+  "free_comparison_z_plane": 19.986665725708008,
+  "free_comparison_plotted": false,
+  "configuration": {
+    "omega": 200.0,
+    "Lz": 20.0,
+    "z_roof_actual": 19.986665725708008,
+    "k_bc": 3.141592653589793,
+    "k0": 3.141592653589793,
+    "sigma_z": 0.5,
+    "z0_init": 10.0,
+    "theta": 0.0,
+    "phi": 0.0
+  },
+  "plot_xlim": [
+    0,
+    200.0
+  ],
+  "plot_ylim": [
+    -0.02,
+    0.424
+  ],
+  "inset_xlim": [
+    8.0,
+    200.0
+  ],
+  "nested_inset_xlim": [
+    80.0,
+    200.0
+  ],
+  "figure_size_inches": [
+    12.0,
+    7.4
+  ],
+  "inset_bounds_in_main_axes": [
+    0.17,
+    0.18,
+    0.79,
+    0.63
+  ],
+  "nested_inset_bounds_in_first_inset": [
+    0.42,
+    0.43,
+    0.55,
+    0.47
+  ],
+  "displayed_window_detection_probabilities": [
+    {
+      "panel": "Main plot",
+      "time_start": 0.0,
+      "time_end": 200.0,
+      "probability": 0.9430704058940796,
+      "percent": 94.30704058940796
+    },
+    {
+      "panel": "First inset",
+      "time_start": 8.0,
+      "time_end": 200.0,
+      "probability": 0.48280296426781255,
+      "percent": 48.280296426781256
+    },
+    {
+      "panel": "Nested inset",
+      "time_start": 80.0,
+      "time_end": 200.0,
+      "probability": 0.06258904131246679,
+      "percent": 6.258904131246679
+    }
+  ],
+  "window_probability_note": "Unconditional detector probability within each interval. The displayed windows overlap and must not be summed.",
+  "figure_style": {
+    "detector_color": "#000000",
+    "detector_linewidth_pt": 1.1,
+    "free_current_color": "#505050",
+    "free_current_linewidth_pt": 1.6,
+    "axes_linewidth_pt": 0.65,
+    "tick_direction": "out",
+    "tick_width_pt": 0.7,
+    "major_tick_length_pt": 4,
+    "minor_tick_length_pt": 2,
+    "font_note": "DejaVu Sans, matching the screenshot's Matplotlib styling."
+  },
+  "P0_init64": 1.0000000002057592,
+  "native_steps": 800000,
+  "plot_bins": 20000,
+  "nominal_bin_width": 0.00999999999999801,
+  "binning": "Sum detector events in consecutive bins and divide by bin duration; no fitted smoothing.",
+  "native_peak_time": 2.294875,
+  "native_peak_density": 0.22523929685652033,
+  "binned_peak_density": 0.2251921419191107,
+  "D_40": 0.784045703944049,
+  "D_80": 0.8804813645816129,
+  "D_100": 0.9006784670616796,
+  "D_200": 0.9430704058940796,
+  "D_plot_horizon": 0.9430704058940796,
+  "D_saved_horizon": 0.9430704058940796,
+  "final_survival": 0.0569292487518397,
+  "max_abs_probability_budget_residual": 3.459007175132811e-07,
+  "binning_integral_error": 2.220446049250313e-16,
+  "run_status": "COMPLETED_NUMERICAL_RUN_NOT_CONVERGENCE_CERTIFIED"
+}

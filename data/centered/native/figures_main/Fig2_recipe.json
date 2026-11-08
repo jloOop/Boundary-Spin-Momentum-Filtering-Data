@@ -1,0 +1,19 @@
+{
+  "fit": {
+    "A": 5.463178896745747,
+    "B": 0.7839921409089937,
+    "R_squared": 0.9931153886949268,
+    "RMSE": 0.31775771572305445,
+    "SSE": 0.807759727212268,
+    "model": "A+B*sqrt(omega)",
+    "n_points": 8,
+    "method": "Unweighted ordinary least squares on all eight calculated values",
+    "fit_domain": [
+      1.0,
+      300.0
+    ]
+  },
+  "processing": "No smoothing, time shifts, extrapolation, binning, conditioning, or fabricated values. Fits use all eight points.",
+  "identity_status": "identified archived export; exact October28 embedded-image identity unconfirmed",
+  "source_package": "R/1.Main/Fig2_centered_without400_lower_inset_2026-10-18"
+}

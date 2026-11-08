@@ -1,0 +1,21 @@
+{
+  "D_top": 0.9054140425814298,
+  "E_lower": 0.061563527222215884,
+  "M1_lower": 0.9338671680798964,
+  "M1_top": 3.499269648117606,
+  "S": 0.03302226135728139,
+  "integration": "CN event rates constant on accepted intervals; survival linearly interpolated on every accepted endpoint",
+  "lower_conditional_mean": 15.169162817930616,
+  "max_abs_mu_exit_identity_residual": 7.985579664193665e-07,
+  "max_abs_mu_top_identity_residual": 1.936228954946273e-13,
+  "max_abs_two_channel_budget_residual": 1.6884426842778133e-07,
+  "mean_semantics": "mu_top_capped=integral(1-D_top), lower escapes assigned no top click; mu_exit=integral(S)",
+  "mu_exit": 5.7540280688389345,
+  "mu_exit_identity_residual": 7.983501761898992e-07,
+  "mu_top_capped": 7.2827079448602925,
+  "mu_top_identity_residual": -1.234568003383174e-13,
+  "probability_semantics": "D_top=top detector; E_lower=lower escape; S=still inside both channels",
+  "time": 40.0,
+  "top_conditional_mean": 3.8648281156992264,
+  "two_channel_budget_residual": 1.6883907297954304e-07
+}

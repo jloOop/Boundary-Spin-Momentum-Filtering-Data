@@ -1,0 +1,45 @@
+# Scope, evidence and source-version differences
+
+This repository accompanies the supplied **28 October 2026** detector-only manuscript and Supplement. The model is a Cartesian spinor waveguide with an absorbing detector and nonunitary no-click evolution. No Task01–Task09 open-system data, transverse bath, or oscillator-channel norm is used.
+
+The [manifest](data/centered/provenance/manifest.json) is the authoritative distributed asset/run map. The [gallery](data/centered/README.md) covers all main Figs. 1–3, supplementary Figs. S1–S13 and Tables S1–S12, including unavailable items. A displayed archived export, a derived-data replot, native-record observable recomputation, and a fresh simulation/restart are different levels. There are no complete restart states; the saved-data workflow does not run a GPU solver.
+
+## Source-version differences
+
+| Item | Distributed provenance and unresolved qualification |
+|---|---|
+| Main reference set | ω=1,25,50,75,100,150,200,300 maps to 5540,5042,5047,5043,5541,5044,5045,7100. Source center10, L20, kz=κ=π, amplitude width0.5, spinor(1,0), Tmax40. |
+| Fig. 1a / 1b | Identified Oct23 exports use7706 atω300. The separately selected b-panel hasω1,50,150,300; the b-panel in the a-package instead uses1,50,100,300 and is not displayed. |
+| Fig. 2 | Uses7100 atω300 and the original Simpson recipe. Its unrounded fit is approximately5.463178896746+0.783992140909√ω. The Supplement's piecewise-linear-survival method is computed and reported separately; coefficients are never silently transferred to a refined run set. |
+| Fig. 3 | The displayed Oct23 export uses7706. Its T10/20/30/40 values come from the same selected histories. Baseline horizon statistics are also recomputed and explicitly distinguished. |
+| Fig. S1 / Tables S2–S4 | Baseline7100, not7706. Branch rates, event-spin and whole-survivor matrices have distinct time axes and normalizations. |
+| Table S1 | For ascending referenceω, manuscript dt=(10,8,7,5,3,2.5,2,1.5)×10⁻⁴; actual baseline configuration dt=(10,8,8,4,5,2.5,2.5,2)×10⁻⁴. Accepted intervals and any final-step shortening are checked independently. Neither statement is edited to agree with the other. |
+| Table S5 | Exact quartet7100,7102,7101,7706. Longitudinal7101 hasNz2999 with fixed numerical boundaries. Later7105/Nz4000 is not substituted. The old three-run analysis is an archived comparison, not a final four-run exporter; the new adapter reports its own explicit reconstruction. Printed baseline D=0.739 differs from native0.739745… (rounds0.740); transverse D=0.742 differs from0.742545… (rounds0.743). Printed longitudinal mean discrepancy1.823% differs from1.823508…% (rounds1.824%). These precision discrepancies do not change the archived values or comparison tolerances. |
+| Scalar S2 controls | Located derived provenance uses a legacy one-sided roof and full terminal weight, with survival reconstruction. Scalar native histories are not bundled; they are not assigned the centered spinor metric. |
+| Figs. S3/S5/S7 | Legacy one-sided profiles and preparation differences remain qualified. Original S7 inputs are missing. Incomplete centered width alternatives ending near17.7–17.8 are not substituted for a T20 result. |
+| Fig. S9 | Its manuscript caption describes differentiation of saved norms; the identified local candidate instead uses native detector events. The discrepancy is retained; this is not claimed as exact caption-method reproduction. |
+| Fig. S2 / Tables S7–S8 | Generic and impedance-calibrated layer results remain manuscript-reported. Original numerical inputs are not bundled; no layer data are manufactured. |
+| Table S10 | The located legacy reduction script imports a missing provenance helper. Archived parameter tables are displayed by a portable adapter, not represented as an independent native recomputation. |
+| Fig. S13 | Available norms reach200. The manuscript's estimate uses logged survival at189.95. The displayed archived-profile derivative and norm check are labeled by their support; no unrestricted mean is inferred. |
+
+Exact identity between the selected local image exports and the current manuscript's embedded images has not been established. Figure captions therefore say “identified archived export” or “candidate.” The alternative “eight-point” evaluation includingω400 instead of300 and the old T20fit4.084+0.638√ω are separate historical products, not replacements for main Eq.(12).
+
+## Numerical definitions and limits
+
+The revised roof closure uses centered ghost points and a compatible terminal half-weight norm. Stored coordinates exclude the nominal endpoint: use the recorded numerical roof, grid spacings, launch norm and precision fields. Coordinate/state/matrix/solve precision can differ. Accepted-step intervals, plane sampling, branch/spin diagnostics and possible movie-frame clocks must not be merged by array index.
+
+Native roof probabilities are integrated with constant within-step rates and exact interval overlap, including a straddling horizon. First moments integrate time over that overlap. Stored survival is integrated with its declared interpolation rule. EventD and1−S are retained separately with measured discrepancy. Cast/clamp corrections are numerical bookkeeping, not detection. Event rate, sampled roof-density rate and current entering the terminal numerical cell differ in part through terminal-cell storage.
+
+Table S5's restricted-mean discrepancy uses the refined mean in its denominator. Rate discrepancies use baseline window probabilities; the branch discrepancy includes plus, minus and neutral sectors and the baseline sampled-roof integral. Absolute differences use union grids and preserve linear-difference zero crossings. Validity masks are respected rather than bridging missing auxiliary intervals. For the fixed-boundary longitudinal comparison, the reconstructed restricted-mean discrepancy is1.8235%, while late CN-profile and branch discrepancies are9.5797% and9.8569%. Halving the timestep gives0.0308% for the mean but5.3321% for the late CN profile. Small mean differences therefore do not establish detailed-profile convergence.
+
+The diagnostic contrasts concern momentum-dependent boundary branches and laboratory-z ensembles. Equal local branch absorption probabilities can coexist with unequal evolved trace weights and different reflection phases. Integrated detector polarization is a ratio of integrated event/spin weights, not an unweighted average of instantaneous polarization. The whole survivor is not an isolated reflected packet.
+
+For two absorbing boundaries, S_in+D_top+E_lower≈1, and no-upper-click probability is S_in+E_lower. Consequently the capped upper-click mean is not simply the integral of interior survival. Lower escape is never counted as an upper event. Finite-guide memory is not equated with bath non-Markovianity, and individual oscillations are not assigned unique round trips.
+
+## What is and is not distributed
+
+The compact exports retain all rows of selected native columns at binary64 precision (integer step counts remainint64); lossless compression changes container bytes, not numerical values. The manifest records full original CSV hashes, parsed-column hashes/equality checks, distributed hashes, parser conventions and transformations. Coarse norm samples are not substituted for full accepted-step histories. Selected machine-specific paths are replaced by aliases in text/configuration/source copies; original research files are untouched.
+
+Missing monitor-current traces and complex spectral fields limit independent auxiliary/peak-timing reconstruction. The inward continuation is not a physical layer, its covariance does not determine the empirical fit, and the reduced return-kernel closure is an assumed interpretation rather than the production simulator. Layer entrance matching does not establish equality of complete detection-time laws.
+
+The protected [legacy animation collection](data/3DGifs_Simulations/) and all existing releases/URLs remain unchanged. These movies have their own preparations and scaling; autoscaled brightness cannot prove probability conservation or absorption efficiency. Existing numerical/solver/loader paths are preserved. No complete inventory, private correspondence, referee materials, manuscript source or supplied PDF is published.

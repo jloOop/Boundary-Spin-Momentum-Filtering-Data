@@ -1,0 +1,346 @@
+{
+  "script": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/S9_4_fixed_source_T40_2026-10-20/scripts/plot_currents.py",
+  "script_sha256": "1e001be285b8ac2f9f45163a44fcb5e8bac652e524fd5226080dbe6073988b21",
+  "python": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:54:21) [Clang 16.0.6 ]",
+  "numpy": "2.4.4",
+  "matplotlib": "3.10.8",
+  "root": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output",
+  "output": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/S9_4_fixed_source_T40_2026-10-20",
+  "quantity": "stored endpoint bond_current = bond_current_raw / initial_norm_squared",
+  "sign_convention": "positive toward the detector",
+  "temporal_cell_edges": "midpoints of adjacent native profile_time samples; outer edges clipped to 0 and 40",
+  "spatial_cell_edges": "native nodal z; each bond occupies its two endpoint nodes",
+  "interpolation": "none",
+  "smoothing": "none",
+  "temporal_or_spatial_resampling": "none",
+  "panel_shifting_or_panelwise_rescaling": "none",
+  "normalization_applied_during_plot": "none; normalized bond_current validated against raw/P0",
+  "same_color_cell_merging": "exact-color vertical runs, extended only when identical in adjacent time columns",
+  "color_map": {
+    "name": "RdBu_r",
+    "lut_entries": 256,
+    "lut_rgba_sha256": "a2c4a605bb69ebe4dc559707830c73583d0cacc99f56392e3725d14fd860b232",
+    "normalization": "SymLogNorm",
+    "vmin": -0.65,
+    "vmax": 0.65,
+    "linthresh": 0.002,
+    "linscale": 1.0,
+    "base": 10,
+    "same_scale_for_both_figures": true,
+    "per_panel_rescaling": false,
+    "display_cap": true,
+    "display_cap_note": "Common visual display limits +/-0.65; currents beyond these limits retain their numerical values and use the colormap endpoint colors.",
+    "colorbar_extend": "both",
+    "ticks": [
+      -0.1,
+      -0.01,
+      0.0,
+      0.01,
+      0.1
+    ],
+    "style_precedent": "2_FirstAcuuracy_Scripts_Run/R4_ScalarABC_check_LowereWall_Check/Output/Fig_S11_reproduction/reproduce_Fig_S11.py",
+    "style_precedent_lines": "38-40, 244-254, 270-276, 405",
+    "normalization_provenance": "Matches the prior Fig_S11_reproduction display settings. That source explicitly reports inference from the reference PDF colorbar, not recovery of original plotting code. The display mapping is applied identically to all five unchanged current histories."
+  },
+  "axes": {
+    "time_limits": [
+      0.0,
+      40.0
+    ],
+    "z_limits": [
+      -15.0,
+      20.3
+    ],
+    "monitor_bond_z": [
+      16.006667137145996,
+      18.006667137145996
+    ],
+    "outside_guide_color": "#e6e6e6"
+  },
+  "cases": [
+    {
+      "case_id": 7750,
+      "source_directory": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/7750.Spin_Gauss_centeredABC_Omega=200_zB=0_zc=10_L=20_T=40_Nxy=100_Nz=1500_dt=0.0003_fixed_source_v1_full_job3725860",
+      "source_npz_sha256": "cb9214105908b5525f8ff81f393fffbf15e18ff794845315bc524dceea8bff99",
+      "omega": 200.0,
+      "z_bottom": 0.0,
+      "z_detector": 19.986665725708008,
+      "profile_shape_time_by_bond": [
+        1349,
+        1499
+      ],
+      "native_samples": 2022151,
+      "profile_time_first": 0.0,
+      "profile_time_last": 40.0,
+      "profile_dt_min": 0.0026999999999990365,
+      "profile_dt_max": 0.030000000000001137,
+      "initial_norm_squared": 1.0000000002057592,
+      "profile_state": "stored_endpoint",
+      "stored_normalization": "quantities without _raw are divided by initial weighted norm squared",
+      "max_abs_raw_divided_P0_minus_normalized": 0.0,
+      "raw_divided_P0_bitwise_equal_to_normalized": true,
+      "minimum_current": -0.1481983231011631,
+      "maximum_current": 3.542607256542998,
+      "maximum_absolute_current": 3.542607256542998,
+      "samples_outside_shared_color_limits": 6947,
+      "maximum_excess_over_shared_color_limit": 2.892607256542998,
+      "positive_saturation_count": 6947,
+      "negative_saturation_count": 0,
+      "positive_saturation_fraction": 0.003435450666147088,
+      "negative_saturation_fraction": 0.0,
+      "total_saturation_fraction": 0.003435450666147088,
+      "saturation_fraction_denominator": "all native endpoint-current cells; unweighted sample count",
+      "monitor_bond_z": [
+        16.006667137145996,
+        18.006667137145996
+      ],
+      "all_native_time_samples_retained": true,
+      "all_native_bond_samples_retained": true,
+      "vertical_color_runs": 1119228,
+      "merged_vector_rectangles": 1068179,
+      "color_mapping_reconstruction_exact": true,
+      "native_cell_coverage_exactly_once": true
+    },
+    {
+      "case_id": 7751,
+      "source_directory": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/7751.Spin_Gauss_centeredABC_Omega=200_zB=-5_zc=10_L=25_T=40_Nxy=100_Nz=1875_dt=0.0003_fixed_source_v1_full_job3725861",
+      "source_npz_sha256": "973eac1c20a986af99965ef2132c7b7c45511217e3f6172b8c3fd61965de790b",
+      "omega": 200.0,
+      "z_bottom": -5.0,
+      "z_detector": 19.986665725708008,
+      "profile_shape_time_by_bond": [
+        1352,
+        1874
+      ],
+      "native_samples": 2533648,
+      "profile_time_first": 0.0,
+      "profile_time_last": 40.0,
+      "profile_dt_min": 0.000600000000000378,
+      "profile_dt_max": 0.030000000000001137,
+      "initial_norm_squared": 1.0000000002057592,
+      "profile_state": "stored_endpoint",
+      "stored_normalization": "quantities without _raw are divided by initial weighted norm squared",
+      "max_abs_raw_divided_P0_minus_normalized": 0.0,
+      "raw_divided_P0_bitwise_equal_to_normalized": true,
+      "minimum_current": -0.1479539322622612,
+      "maximum_current": 3.542607256542998,
+      "maximum_absolute_current": 3.542607256542998,
+      "samples_outside_shared_color_limits": 6947,
+      "maximum_excess_over_shared_color_limit": 2.892607256542998,
+      "positive_saturation_count": 6947,
+      "negative_saturation_count": 0,
+      "positive_saturation_fraction": 0.002741896269726497,
+      "negative_saturation_fraction": 0.0,
+      "total_saturation_fraction": 0.002741896269726497,
+      "saturation_fraction_denominator": "all native endpoint-current cells; unweighted sample count",
+      "monitor_bond_z": [
+        16.006667137145996,
+        18.006667137145996
+      ],
+      "all_native_time_samples_retained": true,
+      "all_native_bond_samples_retained": true,
+      "vertical_color_runs": 1375824,
+      "merged_vector_rectangles": 1313597,
+      "color_mapping_reconstruction_exact": true,
+      "native_cell_coverage_exactly_once": true
+    },
+    {
+      "case_id": 7752,
+      "source_directory": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/7752.Spin_Gauss_centeredABC_Omega=200_zB=-10_zc=10_L=30_T=40_Nxy=100_Nz=2250_dt=0.0003_fixed_source_v1_full_job3725862",
+      "source_npz_sha256": "e85de29da7b93dc54296f06fe5ac21945860d2e60b9423bba199db5973f6b2df",
+      "omega": 200.0,
+      "z_bottom": -10.0,
+      "z_detector": 19.986665725708008,
+      "profile_shape_time_by_bond": [
+        1354,
+        2249
+      ],
+      "native_samples": 3045146,
+      "profile_time_first": 0.0,
+      "profile_time_last": 40.0,
+      "profile_dt_min": 0.000600000000000378,
+      "profile_dt_max": 0.030000000000001137,
+      "initial_norm_squared": 1.0000000002057592,
+      "profile_state": "stored_endpoint",
+      "stored_normalization": "quantities without _raw are divided by initial weighted norm squared",
+      "max_abs_raw_divided_P0_minus_normalized": 0.0,
+      "raw_divided_P0_bitwise_equal_to_normalized": true,
+      "minimum_current": -0.14801705484637478,
+      "maximum_current": 3.542607256542998,
+      "maximum_absolute_current": 3.542607256542998,
+      "samples_outside_shared_color_limits": 6947,
+      "maximum_excess_over_shared_color_limit": 2.892607256542998,
+      "positive_saturation_count": 6947,
+      "negative_saturation_count": 0,
+      "positive_saturation_fraction": 0.0022813356075537922,
+      "negative_saturation_fraction": 0.0,
+      "total_saturation_fraction": 0.0022813356075537922,
+      "saturation_fraction_denominator": "all native endpoint-current cells; unweighted sample count",
+      "monitor_bond_z": [
+        16.006667137145996,
+        18.006667137145996
+      ],
+      "all_native_time_samples_retained": true,
+      "all_native_bond_samples_retained": true,
+      "vertical_color_runs": 1642618,
+      "merged_vector_rectangles": 1567531,
+      "color_mapping_reconstruction_exact": true,
+      "native_cell_coverage_exactly_once": true
+    },
+    {
+      "case_id": 7753,
+      "source_directory": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/7753.Spin_Gauss_centeredABC_Omega=200_zB=-15_zc=10_L=35_T=40_Nxy=100_Nz=2625_dt=0.0003_fixed_source_v1_full_job3725863",
+      "source_npz_sha256": "deec5d48f41fd836b2a6b96cac2b61bf5b188200d3e43bf41647291483ba018c",
+      "omega": 200.0,
+      "z_bottom": -15.0,
+      "z_detector": 19.986665725708008,
+      "profile_shape_time_by_bond": [
+        1359,
+        2624
+      ],
+      "native_samples": 3566016,
+      "profile_time_first": 0.0,
+      "profile_time_last": 40.0,
+      "profile_dt_min": 0.0008999999999996788,
+      "profile_dt_max": 0.030000000000001137,
+      "initial_norm_squared": 1.0000000002057592,
+      "profile_state": "stored_endpoint",
+      "stored_normalization": "quantities without _raw are divided by initial weighted norm squared",
+      "max_abs_raw_divided_P0_minus_normalized": 0.0,
+      "raw_divided_P0_bitwise_equal_to_normalized": true,
+      "minimum_current": -0.14805089304828944,
+      "maximum_current": 3.542607256542998,
+      "maximum_absolute_current": 3.542607256542998,
+      "samples_outside_shared_color_limits": 6947,
+      "maximum_excess_over_shared_color_limit": 2.892607256542998,
+      "positive_saturation_count": 6947,
+      "negative_saturation_count": 0,
+      "positive_saturation_fraction": 0.0019481124033094636,
+      "negative_saturation_fraction": 0.0,
+      "total_saturation_fraction": 0.0019481124033094636,
+      "saturation_fraction_denominator": "all native endpoint-current cells; unweighted sample count",
+      "monitor_bond_z": [
+        16.006667137145996,
+        18.006667137145996
+      ],
+      "all_native_time_samples_retained": true,
+      "all_native_bond_samples_retained": true,
+      "vertical_color_runs": 1865285,
+      "merged_vector_rectangles": 1781896,
+      "color_mapping_reconstruction_exact": true,
+      "native_cell_coverage_exactly_once": true
+    },
+    {
+      "case_id": 7754,
+      "source_directory": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/7754.Spin_Gauss_centeredABC_Omega=1_zB=-15_zc=10_L=35_T=40_Nxy=100_Nz=2625_dt=0.001_fixed_source_v1_full_job3725864",
+      "source_npz_sha256": "d974ed3a0dc11e821a4e22c5d19591584c93950d891276f2ed93d7acefda057b",
+      "omega": 1.0,
+      "z_bottom": -15.0,
+      "z_detector": 19.986665725708008,
+      "profile_shape_time_by_bond": [
+        1340,
+        2624
+      ],
+      "native_samples": 3516160,
+      "profile_time_first": 0.0,
+      "profile_time_last": 40.0,
+      "profile_dt_min": 0.007999999999999119,
+      "profile_dt_max": 0.030000000000001137,
+      "initial_norm_squared": 1.0000000007063083,
+      "profile_state": "stored_endpoint",
+      "stored_normalization": "quantities without _raw are divided by initial weighted norm squared",
+      "max_abs_raw_divided_P0_minus_normalized": 0.0,
+      "raw_divided_P0_bitwise_equal_to_normalized": true,
+      "minimum_current": -0.02572859813186621,
+      "maximum_current": 3.5426072651620015,
+      "maximum_absolute_current": 3.5426072651620015,
+      "samples_outside_shared_color_limits": 6948,
+      "maximum_excess_over_shared_color_limit": 2.8926072651620016,
+      "positive_saturation_count": 6948,
+      "negative_saturation_count": 0,
+      "positive_saturation_fraction": 0.001976019293775027,
+      "negative_saturation_fraction": 0.0,
+      "total_saturation_fraction": 0.001976019293775027,
+      "saturation_fraction_denominator": "all native endpoint-current cells; unweighted sample count",
+      "monitor_bond_z": [
+        16.006667137145996,
+        18.006667137145996
+      ],
+      "all_native_time_samples_retained": true,
+      "all_native_bond_samples_retained": true,
+      "vertical_color_runs": 1647575,
+      "merged_vector_rectangles": 1594446,
+      "color_mapping_reconstruction_exact": true,
+      "native_cell_coverage_exactly_once": true
+    }
+  ],
+  "figures": [
+    {
+      "stem": "fig_S11_fixed_source_omega200_4panel",
+      "case_ids": [
+        7750,
+        7751,
+        7752,
+        7753
+      ],
+      "size_inches": [
+        8.0,
+        6.5
+      ],
+      "png_dpi": 600,
+      "png_pixels": [
+        4800,
+        3900
+      ],
+      "preview_dpi": 200,
+      "png_1200dpi_file": "fig_S11_fixed_source_omega200_4panel_1200dpi.png",
+      "png_1200dpi_dpi": 1200,
+      "png_1200dpi_pixels": [
+        9600,
+        7800
+      ],
+      "png_1200dpi_bytes": 15354428,
+      "png_1200dpi_sha256": "d2d60e65c4d6aa9371a0e6916a5b8a9dfda327bcce3c6d351ceebca707936ac6",
+      "pdf_image_xobjects": 0,
+      "pdf_true_vector": true,
+      "pdf_bytes": 43421050,
+      "png_bytes": 8380739,
+      "pdf_render_generation_seconds": 45.476232125016395,
+      "pdf_sha256": "9697c1a1121a61c5728ca5be8af201b470ed275098bc2fc7ca9ba62aa13684e5",
+      "png_sha256": "54110497d52546cfd35b9ac4e56e4208976230c9fb1214ac7461faaf47b2d62c",
+      "preview": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/S9_4_fixed_source_T40_2026-10-20/validation/fig_S11_fixed_source_omega200_4panel_preview.png"
+    },
+    {
+      "stem": "fig_S11_fixed_source_omega1_zBm15",
+      "case_ids": [
+        7754
+      ],
+      "size_inches": [
+        8.0,
+        3.8
+      ],
+      "png_dpi": 600,
+      "png_pixels": [
+        4800,
+        2280
+      ],
+      "preview_dpi": 200,
+      "png_1200dpi_file": "fig_S11_fixed_source_omega1_zBm15_1200dpi.png",
+      "png_1200dpi_dpi": 1200,
+      "png_1200dpi_pixels": [
+        9600,
+        4560
+      ],
+      "png_1200dpi_bytes": 4829901,
+      "png_1200dpi_sha256": "98ba28b4ea104f05c5fa87105d8748566438c303c0f2d6b33eb83a61c7915580",
+      "pdf_image_xobjects": 0,
+      "pdf_true_vector": true,
+      "pdf_bytes": 11594407,
+      "png_bytes": 3124658,
+      "pdf_render_generation_seconds": 11.226515292015392,
+      "pdf_sha256": "5e0fac05ce89ff3c706312be76df720ffcf1663c38f99e5069a0c51a47899e5e",
+      "png_sha256": "a264e86736cb80e2a022d5daea25f6e3f750f57f48c95901ba93786519baf129",
+      "preview": "R/4.Sweep_Scan_Parameters/5.BottumWall/Output/S9_4_fixed_source_T40_2026-10-20/validation/fig_S11_fixed_source_omega1_zBm15_preview.png"
+    }
+  ]
+}

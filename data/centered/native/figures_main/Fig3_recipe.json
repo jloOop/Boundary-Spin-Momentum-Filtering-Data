@@ -1,0 +1,80 @@
+{
+  "definitions": {
+    "D_T": "sum covered roof_probability/P0_init64",
+    "M_T": "sum clipped interval midpoint times covered roof_probability/P0_init64",
+    "conditional_mean": "M_T/D_T",
+    "mu_star": "Exact integral of native piecewise-linear stored mass/P0_init64 through T"
+  },
+  "endpoint_handling": "Partial event intervals use recorded constant native rates; only the terminal survivor mass is linearly interpolated. No extrapolation.",
+  "roundoff_endpoint_tolerance": 1e-12,
+  "processing": "No smoothing, binning, time shifts of trajectories, conditional curve normalization, or probability-budget corrections. Lines connect computed points.",
+  "figure": {
+    "panel_labels": [
+      "(a)",
+      "(b)",
+      "(c)"
+    ],
+    "ylabels": [
+      "$D_T$",
+      "$\\overline{\\tau}_T^{\\mathrm{cond}}$",
+      "$\\mu^*(T)$"
+    ],
+    "palette": [
+      "#1B0264",
+      "#136384",
+      "#72CE6D",
+      "#E7E656"
+    ],
+    "figsize_inches": [
+      13,
+      4
+    ],
+    "png_dpi": 600,
+    "limits": [
+      {
+        "statistic": "D_T",
+        "xlim": [
+          -1.9900000000000002,
+          302.99
+        ],
+        "ylim": [
+          0.3960241432580725,
+          0.9785001298919882
+        ]
+      },
+      {
+        "statistic": "conditional_mean",
+        "xlim": [
+          -1.9900000000000002,
+          302.99
+        ],
+        "ylim": [
+          2.9124745015666678,
+          11.49780329943614
+        ]
+      },
+      {
+        "statistic": "mu_star",
+        "xlim": [
+          -1.9900000000000002,
+          302.99
+        ],
+        "ylim": [
+          3.536588423956016,
+          19.344121808449476
+        ]
+      }
+    ],
+    "axis_policy": "Original autoscale margins x=.01,y=.05 retained; limits adapt to all eight centered runs through omega300, excluding omega400.",
+    "plotted_values": 96,
+    "all_plotted_artists_equal_calculated_arrays": true
+  },
+  "horizons": [
+    10.0,
+    20.0,
+    30.0,
+    40.0
+  ],
+  "identity_status": "identified archived export; exact October28 embedded-image identity unconfirmed",
+  "source_package": "R/1.Main/Fig3_screenshot_palette_refined300_2026-10-23"
+}

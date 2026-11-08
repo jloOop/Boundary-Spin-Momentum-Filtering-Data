@@ -1,37 +1,11 @@
+# Data guide
 
+| Collection | Role |
+|---|---|
+| [centered/](centered/README.md) | Revised detector-only saved records, selected figures, native reductions and supporting-results gallery. |
+| [processed-summary-diagnostics-tables/](processed-summary-diagnostics-tables/) | Existing legacy summaries and diagnostics, preserved at their public paths. Their older numbering, run selection and T=20 fit are not the revised main result. |
+| [3DGifs_Simulations/](3DGifs_Simulations/) | Protected legacy animation collection and release links, unchanged. Preparations and numerical implementations differ from the revised centered θ=0 reference family. |
 
-# Data and representative media
+The [manifest](centered/provenance/manifest.json) identifies each new distributed record, source hash, transformation, run selection and reproduction level. Compact NPZ exports preserve selected native columns and all rows; they are not byte-identical copies of the original CSVs. No large run folders or manuscript inventory reports are included.
 
-This folder contains selected compact data, processed diagnostics, and representative media for the spinor absorbing-boundary simulations.
-
-The repository is not intended to store every raw GPU/HPC output. Full raw output should remain in scratch/project storage, external archives, or GitHub releases when appropriate.
-
-## Folder map
-
-| Path | Purpose | Notes |
-|---|---|---|
-| `3DGifs_Simulations/` | Representative density animations and selected media | Qualitative visualization; not primary quantitative evidence |
-| `processed-summary-diagnostics-tables/` | Reduced tables, summaries, and processed diagnostic outputs | Best place to inspect compact numerical outputs |
-
-## How to interpret the media
-
-Representative GIFs visualize the evolution of probability density and related slices. For example, a longitudinal marginal or `slices_bar.gif` should be read as qualitative support for propagation, absorption, and delayed structure. It should not be overinterpreted as direct proof of transverse narrowing or as a detector-free arrival-time result.
-
-The quantitative observables are reconstructed from survival / norm-loss arrays and diagnostic summaries:
-
-```math
-S(t;\omega)=\|\Psi_t\|^2,
-\qquad
-g(t;\omega)=-\frac{dS}{dt},
-\qquad
-D_T(\omega)=1-S(T),
-\qquad
-\mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt.
-```
-
-## Data policy
-
-- Commit compact reduced data that is used directly for figures or reproducibility checks.
-- Document selected arrays clearly.
-- Keep raw run folders out of Git unless they are intentionally selected, small, and documented.
-- Use `constants.npz` and `summary.json` as parameter records for individual runs.
+Use native accepted-step roof events for the revised detector probability. Sampled survival, endpoint roof-density rate and terminal-cell inflow are not interchangeable. In lower-absorbing-boundary controls, total norm loss includes escape and cannot be assigned entirely to the upper detector. See [scope](../PROJECT_SCOPE.md) and [tested commands](../REPRODUCING.md).

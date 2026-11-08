@@ -1,305 +1,100 @@
-# Boundary Spin–Momentum Filtering Data
+# Spin–Momentum Impedance and Filtering at a Spin-Coupled Absorbing Boundary
 
-Focused research-code and reproducibility repository for spinor absorbing-boundary simulations in numerical quantum detection theory. The repository contains Python/CuPy solver scripts, CPU-side post-processing, selected reduced data, diagnostic tables, figures, and representative GIFs for a manuscript/preprint on boundary-induced spin–momentum filtering. It is research-code material, not a production software package or physical detector implementation.
+**Alireza Jozani — companion to the manuscript snapshot of 28 October 2026, including its Supplement.**
 
-> **A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_**  
-> Preprint / manuscript-related repository. See [`paper/`](paper/) and [`CITATION.cff`](CITATION.cff) for citation metadata.
+How can transverse confinement change the recorded click-time distribution when the longitudinal bulk Hamiltonian is unchanged? The spin-coupled detecting boundary reads transverse momentum and changes the surviving wave. Its response therefore depends on confinement, while the complete signal also depends on propagation, interference and the finite guide. This is the **detector-only Cartesian study, without an additional transverse environment**. The absorbing detector already makes the no-click evolution nonunitary.
 
-The project studies Pauli/Schrödinger dynamics in a harmonic waveguide with a spin-coupled absorbing boundary at the detecting roof. The repository is intended as research-code and reproducibility material, not as a production software package.
+[Reproduce the saved-data analyses](REPRODUCING.md) · [Supporting figures and tables](data/centered/README.md) · [Scope and source discrepancies](PROJECT_SCOPE.md) · [Existing simulation animations](data/3DGifs_Simulations/)
 
----
+## What the boundary reads
 
-## What this repository demonstrates
-
-| Area | Evidence in this repository |
-|---|---|
-| Numerical quantum dynamics | 3D finite-difference Pauli/Schrödinger evolution in a finite waveguide |
-| Non-Hermitian detector modeling | Spin-coupled absorbing boundary conditions and norm-loss / roof-flux statistics |
-| Scientific computing | Python/CuPy workflows, sparse operators, Crank–Nicolson time stepping, GMRES/Krylov solves |
-| Boundary-mechanism diagnostics | Boundary-symbol, reflection, finite-window, and Duhamel remainder diagnostics |
-| Reproducibility material | Selected scripts, reduced data, processed tables, figures, GIFs, and citation/environment files |
-
----
-
-## Scientific point
-
-The detector observable is the roof flux, equivalently the norm loss of the non-unitary spinor absorbing-boundary evolution,
+For tangential wave vector $\xi$, the boundary symbol and its eigenvalues are
 
 ```math
-g(t;\omega)=\kappa\int_{\Sigma_L}\Psi^\dagger\Psi(x,y,L,t)\,dx\,dy
-= -\frac{d}{dt}\|\Psi_t\|^2 .
+C(\xi)=i\kappa I+(\hat z\times\xi)\cdot\boldsymbol\sigma,
+\qquad R=|\xi|,\qquad \lambda_\pm=i\kappa\pm R.
 ```
 
-For a finite observation window `T`, the main finite-window statistic is the restricted mean detection time,
+At fixed incident normal wave number $k>0$ and detector parameter $\kappa>0$, both local branches have the same one-encounter absorption probability:
 
 ```math
-\mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt,
-\qquad S(t;\omega)=\|\Psi_t\|^2 .
+A_+(k,R)=A_-(k,R)=\frac{4k\kappa}{(k+\kappa)^2+R^2}.
 ```
 
-The key mechanism is local to the spinor absorbing boundary. In tangential Fourier variables, the boundary matrix has two spin–momentum branches,
+Increasing tangential momentum suppresses this local absorption. The reflected phases generally differ between branches, so spin–momentum filtering is not unequal local absorption of two fixed laboratory-spin orientations. For the incident transverse oscillator ground state the characteristic tangential momentum grows as $\sqrt\omega$. That local scale does not determine the whole time distribution or prove a universal square-root law.
+
+## Detection is reshaped, not uniformly delayed
+
+The reference preparation has $L=20$, source center $z_c=10$, $k_z=\kappa=\pi$, Gaussian **amplitude** width $\sigma_\parallel=0.5$, and initial spinor $(1,0)^T$. The numerical roof is at the recorded endpoint-excluded coordinate, approximately $19.986666$, rather than exactly $20$.
+
+![Full-window click-time distributions](data/centered/figures/Fig1a.png)
+
+*Fig. 1a candidate: launch-normalized detector-event density through T=40. The dashed detector-free Gaussian current is a separate comparison, not a click record. This identified archived export uses the half-step case 7706 at ω=300; [inputs](data/centered/native/figures_main/) and [per-item provenance](data/centered/provenance/manifest.json). Exact embedded-manuscript image identity is not asserted.*
+
+![Late-time click distribution detail](data/centered/figures/Fig1b.png)
+
+*Fig. 1b candidate: late-time detail for ω=1,50,150,300, from the separately identified export with the matching confinement subset. It also uses 7706 at ω=300. Late-profile structure remains resolution-sensitive; [native records](data/centered/native/7706/).*
+
+Stronger confinement suppresses prompt detection and changes the relative weight and structure of the tail. The early conditional click time changes only weakly. Over the sampled confinements, the conditional mean increases at T=20,30,40; its T=10 behavior is weak and nonmonotonic. An early/late split is a statistical decomposition, not an identification of each peak with a unique trajectory or round trip.
+
+For density $g(t)$ and survival $S(t)$, three finite-window observables must be distinguished:
 
 ```math
-\lambda_\pm(\xi)=i\kappa\pm |\xi| .
+D_T=\int_0^T g(t)\,dt,\qquad
+\overline\tau_{\rm cond}(T)=\frac{\int_0^T t g(t)\,dt}{D_T},
 ```
-
-For a harmonic transverse ground state,
 
 ```math
-\ell_\perp=\omega^{-1/2},
-\qquad |\xi|\sim \ell_\perp^{-1}\sim \sqrt{\omega} .
+\mu^*(T)=\int_0^T S(t)\,dt
+=D_T\overline\tau_{\rm cond}(T)+T(1-D_T).
 ```
 
-Thus increasing the transverse confinement parameter `omega` changes the local boundary response: it suppresses the prompt roof-flux peak, lowers the detected fraction in a fixed observation window, and shifts part of the detector-present response to later times.
+The identity describes the ideal detector law. Distributed numerical reductions retain event-derived $D_T$, stored survival and their small accounting discrepancy separately; casting and boundary-clamp losses are not clicks.
 
-The fit
+| ω | D₄₀ | Conditional mean | Restricted mean μ*(40) |
+|---:|---:|---:|---:|
+| 1 | 0.952 | 4.663 | 6.358 |
+| 100 | 0.841 | 8.683 | 13.666 |
+| 300 | 0.740 | 11.113 | 18.631 |
+
+These rounded values belong to the **baseline** family, including case 7100 at ω=300. They are recomputed from compact native records and compared with the archived Tables S2–S4. Approximately 26% remains undetected at T=40 for ω=300, contributing substantially to the restricted mean. This is not evidence of permanent non-detection.
+
+![Restricted-mean empirical fit](data/centered/figures/Fig2.png)
+
+*Fig. 2 identified archived export: the baseline eight-point T=40 fit, including 7100. The main reduction separately retains the archived Simpson recipe and the Supplement's piecewise-linear survival check; [inputs and source selection](data/centered/native/figures_main/).*
+
+The reference empirical fit over $\omega\in\{1,25,50,75,100,150,200,300\}$ is
 
 ```math
-\mu^*(20;\omega) \simeq 4.084 + 0.638\sqrt{\omega}
+\mu^*(40;\omega)\simeq 5.463+0.784\sqrt\omega.
 ```
 
-is a finite-window diagnostic for the simulated packet, detector parameter, guide geometry, and observation time. The robust conclusion is the boundary scale `sqrt(omega)`, not universal numerical coefficients.
+Its coefficients summarize this preparation, geometry, detector and finite window. Fit residuals are not numerical-convergence errors, and the old repository's T=20 fit is a separate historical product.
 
----
+![Observation-window comparison](data/centered/figures/Fig3.png)
 
-## Repository map
+*Fig. 3 candidate: detected fraction, conditional mean and restricted mean at T=10,20,30,40 from common histories. This later export uses 7706 at ω=300, unlike Fig. 2. Open the image for full-resolution panel labels; [inputs](data/centered/native/figures_main/) and [version distinctions](PROJECT_SCOPE.md#source-version-differences).*
 
-```text
-Boundary-Spin-Momentum-Filtering-Data/
-├── Solvers/              GPU/CuPy Crank–Nicolson/GMRES solvers and diagnostics
-├── Loaders/              CPU-side post-processing for figures, GIFs, and trajectory plots
-├── data/                 Selected compact data, processed tables, and representative media
-├── paper/                Manuscript / preprint material and citation context
-├── environment.yml       Conda environment without CuPy pinned to a CUDA build
-├── requirements.txt      Lightweight Python dependencies for inspection/post-processing
-├── CITATION.cff          Repository citation metadata
-├── PROJECT_SCOPE.md      Public scope, evidence map, and claim boundaries
-└── README.md             This overview
-```
+## Branch weights and spin describe different ensembles
 
----
+[![Boundary branches and laboratory-z spin](data/centered/figures/FigS1.png)](data/centered/figures/FigS1.png)
 
-## Start here
+*Fig. S1 archived candidate: ω=1,300 branch fractions and laboratory-z polarization through T=40, with baseline 7100. [Native diagnostics](data/centered/native/7100/) and [reproduction levels](REPRODUCING.md) distinguish instantaneous traces from ratios of integrated quantities.*
 
-| Path | Purpose |
-|---|---|
-| [`Solvers/README.md`](Solvers/README.md) | Explains the GPU/CuPy solver and diagnostic scripts |
-| [`Loaders/README.md`](Loaders/README.md) | Explains post-processing for figures, GIFs, and trajectory visualizations |
-| [`data/README.md`](data/README.md) | Explains selected data, reduced outputs, and representative media |
-| [`paper/README.md`](paper/README.md) | Gives manuscript / preprint citation context |
-| [`PROJECT_SCOPE.md`](PROJECT_SCOPE.md) | Summarizes what the repository supports and what it should not be used to claim |
-| [`CITATION.cff`](CITATION.cff) | Citation metadata |
+At ω=300 the integrated plus-branch fraction is approximately 0.946, detector-associated z-polarization approximately 0.097, and final whole-survivor z-polarization nearly 1. Momentum-dependent tangential branches are not fixed laboratory-z spin states. These results concern different weightings and ensembles: they are neither “95% spin-up absorption,” apparatus-spin measurements, nor the polarization of an isolated reflected packet. The neutral branch sector is retained.
 
----
+## Geometry, escape and the long tail
 
-## Main workflow
+The [lower-wall and long-time gallery](data/centered/README.md#geometry-and-the-long-tail) links **Figs. S11–S13 and Tables S11–S12**. Moving the lower wall with source and detector fixed changes late detection while preserving the reported early statistics. At ω=200, adding a partially absorbing lower boundary reduces reported late upper detection from about 0.438 to 0.130. Lower escape is a separate outcome: surviving mass plus upper detection plus lower escape approximately closes the budget. The probability of no upper click includes escaped particles.
 
-```text
-spinor absorbing boundary
-  -> GPU/CuPy finite-difference simulation
-  -> non-unitary roof-flux / norm-loss statistics
-  -> boundary-symbol and reflection diagnostics
-  -> figures, tables, GIFs, and reproducibility notes
-```
+The long-time calculation records substantial detection beyond T=40. The manuscript's logged-survival estimate ends at **189.95**, whereas the available native norm support now reaches **200**. Neither determines the unrestricted mean. Finite-guide memory is not identified here with bath non-Markovianity.
 
-The heavy numerical simulations are in [`Solvers/`](Solvers/). The [`Loaders/`](Loaders/) directory is the analysis layer: it reads completed solver outputs and produces detection-time plots, representative density animations, and trajectory visualizations.
+## Controls, numerical scope and reuse
 
----
+Scalar, bulk-spin, chiral-preparation, source/detector-parameter and geometry controls test specific alternatives, not arbitrary preparations. The [scope document](PROJECT_SCOPE.md) records legacy preparation differences and missing layer/width inputs. The auxiliary inward continuation is not a physical absorber, and its covariance does not determine the empirical fit. The reduced return-kernel closure is an assumed interpretation, not the simulator generating these curves. Layer calibration is a separate manuscript-reported study: better entrance matching need not reproduce an entire click-time law.
 
-## Main scripts
+The centered family uses the ghost-point roof closure and compatible half-weight terminal norm. Integrated branch/spin contrasts survive the tested refinements, while detailed profiles and auxiliary quantities remain sensitive. Actual timesteps disagree with manuscript Table S1; the discrepancy is retained beside the [per-run settings](PROJECT_SCOPE.md#source-version-differences).
 
-| Script | Role | Typical outputs |
-|---|---|---|
-| `Solvers/solver_spinor_abc_gaussian.py` | Main Gaussian spinor-ABC simulation; evolves the 3D spinor wavefunction and records survival/norm-loss data | `prob_times.npy`, `total_probs.npy`, `constants.npz`, `simulation_log.txt` |
-| `Solvers/diagnose_reflection_time_Decomposition.py` | Reflection, time-window, near-roof, and finite-guide-memory diagnostics | `roof_J*.npy`, `kz_*.npy`, `near_roof_mass.npy`, `summary.json` |
-| `Solvers/diagnose_boundary_symbol.py` | Boundary-symbol, covariance, finite-epsilon, and Duhamel diagnostics | `det_rate_toprow.npy`, `bl_rate*.npy`, `duhamel_*`, `boundary_layer_covariance_integrands.npz` |
-| `Loaders/plot_detection_time_distribution.py` | Reconstructs survival, roof flux, detected fraction, restricted mean, and optional trajectory histograms | `arrival_stats_summary.*`, detection-time figures |
-| `Loaders/make_density_gifs.py` | Builds frames and GIFs from saved density snapshots | `midplanes.gif`, `contour_xy.gif`, `slices_bar.gif` |
-| `Loaders/plot_bohmian_trajectories.py` | Plots selected Pauli-current trajectories from saved trajectory arrays | 3D trajectory and projection figures |
+The [unchanged legacy movies](data/3DGifs_Simulations/) have their own configurations and do not reproduce the revised θ=0 family. Autoscaled brightness cannot establish absorption probabilities. No new animation or production simulation is required for this update.
 
----
-
-## Installation
-
-Create the base environment:
-
-```bash
-conda env create -f environment.yml
-conda activate spinor-abc-gaussian-followup
-```
-
-or install the lightweight dependencies directly:
-
-```bash
-pip install -r requirements.txt
-```
-
-The solver scripts require a CUDA-capable GPU and a CuPy build matching the local CUDA version. For example, on a CUDA 12 system:
-
-```bash
-pip install cupy-cuda12x
-```
-
-The `Loaders/` scripts are mainly CPU-side post-processing tools and can usually be inspected without CuPy, provided the required input arrays are available.
-
----
-
-## Example commands
-
-Run from the repository root.
-
-```bash
-mkdir -p runs
-
-OMEGA=300 OUTDIR=./runs python Solvers/solver_spinor_abc_gaussian.py
-
-OMEGA=100 OUTDIR=./runs python Solvers/diagnose_reflection_time_Decomposition.py
-
-OMEGA=200 OUTDIR=./runs NX=100 NY=100 NZ=1500 DT=2.5e-4 TFINAL=20 \
-  python Solvers/diagnose_boundary_symbol.py
-```
-
-For post-processing, first inspect the input-path variables near the top of each loader. Many loaders assume that they are opened or copied into a completed run directory.
-
-```bash
-python Loaders/plot_detection_time_distribution.py
-python Loaders/make_density_gifs.py
-python Loaders/plot_bohmian_trajectories.py
-```
-
-For interactive inspection:
-
-```bash
-jupyter lab
-```
-
----
-
-## Minimal reproducibility path
-
-A representative selected run should contain:
-
-```text
-constants.npz        run parameters and grid metadata
-prob_times.npy       time grid for survival monitoring
-total_probs.npy      survival probability S(t; omega)
-rho_prob_t*.npy      optional selected density snapshots
-summary.json         optional diagnostic metadata
-```
-
-From `prob_times.npy` and `total_probs.npy`, one can reconstruct:
-
-```math
-D_T(\omega)=1-S(T),
-\qquad
-\mu^*(T;\omega)=\int_0^T S(t;\omega)\,dt,
-\qquad
-g(t;\omega)=-\frac{dS}{dt}.
-```
-
-For publication-quality figures, use the same smoothing and plotting pipeline used for the manuscript figures rather than relying only on raw numerical differentiation.
-
----
-
-## Representative media and diagnostic outputs
-
-| Output type | Where to look | Interpretation |
-|---|---|---|
-| Detection-time / roof-flux figures | `data/processed-summary-diagnostics-tables/` and loader outputs | Quantitative finite-window detector-present statistics reconstructed from survival, norm-loss, and roof-flux data |
-| Boundary-symbol / Duhamel diagnostic tables | `data/processed-summary-diagnostics-tables/ReadMe_S7_Boundary_Layer_Duhamel.md`, `s7_boundary_symbol_diagnostics.csv`, `s7_duhamel_depth_sweep.csv`, `s7_finite_epsilon_checks.csv`; generated/checked through `Solvers/diagnose_boundary_symbol.py` | Compact diagnostic checks of the local two-branch boundary-symbol mechanism, finite-epsilon boundary-layer response, and Duhamel-remainder bookkeeping. These are diagnostics of the detector-present boundary mechanism; the physical detector observable remains the roof flux at `z = L`. |
-| Density animations | `data/3DGifs_Simulations/` and repository releases | Qualitative visualization of propagation, absorption, confinement, and delayed density structure |
-| Trajectory plots | loader outputs from `plot_bohmian_trajectories.py` | Monte Carlo samples of the detector-present Pauli-current roof-flux law, not detector-free Bohmian arrival-time predictions |
-
----
-
-## Data policy
-
-This repository is intentionally selective.
-
-- Commit compact processed tables, reduced outputs, representative figures, and documented GIFs.
-- Keep full raw GPU/HPC output in `runs/`, scratch storage, external archives, or GitHub releases when appropriate.
-- Do not treat this repository as a complete raw simulation archive.
-- Use `constants.npz` and `summary.json` as the source of truth for parameters of a specific run.
-
----
-
-## Correct interpretation of trajectories
-
-Bohmian trajectories shown in this repository are Monte Carlo samples of the same detector-present spinor-ABC flux law. They are not a separate no-detector arrival-time proposal.
-
-Use this wording:
-
-```text
-Bohmian trajectory samples of the detector-present spinor-ABC roof-flux law.
-```
-
-Avoid this wording:
-
-```text
-Detector-free Bohmian arrival-time prediction.
-```
-
----
-
-## What I personally implemented
-
-For this manuscript-related repository, I prepared the public research-code and reproducibility material for the spinor absorbing-boundary follow-up project, including:
-
-- spinor-ABC simulation and diagnostic workflows;
-- boundary-symbol, reflection, and finite-window detection-time diagnostics;
-- post-processing scripts for survival/norm-loss curves, detector-time plots, density animations, and trajectory visualizations;
-- selected reduced data, figures, GIFs, and citation/environment files.
-
-The code should be read as research software used to support a theoretical/numerical study, not as a packaged software product or commercial simulation platform.
-
----
-
-## Safe claims and boundaries
-
-This repository supports claims about:
-
-- Python/CuPy scientific-computing workflows;
-- finite-difference Pauli/Schrödinger simulations;
-- Crank–Nicolson time stepping and GMRES/Krylov solves;
-- non-Hermitian absorbing-boundary detector models;
-- roof-flux / norm-loss detection-time statistics;
-- boundary-symbol diagnostics and parameter scans;
-- reduced-data, figure, GIF, and reproducibility organization.
-
-This repository does not claim:
-
-- an experimental physical detector implementation;
-- a universal experimental detector law;
-- a detector-free Bohmian arrival-time model;
-- a production software package;
-- CUDA C/C++ expertise;
-- complete archival storage of every raw HPC output;
-
----
-
-## Related work
-
-- A. Jozani, _Spin–Momentum Impedance and Filtering by a Spin-Coupled Absorbing Boundary Condition_, preprint / manuscript-related work.
-- A. Jozani and R. Tumulka, _Detection Time Distribution Predicted Using Absorbing Boundary Conditions and Imaginary Potentials_, Physical Review Research, accepted / forthcoming.
-
-
-## Author
-
-Alireza Jozani  
-Physics PhD Candidate, University of Tübingen  
-GitHub: [`jloOop`](https://github.com/jloOop)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The saved-data workflow is CPU-only and offline after installation. Start with [REPRODUCING.md](REPRODUCING.md); use [CITATION.cff](CITATION.cff) and the [paper context](paper/README.md) for attribution. Original heavy states, private inventory reports and the supplied manuscript PDF are not distributed here.

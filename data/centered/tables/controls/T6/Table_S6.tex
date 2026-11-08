@@ -1,0 +1,124 @@
+\begin{table}[H]
+\centering
+\begingroup
+\small
+
+% Compact, but not cramped
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.75}
+
+% Slightly stronger outer rules
+\setlength{\heavyrulewidth}{0.10em}
+\setlength{\lightrulewidth}{0.045em}
+
+\caption{Controls at \(T=20\), with two confinement rows per control. From normalized, piecewise-linear survival histories we evaluate \(D_{20}=1-S(20)\), \(\mu^*(20)\), and the absolute late probability \(D_L=S(3.6)-S(20)\). The conditional mean follows from Eq.~\eqref{eq:s34draft:conditional_from_survival}. Entries are rounded independently.}
+\label{tab:SM_S91_controls}
+\label{tab:SM_S91_global_controls}
+
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Control and added Hamiltonian
+& $\omega$
+& $D_{20}$
+& $\bar\tau_{20}^{\mathrm{cond}}$
+& $\mu^*(20)$
+& $D_L$ \\
+\midrule
+
+Reference: $H_a=0$
+& 1
+& 0.925
+& 3.947
+& 5.151
+& 0.348 \\ % 5540
+
+& 100
+& 0.724
+& 5.548
+& 9.534
+& 0.307 \\ % 5541
+
+\midrule
+
+Uniform: $H_a=\pi\sigma_x+\tfrac12\sigma_z$
+& 1
+& 0.928
+& 3.938
+& 5.091
+& 0.350 \\ % 7692
+
+& 100
+& 0.724
+& 5.549
+& 9.536
+& 0.307 \\ % 7693
+
+\midrule
+
+Radial: $H_a=0.2\sqrt{\omega}(X\sigma_x+Y\sigma_y)$
+& 1
+& 0.923
+& 3.935
+& 5.165
+& 0.346 \\ % 7694
+
+& 100
+& 0.723
+& 5.556
+& 9.554
+& 0.307 \\ % 7695
+
+\midrule
+
+Rashba: $H_a=0.5(\sigma_xp_y-\sigma_yp_x)$
+& 1
+& 0.920
+& 4.111
+& 5.375
+& 0.356 \\ % 7696
+
+& 100
+& 0.707
+& 5.690
+& 9.883
+& 0.306 \\ % 7697
+
+\midrule
+
+\begin{tabular}[c]{@{}ll@{}}
+Rashba--Dresselhaus:
+& $H_a=0.4(\sigma_xp_y-\sigma_yp_x)$ \\
+&$\phantom{H_a={}}+0.3(\sigma_xp_x-\sigma_yp_y)$
+\end{tabular}
+& 1
+& 0.917
+& 4.147
+& 5.460
+& 0.355 \\ % 7698
+
+& 100
+& 0.710
+& 5.663
+& 9.818
+& 0.307 \\ % 7699
+
+\midrule
+
+Chiral: $H_a=0$, profile $\chi_+^{(\omega)}$
+& 1
+& 0.914
+& 4.060
+& 5.435
+& 0.348 \\ % 7001
+
+& 100
+& 0.598
+& 6.434
+& 11.89
+& 0.287 \\ % 7000
+
+\bottomrule
+\end{tabular}
+
+\endgroup
+\end{table}

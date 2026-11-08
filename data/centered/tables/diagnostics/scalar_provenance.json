@@ -1,0 +1,180 @@
+[
+  {
+    "omega": 1,
+    "case_id": "5000",
+    "run_id": 5000,
+    "job_id": null,
+    "job_id_note": "Not recorded in retained metadata/stdout.",
+    "directory": "UNBUNDLED/5000.Spin_Gauss_DirichletABC_theta=0_ScalarABC_Omega=1_L=20_zB=0_zc=10_k0=pi_kappa=pi_sigma=0.5_Nz=1500_dt=0.001_T=40_ZIB_R4_v1",
+    "source_hash": "c48dc42c6a1abf997e935c4fdc0a1d53b93c4a51bb091de94c82744dd955df03",
+    "source_hash_algorithm": "sha256",
+    "parent_source_hash": "6104d419a326fedd48396fd514b736183f256a536eb587d9ffec88664dd4cca8",
+    "P0": 1.0000000364574473,
+    "closure": "legacy scalar Robin last row; NOT centered-ghost",
+    "endpoint_mass_weight": 1.0,
+    "volume_metric": "uniform hx*hy*hz",
+    "z_detector_actual": 19.986665725708008,
+    "grid": {
+      "Nx": 100,
+      "Ny": 100,
+      "Nz": 1500,
+      "hx_actual": 0.10000000149011612,
+      "hy_actual": 0.10000000149011612,
+      "hz_actual": 0.013333333656191826
+    },
+    "dt": 0.001,
+    "wavefunction_dtype": "complex64",
+    "field_matrices": "source complex64 assembly then complex128 cast; no change",
+    "linear_solve_dtype": "complex128",
+    "preparation": {
+      "theta": 0.0,
+      "phi": 0.0,
+      "z0": 10.0,
+      "sigma_z_amplitude": 0.5,
+      "k0": 3.141592653589793,
+      "kappa": 3.141592653589793
+    },
+    "status": "verified complete through T=40; native full-step and sampled histories agree at common nodes",
+    "statistics_convention": "Manuscript normalized piecewise-linear sampled survival: prob_times.npy/total_probs.npy. Full-step records used as independent cross-check.",
+    "legacy_metadata_note": "revision_run.json, branch_refinement_case.json, revision_coordinates.npz are not this legacy campaign's schema. Identity checked against run_metadata, constants, geometry/operator audits, script hash, full-step raw history and completion record.",
+    "inputs": {
+      "run_metadata.json": {
+        "path": "UNBUNDLED/run_metadata.json",
+        "sha256": "303761509bb2102e29f444136a3f1ae87f7235db57979b2cdbf3060f43956836"
+      },
+      "geometry_audit.json": {
+        "path": "UNBUNDLED/geometry_audit.json",
+        "sha256": "512852ead08bb20dfae17eebd51f9e76bae1d69233952e3ae5de59bdb54b0243"
+      },
+      "operator_audit.json": {
+        "path": "UNBUNDLED/operator_audit.json",
+        "sha256": "58bdb954848e0469b65b06c3473db864bd02dd4fd026e16f01e733b8b2edb5b9"
+      },
+      "constants.npz": {
+        "path": "UNBUNDLED/constants.npz",
+        "sha256": "09b617eacc781ef88e9f0b6b99261b923278f3c984462aed40ea323ff0fecd01"
+      },
+      "script_used.py": {
+        "path": "UNBUNDLED/script_used.py",
+        "sha256": "c48dc42c6a1abf997e935c4fdc0a1d53b93c4a51bb091de94c82744dd955df03"
+      },
+      "prob_times.npy": {
+        "path": "UNBUNDLED/prob_times.npy",
+        "sha256": "d723cb0f6e50c1afc227229c9721dcf750a7b0d3b180b8b61e51f5a5ceb489ef"
+      },
+      "total_probs.npy": {
+        "path": "UNBUNDLED/total_probs.npy",
+        "sha256": "5380d272e30dfa5cf033f0a8ab850c8fb1f5890f058c50be6e1cc4bf6843557c"
+      },
+      "field_history.npz": {
+        "path": "UNBUNDLED/field_history.npz",
+        "sha256": "adbbfce7e43469fe3d2177958bd8febdd98d083f332b3a6967b01ed1d85e0b9c"
+      },
+      "branch_spin_history.npz": {
+        "path": "UNBUNDLED/branch_spin_history.npz",
+        "sha256": "c72e32facf188526f90ff4430f27040ee33cf739a10be086f1103b010355b1d3"
+      },
+      "longitudinal_history.npz": {
+        "path": "UNBUNDLED/longitudinal_history.npz",
+        "sha256": "f627790b070da62ddf8b425708988a4b8c1e81a2f4df8d00610ef35d951792b8"
+      },
+      "summary.json": {
+        "path": "UNBUNDLED/summary.json",
+        "sha256": "c1865ea5a78a59c19100567952886d90a70579c2e6c39c81694e2b0378435cd5"
+      },
+      "stdout.txt": {
+        "path": "UNBUNDLED/stdout.txt",
+        "sha256": "74b9b883e2c7150d19abdb430980284dc0a08a5c9e830317aa68b44489e2fbae"
+      }
+    }
+  },
+  {
+    "omega": 300,
+    "case_id": "5001",
+    "run_id": 5001,
+    "job_id": null,
+    "job_id_note": "Not recorded in retained metadata/stdout.",
+    "directory": "UNBUNDLED/5001.Spin_Gauss_DirichletABC_theta=0_ScalarABC_Omega=300_L=20_zB=0_zc=10_k0=pi_kappa=pi_sigma=0.5_Nz=1500_dt=0.0002_T=40_ZIB_R4_v1",
+    "source_hash": "2bbf6f39c690bf6efc5d287654eb2a24ed29543e7733a194e6f78de76ebeac49",
+    "source_hash_algorithm": "sha256",
+    "parent_source_hash": "6104d419a326fedd48396fd514b736183f256a536eb587d9ffec88664dd4cca8",
+    "P0": 1.000000013579408,
+    "closure": "legacy scalar Robin last row; NOT centered-ghost",
+    "endpoint_mass_weight": 1.0,
+    "volume_metric": "uniform hx*hy*hz",
+    "z_detector_actual": 19.986665725708008,
+    "grid": {
+      "Nx": 100,
+      "Ny": 100,
+      "Nz": 1500,
+      "hx_actual": 0.005773502867668867,
+      "hy_actual": 0.005773502867668867,
+      "hz_actual": 0.013333333656191826
+    },
+    "dt": 0.0002,
+    "wavefunction_dtype": "complex64",
+    "field_matrices": "source complex64 assembly then complex128 cast; no change",
+    "linear_solve_dtype": "complex128",
+    "preparation": {
+      "theta": 0.0,
+      "phi": 0.0,
+      "z0": 10.0,
+      "sigma_z_amplitude": 0.5,
+      "k0": 3.141592653589793,
+      "kappa": 3.141592653589793
+    },
+    "status": "verified complete through T=40; native full-step and sampled histories agree at common nodes",
+    "statistics_convention": "Manuscript normalized piecewise-linear sampled survival: prob_times.npy/total_probs.npy. Full-step records used as independent cross-check.",
+    "legacy_metadata_note": "revision_run.json, branch_refinement_case.json, revision_coordinates.npz are not this legacy campaign's schema. Identity checked against run_metadata, constants, geometry/operator audits, script hash, full-step raw history and completion record.",
+    "inputs": {
+      "run_metadata.json": {
+        "path": "UNBUNDLED/run_metadata.json",
+        "sha256": "d1efdecae0053a51eccc7c3b0cf2bdf44555c32ab5fb2001c9ab2087b6f9a360"
+      },
+      "geometry_audit.json": {
+        "path": "UNBUNDLED/geometry_audit.json",
+        "sha256": "512852ead08bb20dfae17eebd51f9e76bae1d69233952e3ae5de59bdb54b0243"
+      },
+      "operator_audit.json": {
+        "path": "UNBUNDLED/operator_audit.json",
+        "sha256": "58bdb954848e0469b65b06c3473db864bd02dd4fd026e16f01e733b8b2edb5b9"
+      },
+      "constants.npz": {
+        "path": "UNBUNDLED/constants.npz",
+        "sha256": "c1424214945e97f8f25eae4189e017c3806ead4a3b312a974c782259efcdbd8a"
+      },
+      "script_used.py": {
+        "path": "UNBUNDLED/script_used.py",
+        "sha256": "2bbf6f39c690bf6efc5d287654eb2a24ed29543e7733a194e6f78de76ebeac49"
+      },
+      "prob_times.npy": {
+        "path": "UNBUNDLED/prob_times.npy",
+        "sha256": "e3686d5b7dc4f3ff47565bbdc66f6fa93fccb497223d3ba731be7c6c96b0352d"
+      },
+      "total_probs.npy": {
+        "path": "UNBUNDLED/total_probs.npy",
+        "sha256": "1302c3c58872f6a2af3ec8416a6d5b4d5448113614cf036231480dcab2f912f6"
+      },
+      "field_history.npz": {
+        "path": "UNBUNDLED/field_history.npz",
+        "sha256": "0517286f841cbefd48cd1c8e97c85ad6b76d52083a0d394560cbb825c9a686c1"
+      },
+      "branch_spin_history.npz": {
+        "path": "UNBUNDLED/branch_spin_history.npz",
+        "sha256": "a2b9c13a74098c007a40033e0177665b1235bdc1746cd8d996adfa43d15c7396"
+      },
+      "longitudinal_history.npz": {
+        "path": "UNBUNDLED/longitudinal_history.npz",
+        "sha256": "b36696d61cf544130c3fc7098e623a422746c40a6e73a98c4bcb74c18f4fef71"
+      },
+      "summary.json": {
+        "path": "UNBUNDLED/summary.json",
+        "sha256": "ad461cce1990ad3f927b2c947c3acfc88d0c6649108c3aeb365e116c7046dcb2"
+      },
+      "stdout.txt": {
+        "path": "UNBUNDLED/stdout.txt",
+        "sha256": "a6683f7155d795b1e9cd2d12c89f69f3ef5ea8ea53c15f1789bea11bfc672dab"
+      }
+    }
+  }
+]

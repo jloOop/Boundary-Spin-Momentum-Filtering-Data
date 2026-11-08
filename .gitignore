@@ -26,3 +26,8 @@ raw-data/
 # Allow selected images/GIFs in documented result folders.
 !follow-up-results-3D/**/*.png
 !follow-up-results-3D/**/*.gif
+
+# Centered saved-data workflow and private packaging records
+build/
+.pytest_cache/
+!data/centered/**/*.npy

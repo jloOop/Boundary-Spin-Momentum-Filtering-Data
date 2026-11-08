@@ -1,0 +1,60 @@
+{
+  "observable": "Unconditional upper-detector arrival-time density",
+  "formula": "roof_probability / (P0_init64 * (t_right - t_left))",
+  "time": "(t_left + t_right) / 2",
+  "conditioning_on_top_detection": false,
+  "smoothing": false,
+  "palette_source": "https://sronpersonalpages.nl/~pault/#sec:qualitative",
+  "style_reference": "Supplied paper, Fig. S9, page 37",
+  "axis_labels": {
+    "x": "t",
+    "y": "Probability density"
+  },
+  "titles": false,
+  "main_limits": {
+    "x": [
+      0,
+      40
+    ],
+    "y": [
+      -0.0125,
+      0.25
+    ]
+  },
+  "inset_limits": {
+    "x": [
+      5,
+      35
+    ],
+    "y": [
+      0,
+      0.032
+    ]
+  },
+  "curves": [
+    {
+      "label": "Dirichlet lower wall",
+      "color": "#117733",
+      "source_directory": "5045.Spin_Gauss_centeredABC_Omega=200_L=20_T=40_Nz=1500_complex64_Confinement_v1_full_job3704247",
+      "source_file": "revision_step_data.csv",
+      "initial_mass": 1.0000000002057592,
+      "samples": 160000,
+      "top_probability_0_40": 0.7840457039440489,
+      "peak_time": 2.294875,
+      "peak_density": 0.22523929685652033,
+      "max_density_5_35": 0.029038680181951992
+    },
+    {
+      "label": "Scalar absorbing lower boundary",
+      "color": "#332288",
+      "source_directory": "7800.Spin_Gauss_centeredABC_LowerScalarABC_Omega=200_L=20_k0=pi_kappa=pi_kappaLower=pi_sigma=0.5_T=40_Nz=1500_complex64_LowerABC_v1_full_job3785935",
+      "source_file": "revision_step_data.csv",
+      "initial_mass": 1.0000000002057592,
+      "samples": 160000,
+      "top_probability_0_40": 0.47559320320072496,
+      "peak_time": 2.294875,
+      "peak_density": 0.22523936086977753,
+      "max_density_5_35": 0.028196642651980998
+    }
+  ]
+}

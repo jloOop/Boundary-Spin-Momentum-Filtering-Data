@@ -1,0 +1,167 @@
+{
+  "processing": "Native step-midpoint vertices; no binning, smoothing, time shift, rescaling, differentiation, or conditional normalization.",
+  "detector_method": "P0=P0_init64; dt=t_right-t_left; t=(t_left+t_right)/2; g=roof_probability/(P0*dt)",
+  "D40": "math.fsum(roof_probability)/P0_init64",
+  "S40": "mass_stored_final/P0_init64",
+  "discrepancy": "D40-(1-S40); retained and reported without correction",
+  "figures": [
+    {
+      "stem": "Fig1a_centered",
+      "omegas": [
+        1,
+        50,
+        100,
+        150,
+        200,
+        300
+      ],
+      "xlim": [
+        0.0,
+        40.0
+      ],
+      "original_ylim": [
+        -0.0025,
+        0.405
+      ],
+      "ylim": [
+        -0.0025,
+        0.405
+      ],
+      "limit_changed": false,
+      "maximum_visible_density": 0.37544202949425154,
+      "vertices": [
+        {
+          "omega": 1,
+          "native_vertices": 40000,
+          "density_sha256": "92cfbca9fcd3fec6ee8cffa6d3c1bbc3b9a8b947a1327e350c14011befd9131d"
+        },
+        {
+          "omega": 50,
+          "native_vertices": 50000,
+          "density_sha256": "7f260a52c5581ece1233fc003d317ab244a514abba0ca1371a37a2b61b739ced"
+        },
+        {
+          "omega": 100,
+          "native_vertices": 80000,
+          "density_sha256": "973722c652ef7b767810ae5110747a37e3959131a3eb371ac7a39048db952f90"
+        },
+        {
+          "omega": 150,
+          "native_vertices": 160000,
+          "density_sha256": "46db5792665bafa39d33cb2b30d2fb809961f7b704ac2246daa5ebfb39a9ffb1"
+        },
+        {
+          "omega": 200,
+          "native_vertices": 160000,
+          "density_sha256": "e0094c696530594bc5d8b497132f2c80400c1f444bab71f09a8f18dd0ec5cfdf"
+        },
+        {
+          "omega": 300,
+          "native_vertices": 400000,
+          "density_sha256": "0a0966d3260a82aa373822c2f85520c8349b769624cfcf8040647dfd95fc5e6b"
+        }
+      ],
+      "size_inches": [
+        8.8,
+        3.75
+      ],
+      "png_dpi": 600,
+      "vector_pdf": true,
+      "axes_bounds": [
+        0.115,
+        0.17,
+        0.863,
+        0.7255230125523012
+      ],
+      "legend_columns": 3,
+      "colors": {
+        "1": "#CC6677",
+        "50": "#332288",
+        "100": "#999933",
+        "150": "#44AA99",
+        "200": "#AA4499",
+        "300": "#000000"
+      },
+      "linewidths_pt": {
+        "1": 1.8,
+        "50": 1.6,
+        "100": 1.45,
+        "150": 1.1,
+        "200": 0.75,
+        "300": 0.6
+      }
+    },
+    {
+      "stem": "Fig1b_centered",
+      "omegas": [
+        1,
+        50,
+        100,
+        300
+      ],
+      "xlim": [
+        8.0,
+        40.0
+      ],
+      "original_ylim": [
+        -0.0002,
+        0.0355
+      ],
+      "ylim": [
+        -0.0002,
+        0.0355
+      ],
+      "limit_changed": false,
+      "maximum_visible_density": 0.029793209203390892,
+      "vertices": [
+        {
+          "omega": 1,
+          "native_vertices": 40000,
+          "density_sha256": "92cfbca9fcd3fec6ee8cffa6d3c1bbc3b9a8b947a1327e350c14011befd9131d"
+        },
+        {
+          "omega": 50,
+          "native_vertices": 50000,
+          "density_sha256": "7f260a52c5581ece1233fc003d317ab244a514abba0ca1371a37a2b61b739ced"
+        },
+        {
+          "omega": 100,
+          "native_vertices": 80000,
+          "density_sha256": "973722c652ef7b767810ae5110747a37e3959131a3eb371ac7a39048db952f90"
+        },
+        {
+          "omega": 300,
+          "native_vertices": 400000,
+          "density_sha256": "0a0966d3260a82aa373822c2f85520c8349b769624cfcf8040647dfd95fc5e6b"
+        }
+      ],
+      "size_inches": [
+        8.8,
+        3.75
+      ],
+      "png_dpi": 600,
+      "vector_pdf": true,
+      "axes_bounds": [
+        0.115,
+        0.17,
+        0.863,
+        0.7255230125523012
+      ],
+      "legend_columns": 4,
+      "colors": {
+        "1": "#CC6677",
+        "50": "#332288",
+        "100": "#999933",
+        "300": "#000000"
+      },
+      "linewidths_pt": {
+        "1": 1.8,
+        "50": 1.6,
+        "100": 1.45,
+        "300": 0.9
+      }
+    }
+  ],
+  "identity_status": "identified archived export; exact October28 embedded-image identity unconfirmed",
+  "source_package": "R/1.Main/Fig1_Tol_swapped100_150_upto300_2026-10-23"
+}

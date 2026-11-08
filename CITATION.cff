@@ -1,7 +1,6 @@
 cff-version: 1.2.0
-title: "Spin–Momentum Impedance and Filtering by a Spin-Coupled
-Absorbing Boundary Condition"
-message: "If you use this repository, please cite the associated manuscript."
+title: "Spin–Momentum Impedance and Filtering at a Spin-Coupled Absorbing Boundary"
+message: "If you use this repository, please cite the associated manuscript; centered data refer to the 28 October 2026 snapshot."
 type: software
 authors:
   - family-names: Jozani
