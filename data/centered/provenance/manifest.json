@@ -208,15 +208,16 @@
       "size_bytes": 27816,
       "source_path": null,
       "source_sha256": null,
-      "transformation": "New portable CSV presentation specification and summary/check helpers; original production scripts not executed."
+      "transformation": "New portable CSV presentation specification and summary/check helpers; original production scripts not executed.",
+      "previous_distributed_sha256": "e0c0bdc52092f4bc10053e7f98ba235894836355f973589028f1bbb306d53fdf"
     },
     {
       "path": "Loaders/centered/supplement_tables_b.py",
       "source_path": null,
       "source_sha256": null,
       "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
-      "sha256": "32503289b54c11ae0383ab985e65febde7003d6125e200016bdfdec67df81028",
-      "size_bytes": 28081
+      "sha256": "0e3d891f87b0dba05206c6ef926aff89c513e0e318d1622779de52bff522721a",
+      "size_bytes": 28073
     },
     {
       "path": "Loaders/centered/test_numerics.py",
@@ -279,8 +280,8 @@
     },
     {
       "path": "REPRODUCING.md",
-      "sha256": "c3626354e073f3dfe14662eb035dce1889fba19bcd46f495a9f7529a9c0e62bb",
-      "size_bytes": 7154,
+      "sha256": "fabebea52ad1b7af83e38abf76b2349a7ef3fc2a0426037fc9a42453c4c4cd25",
+      "size_bytes": 7264,
       "source_path": null,
       "source_sha256": null,
       "transformation": "new portable analysis, packaging, test or curated documentation; no source scientific array alteration",
@@ -3643,8 +3644,8 @@
       "source_path": null,
       "source_sha256": null,
       "transformation": "new deterministic supplementary presentation, validation, or targeted navigation; no native scientific array alteration",
-      "sha256": "5427eab3a395715a1c9817e8e45f7c21f8f01720dd8549056c260b05b0183d0c",
-      "size_bytes": 39722
+      "sha256": "a1e92996f8b613412b2af5686365bda468f8f5b9d4735beeb85792c3b50d5c79",
+      "size_bytes": 39714
     },
     {
       "path": "data/centered/tables/controls/7810/long_time_support.csv",
@@ -6583,7 +6584,7 @@
       ],
       "presentation_specification": "Loaders/centered/supplement_tables_b.py",
       "implementation": "Centered spinor upper ABC in all rows; reflecting Dirichlet or scalar absorbing lower closure. The different evidence conventions within the table are retained.",
-      "scientific_status": "Mixed evidence: the two scalar-lower-ABC rows are archived numerical results independently recomputed from bundled native accepted-step records by the [controls adapter](../../../Loaders/centered/controls.py). The two Dirichlet rows retain the rounded archived rounded-reference convention: S_in=1\u2212D\u2084\u2080 and D_L=D\u2084\u2080w_L with w_L retained to four decimals in this CSV (0.3942 and 0.5587), beyond the three decimals printed in Table S2. They are not replaced by more precise native Dirichlet values. Their existing CSV arithmetic precision does not create new source precision. Values agree with PDF page 53 (Supplement page 40) after the declared display rounding.",
+      "scientific_status": "Mixed evidence: the two scalar-lower-ABC rows are archived numerical results independently recomputed from bundled native accepted-step records by the [controls adapter](../../../Loaders/centered/controls.py). The two Dirichlet rows retain the archived rounded-reference convention: S_in=1\u2212D\u2084\u2080 and D_L=D\u2084\u2080w_L with w_L retained to four decimals in this CSV (0.3942 and 0.5587), beyond the three decimals printed in Table S2. They are not replaced by more precise native Dirichlet values. Their existing CSV arithmetic precision does not create new source precision. Values agree with PDF page 53 (Supplement page 40) after the declared display rounding.",
       "presentation_before_second_update": "stored numerical CSV available without a complete rendered table"
     }
   ],
@@ -8060,8 +8061,8 @@
   ],
   "payload": {
     "unique_registered_assets": 282,
-    "registered_bytes": 190949005,
-    "centered_data_bytes_excluding_manifest": 188986116,
+    "registered_bytes": 190949099,
+    "centered_data_bytes_excluding_manifest": 188986108,
     "size_target": "100MiB soft; exceeded to preserve all19 scientific/accounting step columns for11 reference/refinement runs; no full large run directories or new release deposits"
   },
   "supplementary_presentation": {

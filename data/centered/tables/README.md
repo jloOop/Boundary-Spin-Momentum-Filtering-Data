@@ -540,7 +540,7 @@ T=40, ω=1 and 200, with the reference source and spin-coupled upper detector. T
 
 **Implementation.** Centered spinor upper ABC in all rows; reflecting Dirichlet or scalar absorbing lower closure. The different evidence conventions within the table are retained.
 
-**Source and reproduction status.** Mixed evidence: the two scalar-lower-ABC rows are archived numerical results independently recomputed from bundled native accepted-step records by the [controls adapter](../../../Loaders/centered/controls.py). The two Dirichlet rows retain the rounded archived rounded-reference convention: S_in=1−D₄₀ and D_L=D₄₀w_L with w_L retained to four decimals in this CSV (0.3942 and 0.5587), beyond the three decimals printed in Table S2. They are not replaced by more precise native Dirichlet values. Their existing CSV arithmetic precision does not create new source precision. Values agree with PDF page 53 (Supplement page 40) after the declared display rounding.
+**Source and reproduction status.** Mixed evidence: the two scalar-lower-ABC rows are archived numerical results independently recomputed from bundled native accepted-step records by the [controls adapter](../../../Loaders/centered/controls.py). The two Dirichlet rows retain the archived rounded-reference convention: S_in=1−D₄₀ and D_L=D₄₀w_L with w_L retained to four decimals in this CSV (0.3942 and 0.5587), beyond the three decimals printed in Table S2. They are not replaced by more precise native Dirichlet values. Their existing CSV arithmetic precision does not create new source precision. Values agree with PDF page 53 (Supplement page 40) after the declared display rounding.
 
 [Back to table index](#supplementary-tables)
 

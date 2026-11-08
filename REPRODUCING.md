@@ -12,7 +12,7 @@ python Loaders/reproduce_centered.py --group controls --output build/controls
 python Loaders/verify_centered.py
 ```
 
-The new tracked package is approximately **179 MiB**, including about **177 MiB** in the centered data area. This exceeds the soft100 MiB target to retain all19 scientific/accounting columns for11 reference/refinement histories, plus their controls. Native step NPZ members use standard-library ZIP-LZMA compression; NumPy loads them through Python's `zipfile`/`lzma`. No selected numerical row or precision was sacrificed to reach a size cap.
+The first update added approximately **179 MiB**, including about **177 MiB** in the centered data area. This supplementary presentation pass adds approximately **3.8 MiB**, mostly five figure previews. The combined package exceeds the soft100 MiB target to retain all19 scientific/accounting columns for11 reference/refinement histories, plus their controls. Native step NPZ members use standard-library ZIP-LZMA compression; NumPy loads them through Python's `zipfile`/`lzma`. No selected numerical row or precision was sacrificed to reach a size cap.
 
 Run these from the checkout root. Output directories are created automatically and ignored by Git. Entry points also locate inputs relative to their own checkout, independent of the caller's working directory. They reject writes into tracked input directories. All commands read committed saved data; they never import or execute generating GPU solvers.
 
